@@ -1,0 +1,49 @@
+En este mini tutorial veremos como utilizar un excelente plugin de jQuery para implementar la funcionalidad de autocompletar (suggest).
+Nosotros lo hemos utilizado para taggear, sugiriendo al usuario los tags existentes en el sistema, pero hay muchas más aplicaciones:
+en buscadores, ingreso de datos, etc.
+
+El plugin que utilizamos fue Autocomplete (que va a pasar a formar parte de jQuery UI).
+Este plugin convierte un input o área de texto en autocompletable, y puede obtener los datos remotamente utilizando AJAX o localmente
+desde un array. En caso de que los datos sean pocos, lo recomendable es utilizar un array local, pero si ya se está en el orden de los
+cientos, lo mejor será utilizar AJAX para obtener los datos buscando desde por ej. la base de datos.
+
+Inicializamos el plugin:
+
+$().ready(function(){
+$("#tags").autocomplete('buscar_tags.php',
+{ multiple: true,
+autoFill: true,
+selectFirst: true,
+formatItem: formatItem,
+formatResult: formatResult } );
+});
+
+function formatItem(row) {
+return row[0] + ” (” + row[1] + “)”;
+}
+
+function formatResult(row) {
+return row[0];
+}
+
+En donde:
+multiple = true permite ingresar más de un valor autocompletado,
+autoFill: completa la palabara para poder seleccionarla presionando enter o tab,
+selectFirst = hace que la primera sugerencia sea seleccionada si no se presiona enter o tab o se selecciona algo utilizando el puntero,
+formatItem = es una función que permite formatear como se muestra cada item mientras que formatResult es una función que permite
+formatear cómo se muestra una vez seleccionado un ítem.
+
+Otras posibilidades son:
+    * max: limitar la cantidad máxima de ítems
+    * minChars: mínima cantidad de caracteres que debe escribir el usuario para que se active el autocompletar
+    * etc
+
+Cuando implementemos el código de buscar_tags.php, obtendremos en el parmámetro 'q' del querystring el valor ingresado por el usuario.
+Por ejemplo, si el usuario ingresa “foo” se generará un request de tipo:  buscar_tags.php?q=foo&limit=10, donde limit tendrá el valor
+de la opción “max”.
+EL script buscar_tags.php deberá retoranar el resultado un ítem por renglón.
+Para el ejemplo de formatItem anterior podría ser:
+
+foreach($resultados as $resultado) {
+echo $resultado[0], "|", $resultado[1], "\n";
+}

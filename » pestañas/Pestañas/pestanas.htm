@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+		<title>
+			Sistema de Pestañas generado desde http://www.caricatos.net/sistemaPestanas.
+			Pestaña del tipo: normales
+		</title>
+		<script src="pestanas.js" type="text/javascript" charset="ISO-8859-1"></script>
+		<link rel="stylesheet" type="text/css" href="pestanas.css" charset="ISO-8859-1">
+		<script type="text/javascript" charset="ISO-8859-1">
+			var pestanas = {
+				on: 'on',
+				off: 'off',
+				items: ['pesta0', 'pesta1', 'pesta2']
+			}
+			window.onload = function() {inicializaPestañas(pestanas, 'pesta0')};
+		</script>
+		<style type="text/css" charset="ISO-8859-1">
+			.carpeta {background-color: #eeeeee;}
+		</style>
+	</head>
+	<body>
+		<div id="pestanas">
+			<dt id="Ppesta0" class="pestaña on"><a href="#pesta0" id="_pesta0">Compras</a></dt>
+			<dt id="Ppesta1" class="pestaña off"><a href="#pesta1" id="_pesta1">Pagos</a></dt>
+			<dt id="Ppesta2" class="pestaña off"><a href="#pesta2" id="_pesta2">Ventas</a></dt>
+			
+			<dd id="pesta0" class="carpeta" style="display: block">
+				Compras
+			</dd>
+			<dd id="pesta1" class="carpeta" style="display: none;">
+				Pagos
+			</dd>
+			<dd id="pesta2" class="carpeta" style="display: none;">
+				Ventas
+			</dd>
+		</div>
+	</body>
+</html>
+<!-- visor.php -->

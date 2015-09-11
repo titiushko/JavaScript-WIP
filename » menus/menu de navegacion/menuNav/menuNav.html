@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html>
+<head>
+<title>Menu de navegacion horizontal</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta NAME="AUTHOR" CONTENT="Iván Nieto Pérez">
+<meta NAME="description" CONTENT="Ejemplo Menu de navegacion horizontal">
+<link rel="stylesheet" type="text/css" href="menuNav.css">
+<SCRIPT language="JavaScript1.2" src="menuNav.js"></SCRIPT>
+</head>
+<body>
+<p>
+A continuación se muestra el menú de navegacion:
+</p>
+<SCRIPT language="JavaScript1.2">
+<!--
+var sH="<table class=\"menu\" id=\"mainmenu\" cellspacing=\"0\"><tr>";
+var p=0;
+var j=0;
+while(eval("typeof(td_"+ ++j +")!=\"undefined\"")){
+	sH+="<td id=\"td_"+j+"\" onmouseover=\"doMenu(this)\" onmouseout=\"ti=setTimeout('clearMenu()',md)\"";
+	sH+=(eval("typeof(url_"+j+")!=\"undefined\""))?" onclick=\"runMenu('"+eval("url_"+j)+"')\">":">";
+	sH+=eval("td_"+j)+"</td>";
+	if (eval("typeof(td_"+j+"_1)!=\"undefined\""))
+		pT[p++]="_"+j;
+}
+sH+="</tr></table>";
+document.write(sH);
+for(var q=0;typeof(pT[q])!="undefined";q++){
+	sT=pT[q];
+	sH="";
+	j=0;
+	sH+="<table class=\"menu\" id=\"tbl"+sT+"\" cellspacing=\"0\" style=\"top:"+getCoord(sT);
+	while (eval("typeof(td"+sT+"_"+ ++j +")!=\"undefined\"")){
+		sH+="<tr><td id=\"td"+sT+"_"+j+"\" onmouseover=\"doMenu(this)\" onmouseout=\"ti=setTimeout('clearMenu()',md)\"";
+		sH+=(eval("typeof(url"+sT+"_"+j+")!=\"undefined\""))?" onclick=\"runMenu('"+eval("url"+sT+"_"+j)+"')\">":">";
+		sH+=eval("td"+sT+"_"+j)+"</td></tr>";
+		if (eval("typeof(td"+sT+"_"+j+"_1)!=\"undefined\""))
+			pT[p++]=sT+"_"+j;
+	}
+	sH+="</table>";
+	document.write(sH);
+}
+document.getElementById("mainmenu").style.visibility="visible";
+//-->
+</script>
+
+</body></html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Personalizando las alertas javascript</title>
+		<link rel="stylesheet" type="text/css" href="awesome.css" media="screen"></link>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<!--<script type="text/javascript">
+			
+		</script>-->
+		<script type="text/javascript" src="jquery.dialog.js"></script>
+	</head>
+	<body>
+		<div id="header">
+			<div class="content">
+				<div id="title">
+					<h1>Personalizando las alertas javascript</h1>
+				</div>
+			</div>
+		</div>
+		<div id="content">
+			<p>Pulsa en el enlace para mostrar una alerta simple</p>
+			<pre><code>alert("Contenido de la alerta");</code></pre>
+			<button onclick="alert('Contenido de la alerta'); return false;">Mostrar dialogo</button>
+			<p>Pulsa en el enlace para mostrar una alerta con título</p>
+			<pre><code>alert({title: "Contenido de la alerta", content: "Lorem ipsum dolor sit amet...");</code></pre>
+			<button data-title="Titulo del dialogo", data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a ligula mi, id rutrum ante. Aenean ac justo sapien. Vivamus dignissim, enim sit amet sodales ultrices, nunc erat suscipit diam, eu condimentum leo turpis et dolor. Maecenas sed risus elit, ut tristique justo.">Submit</button>
+		</div>
+		<div id="footer">
+			<div class="content">
+				Artículo <a href="http://theproc.es/2010/8/20/27734/personalizando-las-alertas-javascript">Personalizando-las alertas javascript</a> pertenciente a <a href="http://theproc.es">TheProc.es</a>.
+			</div>
+		</div>
+	</body>
+</html>

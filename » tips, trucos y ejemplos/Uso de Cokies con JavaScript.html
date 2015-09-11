@@ -1,0 +1,99 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<script language="javascript">
+    function saludar(nombre, sexo){
+        setCookie("nombre",nombre,20);
+        setCookie("sexo",sexo,20);
+        var saludo ="Hola,"+nombre;
+    if(sexo=="F"){
+       saludo+="\nTu sexo es: Femenino"
+      document.bgColor = "FF69B4";
+      }else{
+           saludo+="\nTu sexo es: Masculino"
+           document.bgColor = "191970";
+        }
+    alert(saludo);
+  }      
+ 
+    function getCookie(nombre) {  
+        var galleta = document.cookie;   //Obtenemos las cookies    
+        var arg = nombre + "=" ;        //construye la cadena con el nombre del valor  
+        var alen = arg.length;             //longitud del nombre del valor  
+        var glen = galleta.length;       //longitud de la cookie        
+      //Se recorre las cookies guardadas para buscar la nuestra
+        var i = 0 ;
+        while (i < glen) {  
+            var j = i + alen;        //posiciona j al final del nombre del valor  
+            if (galleta.substring(i, j) == arg){ //si en la cookie estamo ya en nombre del valor  
+                var finDeCadena = galleta.indexOf(";", j);
+                if (finDeCadena == -1){
+                    finDeCadena = galleta.length  
+                    }
+                return unescape(galleta.substring(j, finDeCadena));
+      }
+            i = galleta.indexOf(" ", i) + 1;    //pasa al siguiente  
+            if (i == 0)  
+                break              //fin de la cookie  
+        }  
+        return null                //no se encuentra el nombre del valor  
+    }
+ 
+/**
+Esta funcion es la que permite guardar la cookie.
+los parametros son el nombre de la cookie, el valor que se desea guardar
+y los dias de expiracion
+*/          
+    function setCookie(nombre, valor, dias) {  
+        var caducidad=0;        
+        var hoy = new Date()                                        //coge la fecha actual  
+        var msEnXDias = eval(dias) * 24 * 60 * 60 * 1000   //pasa los dias a mseg.        
+        hoy.setTime(hoy.getTime() + msEnXDias)          //fecha de caducidad: actual + caducidad  
+        caducidad = hoy.toGMTString();        
+        //crea la cookie: incluye el nombre, la caducidad y la ruta donde esta guardada  
+       //cada valor esta separado por ; y un espacio  
+        document.cookie = nombre + "=" + escape(valor) + "; expires=" + caducidad + "; path=/"   
+    }
+ 
+/**Con esta funcion mostramos la cookie  cuando se actualiza o se vuelve acceder a la pagina*/
+    function showCookie() {    
+        if(getCookie('nombre') != null){
+        var nombre = getCookie('nombre');
+        alert("Hola, "+nombre);
+       document.formulario.nombre.value = nombre;      
+       }
+       if(getCookie('sexo') != null){      
+       var sex = getCookie('sexo');
+        if(sex=="F"){
+        document.bgColor = "FF69B4";
+        document.formulario.sexo.value = "Femenino";
+        }else{
+        document.bgColor = "191970";
+        document.formulario.sexo.value = "Masculino";
+        }              
+       }        
+    }       
+    window.onload = showCookie;     //Permite extraer el contenido de la pagina al cargar la pagina
+ 
+</script>
+</head><body>
+<h3><b>Formulario usando Cookies</b></h3>
+<form name="formulario">
+<table>
+<tr>
+<td><b>Nombre</b></td>
+<td><input type="text" name="nombre"></td>
+</tr>
+<tr>
+<td><b>Sexo</b></td>
+<td><select name="sexo">
+<option onclick="alert('Debe seleccionar Masculino o Femenino')">Seleccione su genero..</option>
+<option  onclick="saludar(this.form.nombre.value, 'M')">Masculino</option>
+<option onclick="saludar(this.form.nombre.value, 'F')">Femenino</option>
+</select>
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>

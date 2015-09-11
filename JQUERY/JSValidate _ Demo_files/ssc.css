@@ -1,0 +1,207 @@
+/* CSS Document */
+body {
+	margin:0px 0px 15px 0px;
+	text-align:center;
+	background:url(/img/bg.jpg) repeat-x left 125px #FFFFFF;
+	_background:url(/img/bg2.jpg) repeat-x left 125px #FFFFFF;
+}
+body,td,th {
+	font-family: Lucida Sans Unicode, Trebuchet MS, Tahoma, sans-serif;
+	font-size: 12px;
+}
+#container {
+	width:620px;
+	margin-right:auto;
+	margin-left:auto;
+	padding:0px;
+	text-align:left;
+}
+
+#header {
+	text-align:center;
+	height:101px;
+	padding-left:85px;
+}
+
+#logo {
+	float:left;
+	height:95px;
+	width:222px;
+	background:url(img/logo.jpg) no-repeat top left;
+	position:relative;
+}
+#language { float:left; margin-left:19px; padding-top:3px; text-align:left; }
+#choose_lang { float:left; padding-top:3px; padding-bottom:10px; text-align:left; text-decoration:none; color:#FFFFFF; margin-left:28px; width:150px; }
+#version {
+	float:left;
+	width:222px;
+	height:95px;
+}
+
+#languages {
+	display:none;
+	position:absolute;
+	margin:0px;
+	list-style:none;
+	padding:0px;
+	text-align:left;
+	height:18px;
+	padding:2px;
+	top:88px;
+	left:14px;
+	width:250px;
+	border:1px solid #11ACE4;
+	background:#FFFFFF;
+}
+#languages li { float:left; }
+#languages li a { font-size:10px; color:#333333; text-decoration:none; padding:2px; margin-right:3px; }
+#languages li a:hover { background:#333333; color:#FFFFFF; } 
+
+#select:hover ul {
+	display:block;
+}
+
+#nav { text-align:center; height:24px; } 
+#nav a { margin-right:1px; }
+
+#graphic { text-align:center; height:185px; position:relative; }
+#release {
+	position:absolute;
+	text-align:left;
+	top: 88px;
+	left: 41px;
+	color:#FFFFFF;
+	width: 178px;
+}
+#forums {
+	position:absolute;
+	text-align:left;
+	top:112px;
+	left:41px;
+}
+#forums a {
+	color:#FFFFFF;
+}
+#col1 {
+	width:260px;
+	padding:0px;
+	float:left;
+	margin-left:30px;
+	margin-right:6px;
+}
+#col2 {
+	width:260px;
+	padding:0px;
+	float:left;
+	margin-left:6px;
+}
+
+#announcement {
+	margin:0px 15px 20px 15px;
+	padding:10px;
+	border:1px solid #960;
+	background:#EFEAE0;
+}
+
+#announcement h2 {
+	color:#960;
+	font-family:'Lucida Sans Unicode', 'Lucida Grande', Helvetica, Arial, sans-serif;
+	font-size:24px;
+	letter-spacing:-1px;
+	font-weight:normal;
+	margin-top:6px;
+	padding-top:0px;
+}
+#announcement h3 {
+	color:#960;
+	font-weight:normal;
+	letter-spacing:-1px;
+	font-size:16px;
+}
+
+#announcement ul {
+	margin:0px 0px 0px 15px;
+	list-style:square;
+	padding:0px;
+}
+
+#announcement ul li {
+	margin-left:5px;
+	padding-left:5px;
+}
+
+.col1 {
+	width:255px;
+	padding:0px;
+	float:left;
+	margin-left:30px;
+	margin-right:6px;
+}
+.col2 {
+	width:255px;
+	padding:0px;
+	float:left;
+	margin-left:6px;
+}
+
+
+input { border:1px solid #000000; padding:2px; margin-bottom:3px; font-family:"Lucida Sans Unicode", "Trebuchet MS", Tahoma, sans-serif; font-size:11px; }
+.noborder { border:0px; }
+.submit_buttons { margin-top:10px; }
+
+.jsvalidation { margin-left:10px; font-size:10px; color:#FF0000; font-family:"Lucida Sans Unicode", "Trebuchet MS", Tahoma, sans-serif; }
+#notes { color:#666666; padding-top:10px; margin-top:20px; border-top:1px solid #333333; }
+.dim, .dim a { color:#CCCCCC; }
+
+.section { font-size:larger; list-style:none; font-weight:bold; padding-top:8px; margin-left:-12px; margin-bottom:5px; }
+
+.good { color:#33CC00; }
+.bad { color:#FF0000; }
+.debug { color:#FF6600; }
+.ugly { color:#CC0000; }
+.untested { color:#003399; }
+
+
+.roundcont {
+	width: 650px;
+	background-color: #EEEEEE;
+	color:#333333;
+	margin-bottom:20px;
+}
+
+.roundcont p {
+	margin: 0 10px;
+}
+
+.roundtop { 
+	background: url(/img/tr_eeeeee.jpg) no-repeat top right; 
+}
+
+.roundbottom {
+	background: url(/img/br_eeeeee.jpg) no-repeat top right; 
+}
+
+img.corner {
+   width: 5px;
+   height: 5px;
+   border: none;
+   display: block !important;
+}
+.code {
+	font-family:"Courier New", Courier, monospace;
+	margin:8px 15px 8px 15px;
+	width:604px;
+	padding:8px;
+	white-space:pre;
+	background-color:#FFFFFF;
+	overflow:auto;
+	max-height:150px;
+}
+.example { margin:20px; }
+.highlight { color:#0489CA; }
+
+blockquote { padding:8px; background:url(/img/stripe.png) top left; }
+
+.clearer {
+	clear:both;
+}

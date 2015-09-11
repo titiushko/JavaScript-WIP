@@ -1,0 +1,76 @@
+/********************************************************************************************/
+/* AJAX Simple Tabs by developersnippets, This code is intended for practice purposes.      */
+/* You may use these functions as you wish, for commercial or non-commercial applications,  */
+/* but please note that the author offers no guarantees to their usefulness, suitability or */
+/* correctness, and accepts no liability for any losses caused by their use.                */
+/********************************************************************************************/
+
+pre {
+	text-indent: 30px;
+	}
+
+#tabmenu {
+	color: #000;
+	border-bottom: 1px solid black;
+	margin: 0px;
+	padding: 0px;
+	z-index: 1;
+	padding-left: 10px;
+	}
+
+#tabmenu li {
+	display: inline;
+	overflow: hidden;
+	list-style-type: none;
+	}
+
+#tabmenu a, a.active {
+	color: #000000;
+	background: #e0ebfe;
+	font: normal 10px tahoma,verdana, Arial, sans-serif;
+	border: 1px solid #666666;
+	border-bottom: none;
+	padding: 2px 5px 2px 5px;
+	margin: 0px;
+	text-decoration: none;
+	cursor:hand;
+	}
+
+#tabmenu a.active {
+	background: #b2cbec;
+	border-bottom: 10px solid #b2cbec;
+	}
+
+#tabmenu a:hover {
+	color: #ffffff;
+	background: #b2cbec;
+	cursor:pointer;
+	}
+
+#tabmenu a:visited {
+	color: #E8E9BE;
+	}
+
+#tabmenu a.active:hover {
+	background: #7ba2d5;
+	color: #ffffff;
+	}
+
+#content {
+	font: 12px verdana, sans-serif;
+	text-align: justify;
+	background: #b2cbec;
+	padding: 20px;
+	border: 1px solid #666666;
+	border-top: none;
+	z-index: 2;
+	}
+
+#content a {
+	text-decoration: none;
+	color: #E8E9BE;
+	}
+
+#content a:hover {
+	background: #666666;
+	}

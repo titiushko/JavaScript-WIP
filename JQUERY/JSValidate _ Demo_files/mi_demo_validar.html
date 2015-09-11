@@ -1,0 +1,76 @@
+<HTML>
+	<head>
+		<title>mi_demo_validar</title>
+		<script type="text/javascript" language="javascript" src="prototype.js"></script>
+		<script type="text/javascript" language="javascript" src="scriptaculous.js"></script>
+		<script type="text/javascript" language="javascript" src="jsvalidate_beta04.js"></script>
+		<script type="text/javascript" src="builder.js"></script>
+		<script type="text/javascript" src="effects.js"></script>
+		<script type="text/javascript" src="dragdrop.js"></script>
+		<script type="text/javascript" src="controls.js"></script>
+		<script type="text/javascript" src="slider.js"></script>
+	<BODY>
+	<form name="query" method="get" action="/demo/">
+	<center>
+	<table>
+		<tr>
+			<td>
+				Numeros
+			</td>
+			<td>
+				<input id="mensaje" type="text" class="jsrequired jsvalidate_digits {errorLocation:'none'}">
+				<span style="opacity: 0;" id="jsvalidator_mensaje" class="jsvalidation">¡¡¡¡Debe introducir un término!!!!.</span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Letras:
+			</td>
+			<td>
+				<input type="text" class="jsvalidate_alpha">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Texto:				
+			</td>			
+			<td>
+				<textarea></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 align="center">
+				<input value="Enviar" type="submit">				
+			</td>
+		</tr>
+	</table>
+	</center>	
+	</form>
+	
+	
+	<div class="roundcont">
+		<p>
+			<strong>Simple "hello world" example.</strong>
+		</p>
+		<div class="example">
+			<form name="query" method="get" action="/demo/">
+				search: <input name="search" class="jsrequired" type="text">
+				<span id="jsvalidator_search" class="jsvalidation" style="opacity: 0;">¡¡ES REQUERIDO!!</span>
+				<br>
+				<input value="go" type="submit">
+			</form>
+		</div>
+		<div class="example">
+			<form name="find" method="get" action="/demo/">
+				search:
+				<input name="mensaje" id="mensaje" class="jsrequired {errorLocation:'none'}" type="text">
+				<input value="go" type="submit">
+				<span style="opacity: 0;" id="jsvalidator_mensaje" class="jsvalidation">¡¡¡¡Debe introducir un término de búsqueda!!!!.</span>
+			</form>
+		</div>
+	</div>
+	
+	<script src="urchin.htm" type="text/javascript"></script>
+	<script type="text/javascript"> _uacct = "UA-3015060-2"; urchinTracker(); </script>
+	</BODY>
+</HTML>

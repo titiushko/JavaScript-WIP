@@ -1,0 +1,63 @@
+<html>
+<head>
+    <link rel="stylesheet" href="AutoComplete.css" media="screen" type="text/css">
+    <script language="javascript" type="text/javascript" src="AutoCompleteComboBox.js"></script>
+    <title>AutoComplete ComboBox</title>
+    
+
+</head>
+<body bgcolor="#dddddd">
+<form name="Form1">
+<table>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr></tr>    
+    <tr>
+		<td></td>
+    </tr>
+	<tr>
+		<td></td>
+	  <td><input name="ac_example1" type="text" class="autocompleteText" id="nombres">
+      <img src="btnUp.JPG" name="imagen" id="boton" style="position:relative; left:127px; top:0px" onMouseOut="ChangeUp('boton')">
+	  </td>
+	</tr>
+</table>
+</form>
+
+
+
+
+
+
+<script language="javascript" type="text/javascript">
+<!--
+    	
+	vector = new Array(
+			'Andres',
+            'Adrian',
+            'Alan',
+            'Benito',
+            'Benitez',
+            'Carlos',
+            'Cesar',
+			'Daniel',
+			'Diego',
+			'Elmer',
+			'Edgardo',
+			'Fernando',
+			'Guillermo',
+			'Hector',
+			'Irvin').sort();
+
+	AutoComplete_Create('nombres', 'boton',vector, 3);
+		
+// -->
+
+</script>
+
+
+</body>
+</html>

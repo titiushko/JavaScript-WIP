@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+ <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+ <title>Advantages</title>
+</head>
+<body>
+
+<h3>Advantages</h3>
+
+<p>This offers some major advantages over just implementing XMLHttpRequest by itself:</p>
+
+<ol>
+ <li><strong>Browser Support:</strong> This implements both XMLHttpRequest and
+  a custom-written hidden-IFRAME-based transport layer. Therefore, it works in
+  a wider range of browsers, including Opera 7 and IE5/Mac.</li>
+ <li><strong>Accessibility:</strong> The document interface code is written
+  with modern "best practice" coding standards in mind. Links are standard A
+  HREF links with a CLASS attribute applied, so legacy useragents can still
+  access your site's content.</li>
+ <li><strong>Multithreading:</strong> The threaded RemoteFileLoader object will
+  automatically create transports as needed, so you can have as many
+  simultaneous requests going on in the background as you want. Plus, it's
+  smart enough to reuse transports that are idle or loading into the same
+  target.</li>
+ <li><strong>Easy:</strong> You can load any file anywhere with just a function
+  call.</li>
+</ol>
+
+</body>
+</html>

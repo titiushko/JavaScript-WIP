@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+#demo-menu #home-link { color: #bca69a; display: block; font-size: 12px; padding: 9px 10px 11px 30px; position: absolute; top: 0; right: 0; text-decoration: none; z-index: 600 }
+#demo-menu #home-link:hover { color: #fff }
+
+ul.dropdown, ul.dropdown li, ul.dropdown ul { list-style: none; text-align: left }
+ul.dropdown { float: left; position: relative; z-index: 597 }
+ul.dropdown li { float: left; line-height: 1.3em; vertical-align: middle; zoom: 1 }
+ul.dropdown li.hover, ul.dropdown li:hover { cursor: default; position: relative; z-index: 599 }
+ul.dropdown ul { left: 0; position: absolute; top: 100%; visibility: hidden; width: 100%; z-index: 598 }
+ul.dropdown ul li { float: none }
+ul.dropdown ul ul { top: 1px; left: 99% }
+ul.dropdown li:hover > ul { visibility: visible }
+
+/* theme.css */
+ul#nav { background: #291102 url(../images/icons/favicon.gif) no-repeat 9px 6px; border-bottom: 1px solid #887468; width: 100% }
+ul#nav li { color: #bca69a; font-size: 12px; padding: 7px 65px 7px 35px }
+ul#nav li.hover, ul#nav li:hover { color: #fff }
+ul#nav li ul { border-bottom: 1px solid #6e5a4e; border-top: 1px solid #291102; margin-top: -1px }
+ul#nav li ul li { border-top: 1px solid #6e5a4e; padding: 0 }
+ul#nav li ul li a { background-color: #544135; color: #fff; display: block; padding: 7px 10px }
+ul#nav li ul li a:hover { background-color: #089aa7 !important }
+ul#nav li ul li ul { left: 100%; top: -1px }
+ul#nav li ul li ul li { border-color: #7e6c61 }
+ul#nav li ul li ul li a { background: #69584d }
+ul#nav a { text-decoration: none }
+ul#nav ul { width: 150px; margin-top: 1px }
+ul#nav ul li { font-weight: normal }
+ul#nav ul li.dir a { background-image: url(../images/icons/demos-menu-arrow.gif); background-position: 93% 50%; background-repeat: no-repeat; padding-right: 25px }
+ul#nav ul li.dir a:hover { background-image: url(../images/icons/demos-menu-arrow-hover.gif) }
+ul#nav ul li.dir ul li a, ul#nav ul li.dir ul li a:hover { background-image: none; padding-right: 10px }

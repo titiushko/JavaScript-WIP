@@ -1,0 +1,494 @@
+/*=======================================
+* Base styles
+* ======================================*/
+body{
+   padding: 0;
+   margin: 0;
+   
+   font-family: sans-serif;
+   font-size: 12px;
+   
+   background: #fdffe4 url('/projects/simpletip/images/bg.jpg') repeat top left;
+   color: #404040;
+}
+
+ul{
+   margin: 5px 0 0 30px;
+   padding: 0;
+   list-style-type: circle;
+}
+ul li{ margin: 0; padding: 0; }
+
+img{ border: 0; }
+
+.pngfix{ behavior: url('/css/iepngfix.htc'); }
+
+
+/*=======================================
+* Links
+* ======================================*/
+a, a:link, a:hover, a:active, a:visited{
+   color: #6699CC;
+   text-decoration: none;
+}
+a:hover{ text-decoration: underline; }
+
+   a.page{ color: #FF7C0A; font-weight: bold; }
+
+
+/*=======================================
+* Floats
+* ======================================*/
+.left{ float: left; }
+.right{ float: right; }
+.clear{ clear: both; height: 0px; font-size: 1px; }
+
+
+/*=======================================
+* Tooltips
+* ======================================*/
+.tooltip{
+   position: absolute;
+   padding: 10px 13px;
+   z-index: 2;
+   
+   color: #303030;
+   background-color: #f5f5b5;
+   border: 1px solid #DECA7E;
+   
+   font-family: sans-serif;
+   font-size: 12px;
+   line-height: 18px;
+   text-align: center;
+}
+
+   .tooltip h3{
+      margin: 0 0 5px;
+      text-align: left;
+   }
+
+
+/*=======================================
+* Tables
+* ======================================*/
+table{
+   width: 100%;
+   padding: 0;
+   margin-top: 8px;
+   
+   border-radius: 5px;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border: 1px solid #6699CC;
+}
+   
+   table thead th{
+      padding: 10px;
+      margin: 0;
+      
+      color: white;
+      background-color: #6699CC;
+      text-align: left;
+      font-weight: bold;
+   }
+   
+   table tr td{
+      padding: 7px 10px;
+      
+      border-bottom: 1px solid #ddd;
+      line-height: 18px;
+      vertical-align: top;
+   }
+   
+   table tr.last td{ border-bottom: 0; }
+  
+   table tr.blank td{
+      height: 9px;
+      padding: 0;
+      overflow: hidden;
+      font-size: 1px;
+      
+      border-bottom: 1px solid #ddd;
+      background-color: #f4f4f4;
+      line-height: 1px;
+   }
+
+
+/*=======================================
+* Google ad banner
+* ======================================*/
+#googlebanner{ 
+   width: 728px;
+   margin: 20px auto; 
+}
+
+
+/*=======================================
+* qTip advert
+* ======================================*/
+#qtip{
+   width: 840px;
+   margin: 20px auto;
+   padding: 22px 30px;
+   
+   border: 2px solid #303030;
+   background-color: #454545;
+   color: #8FD401;
+   
+   font-size: 24px;
+   font-weight: normal;
+}
+
+   #qtip a{
+      color: white;
+      font-weight: bold;
+   }
+
+/*=======================================
+* Beta Advert
+* ======================================*/
+#beta-advert{ 
+   padding: 10px;
+   margin-bottom: 10px;
+   
+   border: 5px solid #EBE4B4;
+   background-color: #F8F4CA;
+   
+   font-size: 17px;
+   text-align: center;
+}
+
+   #beta-advert a,
+   #beta-advert a:link,
+   #beta-advert a:visited{
+      font-size: 17px;
+      font-weight: bold;
+      color: #DF3030;
+   }
+
+
+/*=======================================
+* Master
+* ======================================*/
+#master{
+   width: 900px;
+   margin: 20px auto 0;
+}
+
+   #master .caption{
+      padding-bottom: 7px;
+      font-size: 20px;
+      color: #404040;
+   }
+   
+      #master .caption img{
+         margin: 0 -15px -22px -9px; 
+         behavior: url('/css/iepngfix.htc');
+      }
+      
+   #master .body{
+      padding: 15px;
+      
+      border-radius: 10px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border: 2px solid #99BCE0;
+      background-color: #fffdfd;
+   }
+      
+      /*=======================================
+      * Header
+      * ======================================*/
+      #master .body .header{
+         
+      }
+
+         #master .body .header img.logo{
+            behavior: url('/css/iepngfix.htc');
+         }
+         
+         #master .body .header a{
+            height: 76px;
+            width: 120px;
+            display: block;
+            padding: 32px 25px;
+            margin-left: 10px;
+            
+            border-radius: 7px;
+            -moz-border-radius: 7px;
+            -webkit-border-radius: 7px;
+            color: white;
+            
+            font-size: 15px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            line-height: 21px;
+         }
+         
+            #master .body .header a .tooltip{
+               width: 144px;
+               
+               color: white;
+               border-radius: 5px;
+               -moz-border-radius: 5px;
+               -webkit-border-radius: 5px;
+               border: 0;
+            }
+         
+         #master .body .header a.downloads{
+            height: auto;
+            padding: 22px 25px;
+            margin-bottom: 4px;
+            
+            background-color: #4CC744;
+            line-height: 17px;
+         }
+         
+            #master .body .header a.downloads .tooltip{
+               background-color: #4CC744;
+            }
+         
+            #master .body .header a.downloads b{
+               
+            }
+            
+         #master .body .header a.beta{
+            padding: 12px 25px;
+            background-color: #DF3030;
+            font-weight: normal;
+         }
+         
+            #master .body .header a.beta .tooltip{
+               background-color: #DF3030;
+            }
+            
+         
+         #master .body .header a.docs{
+            height: 46px;
+            padding: 47px 25px;
+            
+            background-color: #6699CC;
+         }
+         
+            #master .body .header a.docs .tooltip{
+               background-color: #6699CC;
+            }
+            
+            
+         #master .body .header a.demo{
+            height: 46px;
+            padding: 47px 25px;
+            
+            background-color: #FF7C0A;
+         }
+         
+            #master .body .header a.demo .tooltip{
+               background-color: #FF7C0A;
+            }
+      
+      /*=======================================
+      * Content
+      * ======================================*/
+      #master .body .content{
+         line-height: 19px;
+      }
+      
+         #master .body .content h1{
+            margin: 30px 0 0;
+            padding: 0;
+            
+            font-size: 27px;
+         }
+            
+            #master .body .content h1 a{ float: right; text-decoration: none; color: #6699CC; font-size: 19px; color: #DF3030; }
+         
+         #master .body .content h2{
+            margin: 35px 0 3px;
+            
+            font-size: 21px;
+         }
+         
+         /*=======================================
+         * Download
+         * ======================================*/
+         #master .body .content .downloads{
+            
+         }
+         
+            #master .body .content .downloads h1 b{
+               color: #6699CC;
+            }
+         
+            #master .body .content .downloads h2{
+               margin-bottom: 5px;
+               color: #6699CC;
+            }
+         
+               #master .body .content .downloads h2 b{
+                  color: #606060;
+               }
+               
+            #master .body .content .downloads h3{
+               margin: 0 0 4px 13px;
+               
+               font-size: 14px;
+               color: #404040;
+            }
+            
+               #master .body .content .downloads h3 b{
+                  color: #606060;
+               }
+            
+            #master .body .content .downloads table{
+               margin: 15px 0 5px;
+            }
+            
+               #master .body .content .downloads table th{
+                  padding: 4px 10px;
+               }
+            
+            #master .body .content .downloads .tip{
+               font-size: 11px;
+               font-style: italic;
+               text-indent: 10px;
+               color: #909090;
+            }
+               
+            #master .body .content .downloads ul{
+               margin: 0 0 0 45px;
+               padding: 0;
+            }
+            
+               #master .body .content .downloads .thanks{
+                  text-indent: 10px;
+                  font-weight: bold;
+                  font-style: italic;
+               }
+         
+         /*=======================================
+         * Demo
+         * ======================================*/
+         #master .body .content .demo{
+            
+         }
+            
+            #master .body .content .demo .sandbox{
+               padding: 15px 30px;
+               margin: 10px 0 10px 15px;
+               
+               border: 1px solid #6699CC;
+               border-width: 1px 1px 1px 15px;
+               
+               border-radius: 5px;
+               -moz-border-radius: 5px;
+               -webkit-border-radius: 5px;
+               
+               background-color: #f7f7f7;
+               line-height: 33px;
+            }
+            
+               #master .body .content .demo .sandbox a{
+                  cursor: help;
+                  border-bottom: 1px dotted #6699CC;
+               }
+               #master .body .content .demo .sandbox a:hover{ text-decoration: none; }
+               
+                  #master .body .content .demo .sandbox .source{ 
+                     padding: 3px 13px;
+                     margin-right: 15px;
+                     
+                     border: 0; 
+                     border-radius: 5px;
+                     -moz-border-radius: 5px;
+                     -webkit-border-radius: 5px;
+                     
+                     background-color: #FF7C0A;
+                     color: white;
+                     font-weight: bold;
+                     cursor: pointer;
+                  }
+               
+               #master .body .content .demo code{
+                  display: none;
+                  font-weight: normal;
+               }
+         
+         
+         /*=======================================
+         * Documentation
+         * ======================================*/
+         #master .body .content .docs{
+            
+         }
+         
+            #master .body .content .docs table tr td span.prop{ color: #FF7C0A; }
+         
+            #master .body .content .docs table.properties tr td.name{
+               width: 15%;
+               
+               color: #FF7C0A;
+               font-weight: bold;
+            }
+            
+            #master .body .content .docs table.properties tr td.description{
+               width: 45%;
+               padding-right: 20px;
+               
+               border-right: 0;
+            }
+            
+            
+            #master .body .content .docs table.properties tr td.possible{
+               width: 25%;
+            }
+            
+            #master .body .content .docs table.properties tr td.value{
+               width: 15%;
+               background-color: #f4f4f4;
+               font-weight: bold;
+            }
+            
+            #master .body .content .docs table.methods tr td.name{
+               width: 15%;
+               
+               color: #FF7C0A;
+               font-weight: bold;
+            }
+            
+            #master .body .content .docs table.methods tr td.arguments{
+               width: 15%;
+            }
+            
+            #master .body .content .docs table.methods tr td.return{
+               width: 15%;
+               background-color: #f4f4f4;
+               font-weight: bold;
+            }
+            
+            #master .body .content .docs table.methods tr td.description{
+               width: 55%;
+               padding-right: 20px;
+               
+               border-right: 0;
+            }
+                  
+   
+   /*=======================================
+   * Footer
+   * ======================================*/
+   #master .footer{
+      margin-top: 10px;
+      padding-bottom: 10px;
+      float: left;
+      width: 100%;
+      
+      text-align: center;
+      color: #606060;
+   }
+   
+      #master .footer a:link,
+      #master .footer a:visited{
+         font-style: italic;
+         color: #505050;
+      }

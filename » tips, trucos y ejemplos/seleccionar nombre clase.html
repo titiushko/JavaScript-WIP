@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>CDATA</title>
+		<style type="text/css">
+			.una_clase{
+				display:none;
+			}
+		</style>
+		<script type="text/javascript">
+			function negative(classname) {
+				//document.getElementById(id).style.display="block";
+				var capas = document.getElementsByClassName(classname);
+				for(var i = 0; capas[i]; i++){
+					capas[i].style.display = "block";
+				}
+			}
+
+			if(!document.getElementsByClassName){
+				document.getElementsByClassName = function(className){
+					var regex = new RegExp(className);
+					var array = [];
+					var element = arguments[1] || document.documentElement;
+					for(var elem = element.firstChild; elem != null; elem = elem.nextSibling){
+						if(elem.nodeType != 1)continue;
+						if(regex.test(elem.className)) array.push(elem);
+						if(elem.hasChildNodes()) array = array.concat(arguments.callee(className, elem));
+					}
+					return array;
+				}
+			}
+			//----------------------------------------------------------------------------
+			/*
+			function validarNuevoRecolector(){
+				var cl = 'importante';
+				var sTagName = 'input';
+				var elemento = document.getElementsByClassName = function(cl, sTagName){
+								var retnode = [];
+								var myclass = new RegExp('\\b'+cl+'\\b');
+								var elem = this.getElementsByTagName((sTagName===""||sTagName===null)?"*":sTagName);
+								for (var i = 0; i < elem.length; i++){
+									var classes = elem[i].className;
+									if (myclass.test(classes)) retnode.push(elem[i]);
+								}
+								return retnode;
+							};				
+				
+				for(var i = 0; elemento[i]; i++){
+					if(elemento[i].value == ""){
+						//elemento = document.getElementById('mensaje1'); elemento.className = "visto";
+						//elemento = document.getElementById('importante'); elemento.className = "elementoVacio";
+						alert("falta!!");
+						//F.nombre_proveedor.focus();
+						return false;
+					}
+				}
+				return true;
+			}
+			*/
+		</script>
+	</head>
+	<body onload="negative('una_clase');">
+	<div class="una_clase">soy un bloque</div>
+	<div class="una_clase">y yo el segundo</div>
+	</body>
+</html>

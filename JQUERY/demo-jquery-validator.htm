@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+		<title>jQuery Validator</title>
+		<script type="text/javascript" src="demo-jquery-validator_files/jquery.js"></script>
+		<script type="text/javascript">
+			/**************************************
+			* Form validator plugin
+			**************************************/
+			(function($){
+				$.fn.validator = function(opts){
+					$(this).find('.elementoVacio').live('keyup', function(){
+						if($(this).val()!=""){
+						$(this).removeClass('elementoVacio');
+						}
+					});
+					return $(this).submit(function(evt){
+						$(this).find('.requiredo').each(function(){
+							if ($(this).attr('value') == ''){
+								$(this).addClass('elementoVacio');
+								evt.preventDefault();
+							}
+						});
+						$(this).find('.elementoVacio').first().focus();
+					});
+				};
+			})(jQuery);
+
+			// El plugin se invocará de la siguiente manera:
+			jQuery(document).ready(function(){
+				jQuery('form').validator();
+			});
+		</script>
+		<link rel="stylesheet" type="text/css" href="demo-jquery-validator_files/style.css" media="screen"></link>	
+	</head>
+	<body class="small">
+		<div id="header">
+			<div class="content">
+				<div id="title">
+					<h1>jQuery Validator</h1>
+				</div>
+			</div>
+		</div>
+		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+		<div id="content">
+			<div class="content">
+				<p>
+					Este formulario utiliza un sencillo plugin de validación.
+				</p>
+				<p>
+					No se puede enviar el formulario hasta que los campos
+					requeridos estén completados.
+				</p>
+				<p>
+					Si los campos requeridos no están completados y se intenta enviar el formulario se mostrarán los campos que
+					necesitan ser rellenados y el primero de ellos obtendrá el foco.
+				</p>
+				<form action="#" method="post">
+					<div class="block">
+						<label for="name_field">Nombre <span>*Obligatorio</span></label><br>
+						<input id="name_field" class="requiredo" type="text">
+					</div>
+					<div class="block">
+						<label for="phone_field">Teléfono (opcional)</label><br>
+						<input id="phone_field" type="text">
+					</div>
+					<div class="block">
+						<label for="request_field">Consulta <span>*Obligatorio</span></label><br>
+						<textarea id="request_field" class="requiredo"></textarea>
+					</div>
+					<div class="block">
+						<input value="Enviar" type="submit">
+					</div>
+				</form>
+			</div>
+		</div>
+		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+		<div id="footer">
+			<div class="content">
+				Artículo <a href="http://theproc.es/2010/7/30/26167/crea-un-sencillo-plugin-para-validar-tus-formularios-con-jquery">Crea un sencillo plugin para validar tus formularios con jQuery</a> pertenciente a <a href="http://theproc.es/">TheProc.es</a>.
+			</div>
+		</div>
+	</body>
+</html>

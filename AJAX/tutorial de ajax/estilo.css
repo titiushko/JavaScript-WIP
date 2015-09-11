@@ -1,0 +1,13 @@
+#aqui {
+  background-color:#18128B;
+  border:1px solid #000;
+  padding:10px;
+  margin:5px;
+  width:400px;
+  text-align:center;
+  color:#fff;
+}
+#aqui:hover {
+  color:#18128B;
+  background-color:#CCCCCC;
+}

@@ -1,0 +1,106 @@
+/*
+body	{
+	height: 100%;
+	margin: 0px;
+	overflow: hidden;
+}
+
+#pestas	{
+	margin: 0px;
+	padding: 0px;
+}
+
+#contenido	{
+	margin: 0px;
+	padding: 0px;
+	border: 2px inset gray;
+	border-top: 0px;
+	overflow: auto;
+}
+
+.pesta	{
+	border: 2px inset gray;
+	margin: 0px;
+	padding: 1px 7px;
+	border-bottom: 0px;
+}
+
+.activa	{
+	background-color: #eeeeee;
+	cursor: default;
+}
+
+.inactiva	{
+	background-color: #bbbbbb;
+	cursor: pointer;
+}
+
+.capa	{
+	overflow: auto;
+}
+
+.visible	{
+	display: block;
+}
+
+.invisible	{
+	display: none;
+}
+
+*/
+
+	/****************************************
+	*	Estilos de las pestañas		*
+	****************************************/
+
+.carpeta	{/*	contenidos de las carpetas	*/
+	border		: 1px solid gray;
+	position	: relative;
+	top: 8px	;
+	padding-top	: 1em;
+	z-index		: 0;
+}
+
+.pestaña	{/*	pestañas	*/
+	display		: inline;
+	margin		: 3px 1px;
+	padding		: 4px;
+	border		: 2px outset gray;
+	position	: relative;
+	top		: 6px;
+}
+
+.pestaña a	{/*	enlace de la pestaña	*/
+	color		: black;
+	border		: 0;
+}
+
+	/****************************************************************
+	*	Estilos discriminados de las pestañas normales		*
+	****************************************************************/
+
+.on	{
+	background-color: #eeeeee;
+	border-style: inset;
+	border-bottom: 0;
+	z-index: 100;
+}
+
+.off	{
+	background-color: #cccccc;
+	z-index: 0;
+}
+
+	/****************************************************************
+	*	Estilos discriminados de las pestañas coloreadas	*
+	****************************************************************/
+
+.si	{
+	border-style: inset;
+	border-bottom: 0;
+	z-index: 100;
+}
+
+.no	{
+	z-index: 0;
+}

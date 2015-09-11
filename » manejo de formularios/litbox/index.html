@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Probando litbox</title>
+<script type="text/javascript" src="prototype.js"></script>
+<script type="text/javascript" src="effects.js"></script>
+<script type="text/javascript" src="dragdrop.js"></script>
+<script type="text/javascript" src="litboxflash.js"></script>
+<script type="text/javascript" src="scriptaculous.js"></script>
+<script type="text/javascript" src="funciones.js"></script>
+
+<link rel="stylesheet" href="litbox.css" type="text/css" media="screen" />
+
+</head>
+
+<body>
+<h4>Haciendo uso de LITBox </h4>
+<p>Type: Alert </p>
+<p>El primer ejemplo el famoso &quot;Hola Mundo&quot;  haciendo uso del parametro type y con valor alert. </p>
+<p>
+<input type="button" onclick="new LITBox('HOLA MUNDO!', {type:'alert', overlay:false, height:60, width:300, resizable:false, opacity:.6});" value="Hola Mundo" />
+</p>
+<p>Type: Window </p>
+<p>Aqui ejemplos de como podemos mostrar imagenes, usando el parametro type y con valor window </p>
+<p>
+<input type="button" onclick="new LITBox('http://localhost/ejemplos/litbox/imagen1.html',{type:'window',overlay:true,height:370, width:450});" value="Mostrar imagen 1" /> 
+<input type="button" onclick="new LITBox('http://localhost/ejemplos/litbox/imagen2.html',{type:'window',overlay:true,height:370, width:450});" value="Mostrar imagen 2" /> 
+<input type="button" onclick="new LITBox('http://localhost/ejemplos/litbox/imagen3.html',{type:'window',overlay:true,height:370, width:450});" value="Mostrar imagen 3" />
+</p>
+<p>Type: Confirm</p>
+<p>
+  <label>
+  <input type="button" onClick="new LITBox('¿Te gusta el ejemplo? (Tienes que elegir SI para ver el resultado)',{type:'confirm',overlay:false,func:respuesta_si,width:350,height:150});" value="Pregunta">
+  </label>
+</p>
+<p>&nbsp; </p>
+</body>
+</html>

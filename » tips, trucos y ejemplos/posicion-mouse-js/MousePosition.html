@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>MousePosition</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<style type="text/css">
+			.centrar{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -200px;
+				margin-top: -150px;
+			}
+		</style>
+		<script language="javascript" type="text/javascript">
+			//http://librosweb.es/ajax/capitulo_6/el_objeto_event.html
+			function ventana(evento){
+				var paranetros =	"capaX=" + evento.layerX + "&" +
+									"capaY=" + evento.layerY + "&" +
+									"pantallaX=" + evento.screenX + "&" +
+									"pantallaY=" + evento.screenY + "&" +
+									"paginaX=" + evento.pageX + "&" +
+									"paginaY=" + evento.pageY + "&" +
+									"compensarX=" + evento.offsetX + "&" +
+									"compensarY=" + evento.offsetY + "&" +
+									"coordenadaX=" + evento.clientX + "&" +
+									"coordenadaY=" + evento.clientY;
+				var alto = document.formulario.altura.value;
+				var ancho = document.formulario.anchura.value;
+				var arriba = (screen.height - alto) / 2;
+				var izquierda = (screen.width - ancho) / 2;
+				var tamano = "width=" + ancho + ",height=" + alto;
+				var posicion = "top=" + arriba + ",left=" + izquierda;
+				window.open("PopUp.html?" + paranetros, "Ventana", tamano + ",status=no,resizable=no," + posicion);
+			}
+		</script>
+	</head>
+	<body>
+		<form name="formulario">
+			<table class="centrar">
+				<tr><td>Alto:</td><td><input type="text" name="altura" value="350" size="5"></td></tr>
+				<tr><td>Ancho:</td><td><input type="text" name="anchura" value="500" size="5"></td></tr>
+				<tr><td colspan="2" align="center"><input type="button" value="ventana" onclick="ventana(event)"></td></tr>
+			</table>
+		</form>
+	</body>
+</html>

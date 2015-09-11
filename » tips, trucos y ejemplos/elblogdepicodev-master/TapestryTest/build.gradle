@@ -1,0 +1,90 @@
+description = 'TapestryTest'
+version = '0.0.1'
+
+apply plugin: 'eclipse'
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'war'
+apply plugin: 'tomcat'
+
+[tomcatRun, tomcatStop]*.stopKey = 'stopKey'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    // Añadir el plugin de Tomcat
+    dependencies {
+        classpath 'org.gradle.api.plugins:gradle-tomcat-plugin:0.9.7'
+    }
+}
+
+repositories {	
+    mavenCentral()
+}
+
+configurations {
+	testCompile.exclude module: 'testng'
+}
+
+dependencies {
+	compile 'org.codehaus.groovy:groovy-all:1.8.6'
+
+	compile 'org.apache.tapestry:tapestry5-annotations:5.3.7'
+	compile 'org.apache.tapestry:tapestry-core:5.3.7'
+
+	providedCompile 'javax.servlet:servlet-api:2.5'
+
+	// Unit testing
+	testCompile 'org.apache.tapestry:tapestry-test:5.3.7'
+	testCompile 'net.sourceforge.tapestrytestify:tapestry-testify:1.0.4'
+	testCompile 'net.sourceforge.tapestryxpath:tapestry-xpath:1.0.1'
+	testCompile 'junit:junit:4.11'
+	testCompile 'org.mockito:mockito-all:1.9.5'
+ 
+	// Integration testing
+    testCompile 'org.gebish:geb-spock:0.9.0'
+    testCompile 'org.gebish:geb-junit4:0.9.0'
+    testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
+    
+    //testRuntime 'org.seleniumhq.selenium:selenium-support:2.15.0' 
+
+	// Tomcat
+    tomcat 'org.apache.tomcat.embed:tomcat-embed-core:7.0.41'
+    tomcat 'org.apache.tomcat.embed:tomcat-embed-logging-juli:7.0.41'
+    tomcat('org.apache.tomcat.embed:tomcat-embed-jasper:7.0.41') {
+        exclude group: 'org.eclipse.jdt.core.compiler', module: 'ecj'
+    }
+}
+
+test {
+    // Excluir de los teses unitarios los teses de integración
+    exclude '**/*IntegrationTest.*'
+    exclude '**/*Spec.*'
+}
+
+tomcatRun {
+	outputFile = file('build/tmp/tomcat.log')
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '1.6'
+}
+
+task integrationTest(type: Test) {
+    // Incluir los teses de integración
+    include '**/*IntegrationTest.*'
+    include '**/*Spec.*'
+
+    // Antes de ejecutar las pruebas de integración iniciar el servidor de aplicaciones
+    doFirst {
+        tomcatRun.daemon = true
+        tomcatRun.execute()
+    }
+
+    // Después de terminar las pruebas parar el servidor de aplicaciones
+    doLast {
+        tomcatStop.execute()
+    }
+}

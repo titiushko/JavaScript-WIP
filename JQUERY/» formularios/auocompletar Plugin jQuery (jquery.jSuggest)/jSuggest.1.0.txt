@@ -1,0 +1,72 @@
+Función Autocompletar con jQuery
+4Jul2008 Categoria: AJAX, DESARROLLO, JAVASCRIPT, TUTORIALES Autor: admin
+	Compartir
+
+Por todos es sabido la gran facilidad de uso de jQuery, y lo mucho que nos ayuda a la hora de implementar código en una página web. Esta vez os dejo un pequeño tutorial para hacer un Autocompletado por ejemplo en una caja de texto para hacer una busqueda. Si no sabeis de que estoy hablando probad este ejemplo poniendo "Cro":
+
+Autocompletado con jQuery
+
+Pues esto es tan simple como descargarte los archivos que detallo a continuación:
+
+   1. jQuery Suggest 1
+   2. jQuery Suggest mini
+   3. jQuery
+   4. Gif de la imagen cargando.
+
+E implementar el código de la siguiente manera:
+
+Código HTML
+<h3 id="243_escribe-sobre-la-caj_1">Escribe sobre la caja de tecto para ver el autocompletado, en este caso, el mínimo de caracteres para que empiece a trabajar es 3. Prueba poniendo por ejemplo CRO</h3>
+<label></label>
+<input style="width: 300px" name="searchQuery" id="ya" type="text" />The code used
+
+Código CSS
+Ahora antes de mostrar el código Javascript os dejo la forma en que le damos un poco de estilo a esto con CSS: 
+<style> #jSuggestContainer { position:absolute; font: 12px Tahoma; border:1px solid #ffb931; border-top:0; background:#FFF; }
+.jSuggestLoading { font-style:italic; padding: 10px; }
+#jSuggestContainer ul, #jSuggestContainer ul li{ margin: 0; padding:0; list-style:none; }
+#jSuggestContainer ul li{ padding: 2px 4px; border-bottom: 1px dotted #ffe594; color:#666; background:#fff9e7; cursor:pointer }
+#jSuggestContainer ul li.last{ border-bottom: 0; }
+#jSuggestContainer ul li.jSuggestHover{ background:#ffeaaa; color:#333; }
+</style>
+
+Código Javascript
+Para hacer la llamada a las librerias y al evento de autocompletar, tendremos que poner lo siguiente:
+<script src="jquery-1.2.6.min.js" language="javascript" type="text/javascript"></script>
+<script src="jquery.jSuggest.1.0.js" language="javascript" type="text/javascript"></script>
+<script language="javascript"> $(function(){
+$("#ya").jSuggest({	 url: "autocompletar.html",	 type: "GET",   data: "searchQuery",	 autoChange: true  });
+}); </script>
+
+Como veis, la función Javascript tiene una llamada a un archivo llamado autocompletar.html donde están todas las opciones de busqueda, es decir:
+<ul>
+	<li>Aeroplane</li>
+	<li>Border</li>
+	<li>Crops</li>
+	<li>Desalination</li>
+<li class="last">Elephants</li>
+</ul>
+
+Ahora solo nos queda saber un poco más de esta API para poder modificar algunos aspectos. Por defecto vienen así configurado:
+$.fn.jSuggest.defaults = {
+minchar: 3,
+opacity: 1.0,
+zindex: 20000,
+delay: 2500,
+loadingImg: 'ajax-loader.gif',
+loadingText: 'Loading...',
+autoChange: false,
+url: "",
+type: "GET",
+data: ""
+};
+
+Minchar: El mínimo de caracteres que el usuario debe introducir para que comience el autocompletado.
+Opacity: Transparencia del Autocompletado.
+Zindex: Z-Index del autocompletado.
+delay: Numero en milisegundos del retardo.
+loadingImg: La imagen que aparecerá cuando este cargando.
+LoadinText: Como la anterior pero con el texto.
+AutoChange: Si esta a TRUE, cambia el texto en la caja de texto cuando esta encima o se selecciona. Si esta a FALSE, se cambiará cuando se haga clic o cuando se le de a la tecla INTRO.
+Url: Dirección de tu autocompletado.
+Type: Get o Post

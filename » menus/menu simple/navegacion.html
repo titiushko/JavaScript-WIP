@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD><TITLE>Navegacion Global</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<LINK href="menu.css" type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="menu.js"></SCRIPT>
+
+</HEAD>
+<BODY leftMargin="0" topMargin="4" MARGINWIDTH="0" MARGINHEIGHT="0">
+
+  <TABLE cellSpacing="0" cellPadding="0" width="100%" border="0">
+
+    <TR><!-- logo -->
+    <TD vAlign="center" align="center" height="80">
+		<a href="menu.html" target="_top">
+      <IMG alt="Logo" src="../../../images/logo_small.gif" border="0">
+      </a>
+    </TD>
+
+    <!-- navegación horizontal -->
+    <TD vAlign="top" height="80">
+
+      <TABLE cellSpacing="0" cellPadding="2" border="0">
+
+         <TR><!-- primera fila -->
+			<script language="javascript">
+			if ( seleccion1 != '' )	MenuNavegacion( '', seleccion1, principal, 1 )
+			else MenuNavegacion( '', 'no_seleccionado', principal, 1 )
+			parent.cen.location = 'inicio.html'
+			</script>
+			</TR>
+
+         <TR><!-- segunda fila -->
+			<script language="javascript">
+			if ( seleccion1 != '' ) {
+			  if ( seleccion2 != '' ) {
+			    MenuNavegacion( '', seleccion2, eval(seleccion1), 2 )
+			    parent.cen.location = seleccion1 + '/' + seleccion2 + '.html'
+			  } else {
+			    MenuNavegacion( '', 'no_seleccionado', eval(seleccion1), 2 )
+			  }
+			}
+			</script>
+         </TR>
+
+     </TABLE>
+  </TD></TR><!-- fin de favegación -->
+
+  </TABLE>
+
+</BODY>
+</HTML>

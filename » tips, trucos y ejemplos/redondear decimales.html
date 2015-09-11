@@ -1,0 +1,29 @@
+<html>
+ <head>
+  <script language="JavaScript">
+  function redondear(valor, numero_decimales){
+	var numero = parseFloat(valor);
+	var formato = "0.00";
+	if (!isNaN(numero)){
+		numero = Math.round(numero * Math.pow(10, numero_decimales)) / Math.pow(10, numero_decimales);
+		formato = String(numero);
+		formato += (formato.indexOf(".") == -1? ".": "") + String(Math.pow(10, numero_decimales)).substr(1);
+		formato = formato.substr(0, formato.indexOf(".") + numero_decimales + 1);
+	}
+	return formato;
+}
+
+   function ponDecimales(nDec){
+    document.frm.t1.value = redondear(document.frm.t1.value, nDec);
+    document.frm.t2.value = redondear(document.frm.t2.value, nDec);
+   }
+  </script>
+ </head>
+ <body>
+  <form name="frm">
+   <input type="text" name="t1"><br>
+   <input type="text" name="t2"><br>
+   <input type="button" value="Prepárense" onclick="ponDecimales(2)">
+  </form>
+ </body>
+</html>  

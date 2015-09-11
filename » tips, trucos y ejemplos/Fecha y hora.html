@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Untitled Page</title>
+    <script type="text/javascript">
+<!--
+
+function Button1_onclick()
+{
+    var fecha = new Date();
+    
+    alert(fecha.toDateString());
+    alert(fecha.toLocaleTimeString());
+    alert(fecha.toString());
+}
+
+//-->
+</script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        
+        <input id="Button1" type="button" value="button" onclick="return Button1_onclick()" />
+        
+    </div>
+    </form>
+    </body>
+</html>

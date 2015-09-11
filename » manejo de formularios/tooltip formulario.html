@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Mi tooltip</title>
+
+
+
+
+
+
+<style type="text/css">
+
+
+dl {
+	font:normal 12px/15px Arial;
+    position: relative;
+    width: 350px;
+}
+dt {
+    clear: both;
+    float:left;
+    width: 130px;
+    padding: 4px 0 2px 0;
+    text-align: left;
+}
+dd {
+    float: left;
+    width: 200px;
+    margin: 0 0 8px 0;
+    padding-left: 6px;
+}
+
+
+.hint {
+   	display: none;
+    position: absolute;
+    right: -250px;
+    width: 200px;
+    margin-top: -4px;
+    border: 1px solid #c93;
+    padding: 10px 12px;
+    background: #ffc url(pointer.gif) no-repeat -10px 5px;
+}
+
+.hint .hint-pointer {
+    position: absolute;
+    left: -10px;
+    top: 5px;
+    width: 10px;
+    height: 19px;
+    background: url(pointer.gif) left top no-repeat;
+}
+</style>
+<script type="text/javascript">
+function addLoadEvent(func) {
+  var oldonload = window.onload;
+  if (typeof window.onload != 'function') {
+    window.onload = func;
+  } else {
+    window.onload = function() {
+      oldonload();
+      func();
+    }
+  }
+}
+
+function prepareInputsForHints() {
+	var inputs = document.getElementsByTagName("input");
+	for (var i=0; i<inputs.length; i++){
+		if (inputs[i].parentNode.getElementsByTagName("span")[0]) {
+			// the span exists!  on focus, show the hint
+			inputs[i].onfocus = function () {
+				this.parentNode.getElementsByTagName("span")[0].style.display = "inline";
+			}
+			inputs[i].onblur = function () {
+				this.parentNode.getElementsByTagName("span")[0].style.display = "none";
+			}
+		}
+	}
+	var selects = document.getElementsByTagName("select");
+	for (var k=0; k<selects.length; k++){
+		if (selects[k].parentNode.getElementsByTagName("span")[0]) {
+			selects[k].onfocus = function () {
+				this.parentNode.getElementsByTagName("span")[0].style.display = "inline";
+			}
+			selects[k].onblur = function () {
+				this.parentNode.getElementsByTagName("span")[0].style.display = "none";
+			}
+		}
+	}
+}
+addLoadEvent(prepareInputsForHints);
+</script>
+</head>
+
+<body>
+<p style="font:normal 12px/15px Arial;"><b>Comiensa a escribir en algunos</br> de los campos para que veas el efecto</b></p>
+
+<dl>
+	<dt>
+		<label for="firstname">Nombre:</label>
+	</dt>
+	<dd>
+		<input
+			name="firstname"
+			id="firstname"
+			type="text" />
+
+		<span class="hint">Asi como te comensaron a llamar cuando nasistes eso pon aqui :P<span class="hint-pointer">&nbsp;</span></span>
+	</dd>
+	<dt>
+		<label for="lastname">Apellido:</label>
+	</dt>
+	<dd>
+		<input
+			name="lastname"
+			id="lastname"
+			type="text" />
+		<span class="hint">Ese creo que si te lo sabes<span class="hint-pointer">&nbsp;</span></span>
+
+	</dd>
+	<dt>
+		<label for="email">Email:</label>
+	</dt>
+	<dd>
+		<input
+			name="email"
+			id="email"
+			type="text" />
+		<span class="hint">Pon esa cosa a la que te llegan correos<span class="hint-pointer">&nbsp;</span></span>
+	</dd>
+
+	<dt><label for="year">Fecha De Nacimiento:</label></dt>
+	<dd>
+		<select id="year" name="year">
+			<option value="">Anio</option>
+			<option value="1066">1066</option>
+			<option value="1492">1492</option>
+			<option value="1776">1776</option>
+
+			<option value="1812">1812</option>
+			<option value="1917">1917</option>
+			<option value="1942">1942</option>
+			<option value="1999">1999</option>
+		</select>
+		<span class="hint">Cuando nasistes y el doctor te dio una nalgada :P</span></span>
+
+	</dd>
+	<dt>
+		<label for="username">Username:</label>
+	</dt>
+	<dd>
+		<input
+			name="username"
+			id="username"
+			type="text" />
+		<span class="hint">Mas te bale que elijas uno bueno<span class="hint-pointer">&nbsp;</span></span>
+	</dd>
+
+	<dt>
+		<label for="password">Password:</label>
+	</dt>
+	<dd>
+		<input
+			name="password"
+			id="password"
+			type="password" />
+		<span class="hint">Pon lo mismo que arriba para que no me cueste mucho adivinarla :P<span class="hint-pointer">&nbsp;</span></span>
+	</dd>
+	<dt class="button">&nbsp;</dt>
+
+	<dd class="button">
+		<input
+			type="submit"
+			class="button"
+			value="Submit" />
+	</dd>
+</dl>
+
+
+</body>
+</html>

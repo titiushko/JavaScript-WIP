@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<title>grafico</title>
+		<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="charting/js/visualize.jQuery.js"></script>
+		<link rel="stylesheet" type="text/css" media="screen" href="charting/css/visualize.css" />
+		<link rel="stylesheet" type="text/css" media="screen" href="charting/css/basic.css" />
+		<link rel="stylesheet" type="text/css" media="screen" href="charting/css/visualize-dark.css" />
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.miTabla').visualize({type:'area',width:400,height:400});
+				var cosa = $("div.visualize");
+				$("div.visualize").remove();
+				$("#nuevo").append(cosa);
+			});
+		</script>
+		<style>
+			div#nuevo{width:600px; margin-left:auto; margin-right:auto;}	
+			.oculto{display:none;}
+		</style>		
+	</head>
+	<body>
+		<center>
+		<table class="miTabla">
+			<caption>2009 Individual Sales by Category</caption>
+			<thead>
+				<tr>
+					<td></td>
+					<th>food</th>
+					<th>auto</th>
+					<th>household</th>
+					<th>furniture</th>
+					<th>kitchen</th>
+					<th>bath</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>Mary</th>
+					<td>150</td>
+					<td>160</td>
+					<td>40</td>
+					<td>120</td>
+					<td>30</td>
+					<td>70</td>
+				</tr>
+				<tr>
+					<th>Tom</th>
+					<td>3</td>
+					<td>40</td>
+					<td>30</td>
+					<td>45</td>
+					<td>35</td>
+					<td>49</td>
+				</tr>
+				<tr>
+					<th>Brad</th>
+					<td>10</td>
+					<td>180</td>
+					<td>10</td>
+					<td>85</td>
+					<td>25</td>
+					<td>79</td>
+				</tr>
+				<tr>
+					<th>Kate</th>
+					<td>40</td>
+					<td>80</td>
+					<td>90</td>
+					<td>25</td>
+					<td>15</td>
+					<td>119</td>
+				</tr>		
+			</tbody>
+		</table>
+		</center>
+		<div id="nuevo"></div>
+	</body>
+</html>

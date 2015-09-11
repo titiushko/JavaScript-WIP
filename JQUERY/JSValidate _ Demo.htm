@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="javascript scriptaculous prototype form validation cross browser simple easy">
+<meta name="description" content="JSValidate is a form validator that utilizes aspects of prototype and scriptaculous to bring you a simple to execute, non-intrusive javascript form validator.">
+<title>JSValidate | Demo</title>
+<link rel="shortcut icon" href="http://www.jsvalidate.com/favicon.ico">
+<link rel="stylesheet" type="text/css" href="JSValidate%20_%20Demo_files/ssc.css">
+<script type="text/javascript" language="javascript" src="JSValidate%20_%20Demo_files/prototype.js"></script>
+<script type="text/javascript" language="javascript" src="JSValidate%20_%20Demo_files/scriptaculous.js"></script>
+<script type="text/javascript" src="JSValidate%20_%20Demo_files/builder.js"></script>
+<script type="text/javascript" src="JSValidate%20_%20Demo_files/effects.js"></script>
+<script type="text/javascript" src="JSValidate%20_%20Demo_files/dragdrop.js"></script>
+<script type="text/javascript" src="JSValidate%20_%20Demo_files/controls.js"></script>
+<script type="text/javascript" src="JSValidate%20_%20Demo_files/slider.js"></script>
+<script type="text/javascript" language="javascript" src="JSValidate%20_%20Demo_files/jsvalidate_beta04.js"></script>
+</head><body>
+<div id="container">
+	<div id="header"><!--
+		--><div id="logo"><a href="http://www.jsvalidate.com/"><img src="JSValidate%20_%20Demo_files/blank.gif" alt="JSValidate" border="0" height="65" width="222"></a><!--
+			--><span id="language">EN</span><span id="select"><a href="#" id="choose_lang" onclick="return false;">Choose Language</a><!--
+			--><ul id="languages">
+				<li><a href="http://www.jsvalidate.com/language/en/">English</a></li>
+				<li><a href="http://www.jsvalidate.com/language/tr/">Türkçe (Turkish)</a></li>
+				<li><a href="http://www.jsvalidate.com/about/translate/">Translate Now</a></li>
+			</ul></span><!--
+		--></div>
+	<!--
+		--><div id="version"><a href="http://www.jsvalidate.com/download/get/"><img src="JSValidate%20_%20Demo_files/version.jpg" alt="current version" border="0" height="87" width="222"></a></div><!--
+	--></div>
+	<div id="nav"><a href="http://www.jsvalidate.com/"><img src="JSValidate%20_%20Demo_files/home.jpg" alt="home" border="0" height="24" width="90"></a><!--
+		--><a href="http://www.jsvalidate.com/download/"><img src="JSValidate%20_%20Demo_files/download.jpg" alt="download" border="0" height="24" width="90"></a><!--
+		--><a href="http://www.jsvalidate.com/demo/"><img src="JSValidate%20_%20Demo_files/demo_set.jpg" alt="demo" border="0" height="24" width="90"></a><!--
+		--><a href="http://www.jsvalidate.com/faq/"><img src="JSValidate%20_%20Demo_files/faq.jpg" alt="faq" border="0" height="24" width="90"></a><!--
+		--><a href="http://www.jsvalidate.com/docs/"><img src="JSValidate%20_%20Demo_files/docs.jpg" alt="docs" border="0" height="24" width="90"></a><!--
+		--><a href="http://www.jsvalidate.com/about/"><img src="JSValidate%20_%20Demo_files/about.jpg" alt="about" border="0" height="24" width="90"></a><!--
+		--><a href="http://www.jsvalidate.com/social/" target="_blank"><img src="JSValidate%20_%20Demo_files/social.jpg" alt="digg this" border="0" height="24" width="32"></a><!--
+	--></div>
+	<div id="graphic"><img src="JSValidate%20_%20Demo_files/huge_demo.jpg" alt="See it in action! Actual demos you might actually use, perhaps." border="0" height="170" width="592"></div>
+	<div id="the_rest">
+				<div class="roundcont">
+			<div class="roundtop">
+				<img src="JSValidate%20_%20Demo_files/tl_eeeeee.jpg" alt="" class="corner" style="display: none;" height="5" width="5">
+			</div>
+			
+	<p><strong>Simple "hello world" example.</strong>
+	</p><div class="code">search: &lt;input type="text" name="search" class="<span class="highlight">jsrequired</span>" /&gt;&lt;br /&gt;
+	&lt;input type="submit" value="go" /&gt;</div>
+			<div class="example">
+			<form name="query" method="get" action="/demo/">
+				search: <input name="search" class="jsrequired" type="text"><span id="jsvalidator_search" class="jsvalidation" style="opacity: 0;">¡¡ES REQUERIDO!!</span><br>
+				<input value="go" type="submit">
+			</form></div>
+			
+			<div class="roundbottom">
+				<img src="JSValidate%20_%20Demo_files/bl_eeeeee.jpg" alt="" class="corner" style="display: none;" height="5" width="5">
+			</div>
+		</div>
+		
+		<div class="roundcont">
+			<div class="roundtop">
+				<img src="JSValidate%20_%20Demo_files/tl_eeeeee.jpg" alt="" class="corner" style="display: none;" height="5" width="5">
+			</div>
+			
+	<p><strong>Here's a single field example that is required and it must be a US or Canada zip code.</strong>
+	</p><div class="code">zip: &lt;input type="text" name="zip" class="<span class="highlight">jsrequired jsvalidate_uscanzip</span>" /&gt;&lt;br /&gt;
+	&lt;input type="submit" value="go" /&gt;</div>
+			<div class="example">
+			<form name="zipcode" method="get" action="/demo/">
+				zip: <input name="zip" class="jsrequired jsvalidate_uscanzip" type="text"><span id="jsvalidator_zip" class="jsvalidation" style="opacity: 0;">This field is required. This field must contain a valid US or Canada zip code.</span><br>
+				<input value="find" type="submit">
+			</form></div>
+			
+			<div class="roundbottom">
+				<img src="JSValidate%20_%20Demo_files/bl_eeeeee.jpg" alt="" class="corner" style="display: none;" height="5" width="5">
+			</div>
+		</div>
+		
+		<div class="roundcont">
+			<div class="roundtop">
+				<img src="JSValidate%20_%20Demo_files/tl_eeeeee.jpg" alt="" class="corner" style="display: none;" height="5" width="5">
+			</div>
+			
+	<p><strong>This is an example of a very simple "contact us" form with an example of a custom error message.</strong>
+	</p><div class="code">(* means required)
+*Your Name: &lt;input type="text" name="visitor" class="<span class="highlight">jsrequired jsvalidate_alpha</span>" /&gt;&lt;br /&gt;
+*Your Email Address: &lt;input type="text" name="email" class="<span class="highlight">jsrequired jsvalidate_email</span>" <span class="highlight">alt="We require a valid email address."</span> /&gt;&lt;br /&gt;
+Subject: &lt;input type="text" name="subject" class="<span class="highlight">jsvalidate_alphanum</span>" /&gt;&lt;br /&gt;
+*Your message:&lt;br /&gt;
+&lt;textarea name="message" class="<span class="highlight">jsrequired</span>" rows="5" cols="30"&gt;&lt;/textarea&gt;&lt;br /&gt;
+&lt;input type="submit" value="Send information" /&gt;</div>
+			<div class="example">
+			(* means required)
+			<form name="contact" method="post" action="/demo/">
+				*Your Name: <input name="name" class="jsrequired jsvalidate_alpha" type="text"><span id="jsvalidator_name" class="jsvalidation" style="opacity: 0;">This field is required. This field must contain only letters.</span><br>
+				*Your Email Address: <input name="email" class="jsrequired jsvalidate_email" alt="We require a valid email address." type="text"><span id="jsvalidator_email" class="jsvalidation" style="opacity: 0;">We require a valid email address.</span><br>
+				Subject: <input name="subject" class="jsvalidate_alphanum" type="text"><span id="jsvalidator_subject" class="jsvalidation" style="opacity: 0;">This field must contain only letters or numbers.</span><br>
+				*Your message:<br>
+				<textarea name="message" class="jsrequired" rows="5" cols="30"></textarea><span id="jsvalidator_message" class="jsvalidation" style="opacity: 0;">This field is required.</span><br>
+				<input value="Send information" type="submit">
+			</form></div>
+			
+			<div class="roundbottom">
+				<img src="JSValidate%20_%20Demo_files/bl_eeeeee.jpg" alt="" class="corner" style="display: none;" height="5" width="5">
+			</div>
+		</div>
+		
+		<h3>Not impressed yet?</h3>
+		
+		<div class="roundcont">
+			<div class="roundtop">
+				<img src="JSValidate%20_%20Demo_files/tl_eeeeee.jpg" alt="" class="corner" style="display: none;" height="5" width="5">
+			</div>
+			
+	<p><strong>Here's the first example formatted just a little better.</strong>
+	</p><div class="code">search: &lt;input type="text" name="search2" class="<span class="highlight">jsrequired {errorLocation:'none'}</span>" /&gt; &lt;input type="submit" value="go" /&gt;
+<span class="highlight">&lt;span id="jsvalidator_search2" class="jsvalidation"&gt;You must enter a search term.&lt;/span&gt;</span></div>
+			<div class="example">
+			<form name="find" method="get" action="/demo/">
+				search: <input name="search2" id="search2" class="jsrequired {errorLocation:'none'}" type="text"> <input value="go" type="submit">
+				<span style="opacity: 0;" id="jsvalidator_search2" class="jsvalidation">¡¡¡¡Debe introducir un término de búsqueda!!!!.</span>
+			</form></div>
+			
+			<div class="roundbottom">
+				<img src="JSValidate%20_%20Demo_files/bl_eeeeee.jpg" alt="" class="corner" style="display: none;" height="5" width="5">
+			</div>
+		</div>	</div>
+</div>
+<script src="JSValidate%20_%20Demo_files/urchin.htm" type="text/javascript"></script>
+<script type="text/javascript"> _uacct = "UA-3015060-2"; urchinTracker(); </script>
+</body></html>

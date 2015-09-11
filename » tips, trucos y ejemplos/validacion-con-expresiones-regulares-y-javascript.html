@@ -1,0 +1,387 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="wf-molengo-n4-inactive wf-droidserif-n4-inactive wf-inactive" xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+
+<title>Validación con expresiones regulares y Javascript -  Intenta, Desarrollo Web y Recursos</title>
+<meta name="description" content="">
+<meta name="keywords" content="intenta, webintenta, blog, fotografia, recursos, citas, css, software, windows, tutoriales, photoshop">
+<meta name="verify-v1" content="StqeX2/8WMkvCoyjuVHmPbzJgi8v6qCt34QuOQB73Vw=">
+<link rel="alternate" type="application/rss+xml" title="Intenta Blog -Feed" href="http://www.webintenta.com/feed">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><!-- base href="http://www.webintenta.com/" -->
+    <link type="text/css" rel="stylesheet" href="validacion-con-expresiones-regulares-y-javascript_files/Estilos.css">
+    <script async="" type="text/javascript" src="validacion-con-expresiones-regulares-y-javascript_files/webfont.js"></script><script type="text/javascript" charset="ISO-8859-1" src="validacion-con-expresiones-regulares-y-javascript_files/cache.js"></script>
+<link href="validacion-con-expresiones-regulares-y-javascript_files/css.css" rel="stylesheet"><script src="validacion-con-expresiones-regulares-y-javascript_files/bsa.htm" async="" type="text/javascript"></script><style type="text/css">.dp-xml .cdata { color: #444; }.dp-xml .tag, .dp-xml .tag-name { color: #444; }.dp-xml .attribute { color: #444; }.dp-xml .attribute-value { color: #444; }</style></head><body>
+
+<!-- BuySellAds.com Ad Code -->
+<script type="text/javascript">
+    (function() {
+        var bsa = document.createElement('script');
+        bsa.type = 'text/javascript';
+        bsa.async = true;
+        bsa.src = '//s3.buysellads.com/ac/bsa.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(bsa);
+    })();
+</script>
+<!-- End BuySellAds.com Ad Code -->
+
+    <div id="content" class="columnas"><!-- INICIO DIV CONTENT-->
+        <div id="pagina"><!-- INICIO DIV PAGINA-->
+
+        <h2><!--TITULO DEL POST -->
+<a rel="bookmark" title="Haz click para continuar leyendo Validación con expresiones regulares y Javascript" href="http://www.webintenta.com/validacion-con-expresiones-regulares-y-javascript.html">
+Validación con expresiones regulares y Javascript</a>
+</h2><!--TITULO DEL POST -->
+
+
+<span class="infopost"><!-- INICIO INFOPOST-->
+<!--COMENTARIOS DEL POST -->
+<a rel="bookmark" title="Comentar Validación con expresiones regulares y Javascript" href="http://www.webintenta.com/validacion-con-expresiones-regulares-y-javascript.html#comments">
+<img original="Imagenes/comment-icon.gif" src="validacion-con-expresiones-regulares-y-javascript_files/comment-icon.gif" style="margin-right: 5px;" align="absmiddle" border="0">25 COMENTARIOS </a>&nbsp;-&nbsp;
+	09/01/2007&nbsp;-&nbsp;
+   <img original="Imagenes/tag-icon.gif" src="validacion-con-expresiones-regulares-y-javascript_files/tag-icon.gif" style="margin-right: 5px;" align="absmiddle" border="0"> Clasificado en: <a rel="tag" href="http://www.webintenta.com/javascript/" title="javascript">JAVASCRIPT</a>, <a rel="tag" href="http://www.webintenta.com/tutoriales/" title="tutoriales">TUTORIALES</a></span>
+<style type="text/css">
+.tabla_expresiones td{
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 10px;
+	color: #787878;
+	padding:4px;
+	text-align:left;
+	border-bottom:1px dashed #eea1a1;
+}
+.tabla_expresiones td p{
+	margin:0px;
+}
+</style>
+<p>Las expresiones regulares son modelos que describen las  
+combinaciones de caracteres en el texto. Se podrían definir como  una 
+serie de carácteres que forman un  patrón, que representan a otro grupo 
+de carácteres mayor,  de tal forma que podemos comparar el patrón con 
+otros conjuntos de  carácteres para ver las coincidencias. Las 
+expresiones regulares pueden utilizarse en múltiples lenguajes de 
+programación pero en esta entrada vamos a ver un ejemplo de validación 
+de formularios mediante Javascript y haciendo uso de expresiones 
+regulares. 
+</p><p>Un buen tutorial para iniciarse en el manejo de expresiones regulares lo podemos encontrar en <a href="http://www.desarrolloweb.com/manuales/expresiones-regulares.html" target="_blank">Desarrolloweb</a>.
+ Para realizar el ejemplo siguiente no hay porque conocer en profundidad
+ su manejo. A continuación muestro una serie de tablas a modo de chuleta
+ para que podamos utilizarlas con un simple corta y pega. 
+</p><p>La tabla siguiente contiene los caracteres especiales de las expresiones regulares. 
+</p><table class="tabla_expresiones" cellpadding="0" cellspacing="0">
+    <tbody><tr>
+      <th bgcolor="#e0e6ed" width="159"> Carácter </th>
+      <th bgcolor="#e0e6ed" width="1043"> Texto buscado </th>
+    </tr>
+    <tr>
+      <td><p><strong>^</strong></p></td>
+      <td><p>Principio de entrada o línea.</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>$</strong></p></td>
+      <td><p>Fin de entrada o línea.</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>*</strong></p></td>
+      <td><p>El carácter anterior 0 o más veces.</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>+</strong></p></td>
+      <td><p>El carácter anterior 1 o más veces.</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>?</strong></p></td>
+      <td><p>El carácter anterior una vez como máximo (es decir, indica que el carácter anterior es opcional).</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>.</strong></p></td>
+      <td><p>Cualquier carácter individual, salvo el de salto de línea.</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>x|y</strong></p></td>
+      <td><p>x o y.</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>{n}</strong></p></td>
+      <td><p>Exactamente n apariciones del carácter anterior.</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>{n,m}</strong></p></td>
+      <td><p>Como mínimo n y como máximo m apariciones del carácter anterior.</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>[abc]</strong></p></td>
+      <td><p>Cualquiera de los caracteres entre corchetes. Especifique 
+un rango  de caracteres con un guión (por ejemplo, [a-f] es equivalente a
+  [abcdef]). </p></td>
+    </tr>
+    <tr>
+      <td><p><strong>[^abc]</strong></p></td>
+      <td><p>Cualquier carácter que no esté entre corchetes. Especifique
+ un rango  de caracteres con un guión (por ejemplo, [^a-f] es 
+equivalente a  [^abcdef]).</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>\b</strong></p></td>
+      <td><p>Límite de palabra (como un espacio o un retorno de carro).</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>\B</strong></p></td>
+      <td><p>Cualquiera que no sea un límite de palabra.</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>\d</strong></p></td>
+      <td><p>Cualquier carácter de dígito. Equivalente a [0-9].</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>\D</strong></p></td>
+      <td><p>Cualquier carácter que no sea de dígito. Equivalente a [^0-9].</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>\f</strong></p></td>
+      <td><p>Salto de página.</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>\n</strong></p></td>
+      <td><p>Salto de línea.</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>\r</strong></p></td>
+      <td><p>Retorno de carro.</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>\s</strong></p></td>
+      <td><p>Cualquier carácter individual de espacio en blanco (espacios, tabulaciones, saltos de página o saltos de línea).</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>\S</strong></p></td>
+      <td><p>Cualquier carácter individual que no sea un espacio en blanco.</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>\t</strong></p></td>
+      <td><p>Tabulación.</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>\w</strong></p></td>
+      <td><p>Cualquier carácter alfanumérico, incluido el de subrayado. Equivalente a [A-Za-z0-9_].</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>\W</strong></p></td>
+      <td><p>Cualquier carácter que no sea alfanumérico. Equivalente a [^A-Za-z0-9_].</p></td>
+    </tr>
+</tbody></table>
+<p>La tabla siguiente contiene algunos de los patrones más utilizados a 
+la hora de validar formularios. Si alguien conoce alguna expresión 
+regular más -que pueda ser útil en la validación de formularios- la 
+puede poner en los comentarios y yo la incorporaré a esta tabla. 
+</p><table class="tabla_expresiones" cellpadding="0" cellspacing="0">
+    <tbody><tr valign="top">
+      <td width="221"><strong>Cualquier letra en minuscula </strong></td>
+      <td width="772"> [a-z]</td>
+    </tr>
+    <tr valign="top">
+      <td><strong>Entero</strong></td>
+      <td>^(?:\+|-)?\d+$</td>
+    </tr>
+    <tr valign="top">
+      <td><p><strong>Correo electrónico</strong></p></td>
+      <td><p>/[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/</p></td>
+    </tr>
+    <tr valign="top">
+      <td><p><strong>URL</strong></p></td>
+      <td><p>^(ht|f)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)(  			  [a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$</p></td>
+    </tr>
+    <tr valign="top">
+      <td><p><strong>Contraseña segura</strong></p></td>
+      <td><p>(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,10})$<br>
+        (Entre 8 y 10 caracteres, por lo menos un digito y un alfanumérico, y no  puede contener caracteres espaciales)<br>
+      </p></td>
+    </tr>
+    <tr valign="top">
+      <td><p><strong>Fecha</strong></p></td>
+      <td><p>^\d{1,2}\/\d{1,2}\/\d{2,4}$<br>
+      (Por ejemplo 01/01/2007)</p></td>
+    </tr>
+    
+    <tr valign="top">
+      <td><strong>Hora</strong></td>
+      <td>^(0[1-9]|1\d|2[0-3]):([0-5]\d):([0-5]\d)$<br>
+        (Por ejemplo 10:45:23)</td>
+    </tr>
+    <tr valign="top">
+      <td><p><strong>Número  tarjeta de crédito</strong></p></td>
+      <td><p>^((67\d{2})|(4\d{3})|(5[1-5]\d{2})|(6011))(-?\s?\d{4}){3}|(3[4,7])\  			  d{2}-?\s?\d{6}-?\s?\d{5}$</p></td>
+    </tr>
+    <tr valign="top">
+      <td><p><strong>Número  teléfono</strong> </p></td>
+      <td><p>^[0-9]{2,3}-? ?[0-9]{6,7}$</p></td>
+    </tr>
+    <tr valign="top">
+      <td><p><strong>Código postal</strong></p></td>
+      <td><p>^([1-9]{2}|[0-9][1-9]|[1-9][0-9])[0-9]{3}$</p></td>
+    </tr>
+    <tr valign="top">
+      <td><p><strong>Certificado  Identificación Fiscal</strong></p></td>
+      <td><p>^(X(-|\.)?0?\d{7}(-|\.)?[A-Z]|[A-Z](-|\.)?\d{7}(-|\.)?  			  [0-9A-Z]|\d{8}(-|\.)?[A-Z])$</p></td>
+    </tr>
+</tbody></table>
+<p>Un ejemplo para controlar que la clave que se introduce sea segura podría ser:
+</p><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">texto plano</a></div></div><ol class="dp-xml" start="1"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">html</span><span>&nbsp;</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="tag">&lt;</span><span class="tag-name">head</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">title</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">title</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="tag">&lt;</span><span class="tag-name">script</span><span>&nbsp;</span><span class="attribute">type</span><span>=</span><span class="attribute-value">"text/javascript"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&lt;!--&nbsp;&nbsp;</span></li><li class=""><span>function&nbsp;validatePass(campo)&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;<span class="attribute">RegExPattern</span><span>&nbsp;=&nbsp;/(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,10})$/;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;<span class="attribute">errorMessage</span><span>&nbsp;=&nbsp;</span><span class="attribute-value">'Password&nbsp;Incorrecta.'</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;((campo.value.match(RegExPattern))&nbsp;&amp;&amp;&nbsp;(campo.value!=''))&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert('Password&nbsp;Correcta');&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(errorMessage);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;campo.focus();&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li><li class=""><span>//--<span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="tag">&lt;/</span><span class="tag-name">script</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="tag">&lt;/</span><span class="tag-name">head</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">body</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="tag">&lt;</span><span class="tag-name">form</span><span>&nbsp;</span><span class="attribute">action</span><span>=</span><span class="attribute-value">"#"</span><span>&nbsp;</span><span class="attribute">method</span><span>=</span><span class="attribute-value">"post"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">p</span><span class="tag">&gt;</span><span class="tag">&lt;</span><span class="tag-name">input</span><span>&nbsp;</span><span class="attribute">type</span><span>=</span><span class="attribute-value">"text"</span><span>&nbsp;</span><span class="attribute">name</span><span>=</span><span class="attribute-value">"date"</span><span>&nbsp;</span><span class="attribute">onblur</span><span>=</span><span class="attribute-value">"validatePass(this);"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">input</span><span>&nbsp;</span><span class="attribute">name</span><span>=</span><span class="attribute-value">"button"</span><span>&nbsp;</span><span class="attribute">type</span><span>=</span><span class="attribute-value">"button"</span><span>&nbsp;</span><span class="attribute">value</span><span>=</span><span class="attribute-value">"Probar"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">br</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;Entre&nbsp;8&nbsp;y&nbsp;10&nbsp;caracteres,&nbsp;por&nbsp;lo&nbsp;menos&nbsp;un&nbsp;digito&nbsp;y&nbsp;un&nbsp;alfanumérico,&nbsp;y&nbsp;no&nbsp;&nbsp;puede&nbsp;contener&nbsp;caracteres&nbsp;espaciales&nbsp;&nbsp;</span></li><li class="alt"><span><span class="tag">&lt;/</span><span class="tag-name">form</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="tag">&lt;/</span><span class="tag-name">body</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="tag">&lt;/</span><span class="tag-name">html</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" name="code" class="html">&lt;html &gt;
+&lt;head&gt;
+&lt;title&gt;&lt;/title&gt;
+&lt;script type="text/javascript"&gt;
+&lt;!--
+function validatePass(campo) {
+    var RegExPattern = /(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,10})$/;
+    var errorMessage = 'Password Incorrecta.';
+    if ((campo.value.match(RegExPattern)) &amp;&amp; (campo.value!='')) {
+        alert('Password Correcta'); 
+    } else {
+        alert(errorMessage);
+        campo.focus();
+    } 
+}
+//--&gt;
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;form action="#" method="post"&gt;
+&lt;p&gt;&lt;input type="text" name="date" onblur="validatePass(this);"&gt;
+  &lt;input name="button" type="button" value="Probar"&gt;
+  &lt;br&gt;
+  Entre 8 y 10 caracteres, por lo menos un digito y un alfanumérico, y no  puede contener caracteres espaciales
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;  
+</pre>
+<p><a href="validacion-con-expresiones-regulares-y-javascript_files/Regex.html" target="_blank">Ver ejemplo en funcionamiento » »</a>
+
+
+
+
+ 
+ 
+
+ 	        <table class="tablacomentarios" id="comentario_9" border="0" cellpadding="8" cellspacing="0" width="530px">
+       		 <tbody><tr>
+       				 <td valign="top" width="84%">
+                       <span class="autor_comentario ">
+                       Comentario realizado el 13/02/2010<br><strong> Carles</strong></span>                        <span class="contenido_comentario">Hola!<br>
+La expresión regular para el correo electrónico no va del todo bien y es
+ que despues del punto en teoria solo debe aceptar de 2 a 4 caracteres 
+verdad? yo lo he probado y por ejemplo "micorreo@micorreo.infon" lo ha 
+aceptado.<br>
+Aquí os dejo esta otra expresión regular que controla ese aspecto:<br>
+new RegExp (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/);<br>
+yo la utilizo en mis formularios y por lo que se va bien <br>
+<br>
+Un saludo!<br>
+Carles</span>
+                      </td>
+      		</tr>
+    	</tbody></table>
+
+		        <table class="tablacomentarios" id="comentario_22" border="0" cellpadding="8" cellspacing="0" width="530px">
+       		 <tbody><tr>
+       				 <td valign="top" width="84%">
+                       <span class="autor_comentario ">
+                       Comentario realizado el 25/07/2010<br><strong> Adriana</strong></span>                        <span class="contenido_comentario">Esta expresión funciona para validar el campo domicilio.<br>
+<br>
+El formato que acepta es por ejemplo: Hidalgo #11<br>
+Al principio solo acepta letras, después el simbolo #, numeros y es opcional el simbolo - y una letra. <br>
+ /^([\\sa-zA-Z|á|é|í|ó|ú|ñ|ü|Á|É|Í|Ó|Ú|Ñ|Ü]+\\s#[0-9]+[-]?[a-zA-Z|ñ|Ñ]?)$/;</span>
+                      </td>
+      		</tr>
+    	</tbody></table>
+
+		        <table class="tablacomentarios" id="comentario_23" border="0" cellpadding="8" cellspacing="0" width="530px">
+       		 <tbody><tr>
+       				 <td valign="top" width="84%">
+                       <span class="autor_comentario ">
+                       Comentario realizado el 05/09/2010<br><strong> Fer</strong></span>                        <span class="contenido_comentario">Ante todo gracias por la ayuda, me fué muy útil.<br>
+<br>
+Y un error que vi, en el ejemplo de la hora:<br>
+^(0[1-9]|1\\d|2[0-3]):([0-5]\\d):([0-5]\\d)$<br>
+<br>
+Según esa expresión, la hora 00 no existe, lo cual es erróneo, debería de ser:<br>
+^(0\\d|1\\d|2[0-3]):([0-5]\\d):([0-5]\\d)$<br>
+<br>
+Saludos!</span>
+                      </td>
+      		</tr>
+    	</tbody></table>
+
+		        <table class="tablacomentarios" id="comentario_25" border="0" cellpadding="8" cellspacing="0" width="530px">
+       		 <tbody><tr>
+       				 <td valign="top" width="84%">
+                       <span class="autor_comentario ">
+                       Comentario realizado el 04/10/2010<br><strong> Lobamega</strong></span>                        <span class="contenido_comentario">La
+ validacion de fecha se muestra de varias formas en diversas paginas , 
+yo estuve trabajando y valide mi fecha asi: 
+^(0?[1-9]|[12][0-9]|3[01])\/(0?[1-9]|1[012])\/[0-9]{4} que da como 
+resultado lo mism o que has hecho sin embargo este tipo de validacion 
+tanto la tuya y la mia no nos brinda una seguridad porque si te fijas 
+siguiendo este formato el usuario puede registrarse escribiendo 
+31/02/9999 me gustaria que me ayudes a validar ya sea  con expresiones 
+regulares o usando java para validar teniendo en cuenta los meses de 
+31,30,28 y 29 días gracias.</span>
+                      </td>
+      		</tr>
+    	</tbody></table>
+
+		        <table class="tablacomentarios" id="comentario_32" border="0" cellpadding="8" cellspacing="0" width="530px">
+       		 <tbody><tr>
+       				 <td valign="top" width="84%">
+                       <span class="autor_comentario ">
+                       Comentario realizado el 01/12/2010<br><strong> ivan2car</strong></span>                        <span class="contenido_comentario">tengo
+ una duda con lo del Pass, digamos que quiero minimo dos mayúsculas o 
+mínimo 3 números donde debería ir mi {n,}. Es modificar esta 
+(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,10})$ estoy tratando con 
+(?!^([0-9].*){2}$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,})$ para los números...
+ pero no funciona :( <br>
+<br>
+Gracias!</span>
+                      </td>
+      		</tr>
+    	</tbody></table>
+
+		        <table class="tablacomentarios" id="comentario_35" border="0" cellpadding="8" cellspacing="0" width="530px">
+       		 <tbody><tr>
+       				 <td valign="top" width="84%">
+                       <span class="autor_comentario ">
+                       Comentario realizado el 22/12/2010<br><strong> Lor</strong></span>                        <span class="contenido_comentario">La
+ expresión para validar el código postal permite códigos mayores de 
+52999. Las dos primeras cifras corresponden a las provincias y hay un 
+total de 52.<br>
+<br>
+Soy novata, pero creo que esta expresión corrige ese error, además de no permitir la provincia 00 que no existe. <br>
+<br>
+/(^([0-5]{1}[1-9]{1})|^([1-5]{1}[0-9]{1}))[0-9]{3}$/<br>
+<br>
+Aunque como expresión, no sé si es del todo correcta...<br>
+<br>
+Saludos!</span>
+                      </td>
+      		</tr>
+    	</tbody></table>
+
+		        <table class="tablacomentarios" id="comentario_37" border="0" cellpadding="8" cellspacing="0" width="530px">
+       		 <tbody><tr>
+       				 <td valign="top" width="84%">
+                       <span class="autor_comentario webintenta">
+                       Comentario realizado el 26/12/2010<br><strong> FRancisco</strong></span>                        <span class="contenido_comentario">La siguiente, creo que te puede servir:<br>
+<br>
+^([a-zA-Z].*|[1-9].*)\.(((j|J)(p|P)(g|G)))$<br>
+<br>
+Pero ten en cuenta de que eso no te asegura nada. Como un primer filtro 
+está bien pero pueden cambiar la extensión del fichero y saltarse este 
+filtro. Deberás hacer una comprobación a posteriori para asegurarte de 
+que realmente es una imagen.<br>
+<br>
+Saludos.</span>
+                      </td>
+      		</tr>
+    	</tbody></table>
+
+    </div>
+
+</body></html>

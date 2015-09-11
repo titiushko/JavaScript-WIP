@@ -1,0 +1,94 @@
+<HTML>
+	<HEAD>
+		<SCRIPT language="JavaScript">
+			function leertext1(form,nombre){
+				return eval('window.document.'+form+'.'+nombre+'.value');
+			}
+
+			function leertext2(objetotext){
+				return objetotext.value;
+			}
+
+			//ojo con eval que interpreta los caracteres de escape (/)
+			function escribirtext1(form,nombre,valornuevo){
+				eval('window.document.'+form+'.'+nombre+'.value="'+valornuevo+'"');
+			}
+
+			function escribirtext2(objetotext,valor){
+				objetotext.value=valor;
+			}
+		</SCRIPT>
+	</HEAD>
+	<BODY>
+		<FORM NAME="formulario" ACTION="">
+			<BR><BR>
+			<CENTER>
+				<B>Acceso a elementos Text y Textarea</B>
+				<BR><BR>
+				<TABLE BORDER=0>
+					<TR>
+						<TD ALIGN="Right">
+						CampoText:
+						<TD>
+						<INPUT TYPE="Text" Name="texto" Value="Ejemplo">
+					</TR>
+					<TR>
+						<TD ALIGN="Right">
+						CampoTextarea:
+						<TD>
+						<TEXTAREA Name="textarea" rows=1 cols=20"></TEXTAREA>
+					</TR>
+				</TABLE>
+				<BR>
+				<TABLE BORDER=1>
+					<TR>
+						<TH COLSPAN=2>Text
+						<TH COLSPAN=2>Textarea
+					</TR>
+					<TR>
+						<TD ALIGN="CENTER">Lectura
+						<TD ALIGN="CENTER">Escritura
+						<TD ALIGN="CENTER">Lectura
+						<TD ALIGN="CENTER">Escritura
+					</TR>
+					<TR>
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método1"
+						onClick="var valor=leertext1('formulario','texto');
+						alert('El valor del campo de tipo Text es '+valor)">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método1"
+						onClick="escribirtext1('formulario','texto',
+						prompt('Valor del campo de tipo Text',''));">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método1"
+						onClick="var valor=leertext1('formulario','textarea');
+						alert('El valor del campo de tipo Textarea es '+valor)">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método1"
+						onClick="escribirtext1('formulario','textarea',
+						prompt('Valor del campo de tipo Textarea',''));">
+					</TR>
+					<TR>
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método2"
+						onClick="var valor=leertext2(window.document.formulario.texto);
+						alert('El valor del campo de tipo Text es '+valor)">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método2"
+						onClick="escribirtext2(window.document.formulario.texto,
+						prompt('Valor del campo de tipo Text',''));">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método2"
+						onClick="var valor=leertext2(window.document.formulario.textarea);
+						alert('El valor del campo de tipo Textarea es '+valor)">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método2"
+						onClick="escribirtext2(window.document.formulario.textarea,
+						prompt('Valor del campo de tipo Textarea',''));">
+					</TR>
+				</TABLE>
+			</CENTER>
+		</FORM>
+	</BODY>
+</HTML>

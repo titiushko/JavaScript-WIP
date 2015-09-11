@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+ <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+ <title>HTMLHttpRequest Demonstration</title>
+
+ <!-- HTMLHttpRequest v1.0beta by Angus Turnbull http://www.twinhelix.com -->
+ <script type="text/javascript" src="htmlhttprequest.js"></script>
+
+<script type="text/javascript">//<![CDATA[
+
+// Welcome to the HTMLHttpRequest demonstration!
+//
+// This script allows you to make background asynchronous GET and POST requests to a
+// server in an accessible manner that is backwards-compatible with older browsers,
+// mobile devices, screenreaders and search engines.
+//
+// The overall architecture is assembled in 3 layers:
+//
+// 1) A "Transport" object ('HTMLHttpRequest') that makes a request to the server.
+// 2) A "Threading" object ('RemoteFileLoader') that creates and allocates Transports
+//    and provides an easy way of loading content into your existing page.
+// 3) An "Interface" layer of code that captures clicks/submissions on the document.
+//
+// Layers (1) and (2) are objects included in the external .JS file above.
+// Both contain documentation if you are interested in customising the implementation.
+// Otherwise, the code below is the "Interface" layer that will process our document.
+
+
+// First, we create an example object for our document click handler.
+var docClickLoader = new RemoteFileLoader('docClickLoader');
+
+// At any stage you can call docClickLoader.loadInto('file.html', 'IDOfTarget') to trigger
+// a content load into an element from your script.
+// The example below does this when suitable links in the document are clicked.
+
+
+function loadInto(src, destId, evt)
+{
+ // Called to when a link with class="loadinto-IdOfTarget" is clicked.
+ // Parameters: src = reference to link, destId = ID of target element, evt = event object.
+ var ok = docClickLoader.loadInto(src.href || src.getAttribute('href'), destId);
+ if (ok) cancelEvent(evt);
+};
+
+
+function toggleInto(src, destId, evt)
+{
+ // As above, but loads only once and toggles the display of the target.
+ var dest = document.getElementById(destId);
+ if (!dest.contentLoaded)
+ {
+  var ok = docClickLoader.loadInto(src.href || src.getAttribute('href'), destId);
+  if (ok) dest.contentLoaded = true;
+ }
+ cancelEvent(evt);
+ if (!dest.toggleState)
+ {
+  src.innerHTML = 'Close: ' + src.innerHTML;
+  dest.style.display = 'block';
+  dest.toggleState = 1;
+ }
+ else
+ {
+  src.innerHTML = src.innerHTML.replace(/^Close: /, '');
+  dest.style.display = 'none';
+  dest.toggleState = 0;
+ }
+};
+
+
+// addEvent is defined within htmlhttprequest.js, feel free to reuse :).
+addEvent(document, 'click', function(evt)
+{
+ // Here we capture all clicks on the document, scanning for links with a CLASS
+ // attribute of "loadinto-IdOfTarget" and routing them to loadInto() above.
+ evt = evt || window.event;
+ // Only process left clicks.
+ if (evt.which > 1 || evt.button > 1) return;
+ var src = evt.target || evt.srcElement;
+ if (src.nodeType && src.nodeType != 1) src = src.parentNode;
+ // Loop up the DOM tree scanning all elements to find a matching one.
+ while (src)
+ {
+  var srcName = (src.nodeName||src.tagName||'').toLowerCase();
+  if (srcName == 'a' && src.className && src.className.match(/^(load|toggle)into-(.+)$/))
+  {
+   // Call our load handlers if we have a match; they'll cancel the normal action.
+   if (RegExp.$1 == 'load') return loadInto(src, RegExp.$2, evt);
+   if (RegExp.$1 == 'toggle') return toggleInto(src, RegExp.$2, evt);
+  }
+  src = src.parentNode;
+ }
+}, 1);
+
+
+//]]></script>
+
+
+<style type="text/css">
+
+/* Some formatting for the demo below -- you can just ignore this :). */
+
+#demoLinkList {
+ list-style: none;
+ margin: 0;
+ padding: 0;
+}
+
+#demoLinkList li {
+ float: left;
+ width: 8em;
+}
+
+#demoLinkList a {
+ display: block;
+ padding: 0.5em;
+ background-color: #8899BB;
+ color: #FFFFFF;
+ text-decoration: none;
+}
+
+#demoLinkList a:hover {
+ background-color: #CCDDFF;
+ color: #000000;
+}
+
+#targetArea, #blindArea {
+ clear: both;
+ padding: 0.5em 1.5em;
+ margin-bottom: 2em;
+ background: #CCDDFF;
+ height: 15em;
+ overflow: auto;
+}
+
+</style>
+
+</head>
+
+<body style="font: 0.8em/1.6 sans-serif; background-color: #FFF">
+
+<div style="text-align: center">
+ <h1 style="font-size: 20pt">HTMLHttpRequest v1.0beta3</h1>
+ by Angus Turnbull - <a href="http://www.twinhelix.com">http://www.twinhelix.com</a>.
+ Updated: 25 June 2006.
+ <hr />
+</div>
+
+
+<ul id="demoLinkList">
+ <!--
+  Any link with a class="loadinto-IdOfTarget" attribute will load into an
+  element with an id="IdOfTarget" attribute. It's that easy!
+ -->
+ <li><a class="loadinto-targetArea" href="content/introduction.html">Introduction</a></li>
+ <li><a class="loadinto-targetArea" href="content/usage.html">Usage Notes</a></li>
+ <li><a class="loadinto-targetArea" href="content/advantages.html">Advantages</a></li>
+</ul>
+
+<div id="targetArea">
+ <!--
+  Here's our target for the links above.
+  You can have as many different targets in the page as you want.
+ -->
+ For a demonstration of this script, please click one of the links above.
+</div>
+
+
+<p style="clear: both; margin-top: 2em">
+ Second demonstration: form submittal.
+ Here's a calculator that POSTs its equation back to the server via a normal form.
+ Note that this works only when run from a webserver, not a local file.
+ POSTs will fallback to a normal browser POST where unsupported, to maintain
+	accessibility.
+</p>
+
+<!--
+ Forms you want to submit via a RemoteFileLoader must have an ONSUBMIT event
+ applied like this. You may want to apply it via script from an external file?
+-->
+
+<form action="content/calculator.php" method="post"
+ onsubmit="docClickLoader.submitInto(this, 'resultArea', event)">
+ <div>
+  <input type="text" name="num1" value="2" style="width: 2em" />
+  <select name="operator">
+   <option value="*">*</option>
+   <option value="/">/</option>
+   <option value="+">+</option>
+   <option value="-">-</option>
+  </select>
+  <input type="text" name="num2" value="6" style="width: 2em" />
+  <input type="submit" name="submit" value="Calculate!" />
+  <strong>Result:</strong>
+  <span id="resultArea"></span>
+ </div>
+</form>
+
+<p>Third demonstration: Toggling 'blind' links that load their content once, then
+collapse/expand their target.</p>
+
+<p><a class="toggleinto-blindArea" href="content/blind.html">Blind Content Toggle</a></p>
+<div id="blindArea" style="display: none"></div>
+
+
+<div style="border: 2px solid red; background: #FFF0F0; padding: 0pt 10pt 0pt 10pt">
+
+ <h4>Script License Agreement</h4>
+
+ <p>HTMLHttpRequest v1.0beta &copy; 2001-2006 Angus Turnbull, TwinHelix Designs
+ <a href="http://www.twinhelix.com">http://www.twinhelix.com</a></p>
+
+ <p>Licensed under the CC-GNU LGPL, version 2.1 or later:</p>
+ <p><a href="http://creativecommons.org/licenses/LGPL/2.1/">
+  http://creativecommons.org/licenses/LGPL/2.1/</a></p>
+ <p>This is distributed WITHOUT ANY WARRANTY; without even the implied
+  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p>
+
+</div>
+
+<p>If you find this useful, you're more than welcome to consider making a
+<a href="http://www.twinhelix.com/donate/">donation</a> to support its
+development :).
+Also, if this license isn't suitable for your project, please
+<a href="http://www.twinhelix.com/contact/">contact me</a> for alternative
+licensing terms.</p>
+
+<p>Good luck - Angus.</p>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<html>
+<head>
+	<title>Cross-browser Dynamic HTML Scripts - LeftMenu</title>
+<style type="text/css">
+#divMenu0{position:absolute; top:150; left:30; width:310; height:100; visibility:hidden; font-family:arial,helvetica; font-size:18px; font-weight:bold}
+#divMenu1{position:absolute; top:200; left:30; width:460; height:100; visibility:hidden; font-family:arial,helvetica; font-size:18px; font-weight:bold}
+#divMenu2{position:absolute; top:250; left:30; width:360; height:100; visibility:hidden; font-family:arial,helvetica; font-size:18px; font-weight:bold}
+</style>
+<script type="text/javascript" language="JavaScript">
+/********************************************************************************
+Copyright (C) 1999 Thomas Brattli
+This script is made by and copyrighted to Thomas Brattli at www.bratta.com
+Visit for more great scripts. This may be used freely as long as this msg is intact!
+I will also appriciate any links you could give me.
+********************************************************************************/
+//Default browsercheck, added to all scripts!
+function checkBrowser(){
+	this.ver=navigator.appVersion
+	this.dom=document.getElementById?1:0
+	this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0;
+	this.ie4=(document.all && !this.dom)?1:0;
+	this.ns5=(this.dom && parseInt(this.ver) >= 5) ?1:0;
+	this.ns4=(document.layers && !this.dom)?1:0;
+	this.bw=(this.ie5 || this.ie4 || this.ns4 || this.ns5)
+	return this
+}
+bw=new checkBrowser()
+/* Set the variables below.
+If you look at the init function you can see that you can also set
+these variables different for each menu!
+If you only want 1 menu just remove the lines marked with *
+in the init function and the divs from the page.
+*/
+//How many pixels should it move every step? 
+var lMove=10;
+//At what speed (in milliseconds, lower value is more speed)
+var lSpeed=40
+//Do you want it to move with the page if the user scroll the page?
+var lMoveOnScroll=true
+//How much of the menu should be visible in the in state?
+var lShow=60
+/********************************************************************************
+You should't have to change anything below this.
+********************************************************************************/
+//Defining variables
+var tim,ltop;
+/********************************************************************
+Contructs the menuobjects -Object functions
+*********************************************************************/
+function makeMenu(obj,nest,show,move,speed){
+    nest=(!nest) ? '':'document.'+nest+'.'
+	this.el=bw.dom?document.getElementById(obj):bw.ie4?document.all[obj]:bw.ns4?eval(nest+'document.'+obj):0;
+  	this.css=bw.dom?document.getElementById(obj).style:bw.ie4?document.all[obj].style:bw.ns4?eval(nest+'document.'+obj):0;		
+	this.x=(bw.ns4 || bw.ns5)? this.css.left:this.el.offsetLeft;
+	this.y=(bw.ns4 || bw.ns5)? this.css.top:this.el.offsetTop;		
+	this.state=1; this.go=0; this.min=b_min; this.show=show
+	this.top=this.y; this.mout=b_mout; 
+	this.width=bw.ns4?this.css.document.width:this.el.offsetWidth
+	this.moveIt=b_moveIt; this.move=move; this.speed=speed
+    this.obj = obj + "Object"; 	eval(this.obj + "=this")	
+}
+function b_moveIt(x,y){this.x=x; this.y=y; this.css.left=this.x; this.css.top=this.y}
+//Menu in
+function b_min(){
+	if(this.x>-this.width+this.show){
+		this.go=1; this.moveIt(this.x-this.move,this.y)
+		setTimeout(this.obj+".min()",this.speed)
+	}else{this.go=0; this.state=1}	
+}
+//Menu out
+function b_mout(){
+	if(this.x<0){
+		this.go=1; this.moveIt(this.x+this.move,this.y)
+		setTimeout(this.obj+".mout()",this.speed)
+	}else{this.go=0; this.state=0}	
+}
+/********************************************************************************
+Deciding what way to move the menu (this is called onmouseover, onmouseout or onclick)
+********************************************************************************/
+function moveLeftMenu(num){
+	if(!oMenu[num].go){
+		if(!oMenu[num].state)oMenu[num].min()	
+		else oMenu[num].mout()
+	}
+}
+/********************************************************************************
+Checking if the page is scrolled, if it is move the menu after
+********************************************************************************/
+function checkScrolled(){
+	for(i=0;i<oMenu.length;i++){
+		if(!oMenu[i].go) oMenu[i].moveIt(oMenu[i].x,eval(scrolled)+oMenu[i].top)
+	}
+	if(bw.ns4) setTimeout('checkScrolled()',40)
+}
+/********************************************************************************
+Inits the page, makes the menu object, moves it to the right place, 
+show it
+********************************************************************************/
+function leftMenuInit(){
+	oMenu=new Array()
+	oMenu[0]=new makeMenu('divMenu0','',lShow,lMove,lSpeed) 
+	oMenu[1]=new makeMenu('divMenu1','',lShow,lMove,lSpeed) //*
+	//Here's an example of how you can set the properties for each menu: //*
+	oMenu[2]=new makeMenu('divMenu2','',70,10,20) //*
+	//You can add as many menus you want like the line above.
+	//Just remember to add the actual divs in the style and body as well.
+	
+	scrolled=bw.ns4?"window.pageYOffset":"document.body.scrollTop"
+	//Placing and showing menus
+	for(i=0;i<oMenu.length;i++){
+		oMenu[i].moveIt(-oMenu[i].width+oMenu[i].show,oMenu[i].y)
+		oMenu[i].css.visibility='visible'
+	}
+	if(lMoveOnScroll) bw.ns4?checkScrolled():window.onscroll=checkScrolled;
+}
+//Initing menu on pageload
+onload=leftMenuInit;
+</script>
+</HEAD>
+<BODY bgcolor="White">
+<div id="divMenu0">
+	<!-- You can just replace this text with some cool images if you want -->
+	<a href="javascript://">Link1</a> -
+	<a href="javascript://">Link2</a> -
+	<a href="javascript://">Link3</a> - 
+	<a href="javascript://">Link4</a> - 
+	<a href="#" onclick="moveLeftMenu(0); return false">MENU</a>
+</div>
+<div id="divMenu1">
+	<!-- You can just replace this text with some cool images if you want -->
+	This is onmouseover, the first one is onclick - 
+	<a href="#" onmouseover="moveLeftMenu(1)">MENU</a>
+</div>
+<div id="divMenu2">
+	<!-- You can just replace this text with some cool images if you want -->
+	This is onclick like the first one - 
+	<a href="#" onclick="moveLeftMenu(2); return false">MENU 3</a>
+</div>
+Aquí debe ir todo el contenido
+</BODY>
+</HTML>

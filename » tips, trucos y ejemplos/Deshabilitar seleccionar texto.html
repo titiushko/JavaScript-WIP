@@ -1,0 +1,65 @@
+<HTML>   
+<HEAD>   
+  
+<script language="javascript">   
+  
+/* Definimos si ante la selección de texto en la página   
+se muestra un mensaje de alerta */  
+var mensaje = true; // Valores: true | false   
+var navegador = navigator.appName;   
+  
+function impedirSeleccionTexto() {  
+  
+// Si elegimos mostrar el mensaje   
+if (mensaje) {  
+    alert('No está permitido seleccionar texto en esta página');   
+    // Si el navegador utilizado es Firefox   
+    if (navegador == 'Netscape') {  
+    // Damos al cuadro de texto el valor de la variable más el caracter vacío   
+    document.form.cuadroTexto.value = valor+' ';   
+    // Volvemos a dar al cuadro de texto el valor original   
+    document.form.cuadroTexto.value = valor;   
+    }  
+    return false;   
+}  
+       
+/* De otra manera no se muestra el mensaje   
+pero igualmente no se podrá seleccionar texto */  
+else {  
+    if (navegador == 'Netscape') {  
+    // Forzamos un evento onBlur en el cuadro de texto   
+    document.form.cuadroTexto.blur();   
+    document.form.cuadroTexto.value = valor+' ';   
+    document.form.cuadroTexto.value = valor;   
+    }  
+    return false;   
+}  
+       
+} // Fin de la función impedirSeleccionTexto()   
+  
+/* Ante el evento onselectstart ejecutamos la función   
+que impide la selección de texto */  
+document.onselectstart = impedirSeleccionTexto   
+/* Utilizamos el evento onselect para que el JavaScript   
+sea compatible con Firefox */  
+document.onselect = impedirSeleccionTexto   
+  
+</script>   
+  
+</HEAD>   
+  
+<BODY>   
+  
+<PRE>   
+El texto de esta página no podrá seleccionarse bajo ningún método.   
+El Script también impide la selección del texto contenido en un cuadro de texto o textarea.   
+  
+<FORM name="form">   
+<INPUT type="text" value="Selecciona este texto... si puedes!!!"    
+size="50" onBlur="valor=this.value" name="cuadroTexto">   
+</FORM>   
+  
+</PRE>   
+  
+</BODY>   
+</HTML>  

@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>TabPage 0.1</title>
+<script language="JavaScript" type="text/javascript" src="script.js"></script>
+<link rel="stylesheet" type="text/css" href="estilos.css" />
+</head>
+<!--En el evento onload del body especificamos la función MostrarPagina para
+que muestre la primera pagina por defecto-->
+<body onload="MostrarPagina('pagina1.html','1')">
+<p>Este ejemplo muestra un tabpages  hecho en ajax, es una manera de organizar nuestra informaci&oacute;n. Espero les sirva. </p>
+<div id="botones">
+<!-- Aqui le damos nombre a los botones con el prefijo 
+"boton_", además en el evento onclick llamamos a la función
+MostrarPagina y especificamos como primer parametro el contenido
+que se mostrará y como segundo parametro el numero de boton.-->
+<a id="boton_1" onclick="MostrarPagina('pagina1.html','1')">P&aacute;gina 1</a> 
+<a id="boton_2" onclick="MostrarPagina('pagina2.html','2')">P&aacute;gina 2</a> 
+<a id="boton_3" onclick="MostrarPagina('pagina3.html','3')">P&aacute;gina 3</a> 
+</div>
+<div id="contenido">
+</div>
+</body>
+</html>

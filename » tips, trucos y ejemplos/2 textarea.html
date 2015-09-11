@@ -1,0 +1,39 @@
+<html> 
+<head> 
+
+</head> 
+
+<body> 
+<form> 
+<textarea id="abc" style="position:relative;border:solid 1px black;overflow:hidden;" 
+rows="5" cols="20" onfocus="control =0;move_scroll()" onblur="control = 1"> 
+Bla, bla, bla,Bla, bla, bla,Bla, bla, bla,Bla, bla, bla,Bla, bla, bla,Bla, bla, bla, 
+Bla, bla, bla,Bla, bla, bla,Bla, bla, bla,Bla, bla, bla,Bla, bla, bla,Bla, bla, bla, 
+</textarea> 
+<textarea id ="def" style="position:relative;border:solid 1px black;overflow:auto;" 
+rows="5" cols="20" onfocus="control =0;move_scroll()" onblur="control = 1" > 
+Bla, bla, bla,Bla, bla, bla,Bla, bla, bla,Bla, bla, bla,Bla, bla, bla,Bla, bla, bla, 
+Bla, bla, bla,Bla, bla, bla,Bla, bla, bla,Bla, bla, bla,Bla, bla, bla,Bla, bla, bla, 
+</textarea> 
+
+<script> 
+
+var timeout_id = setTimeout('move_scroll()',100) 
+var control = 1 
+function move_scroll(){ 
+  var t1 = document.getElementById("abc") 
+  var t2 = document.getElementById("def") 
+   
+  t1.scrollTop = t2.scrollTop 
+  if(control){ 
+    clearTimeout(timeout_id) 
+  } 
+  else{ 
+    timeout_id = setTimeout('move_scroll()',100) 
+  } 
+} 
+
+
+</script> 
+</body> 
+</html>  

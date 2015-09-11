@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<p>Vamos a hacer uso de LITBox, a trav&eacute;s de algunos ejemplos, para aprender mas de su uso. Ya en un art&iacute;culo anterior hablamos sobre sus caracter&iacute;sticas generales, ahora veremos como configurarlo y usarlo dependiendo de lo que queramos mostrar en el LITBox.</p>
+<p>Empezemos descargando el c&oacute;digo fuente de la p&aacute;gina del autor. El comprimido contiene los siguientes archivos: dragdrop.js, effects.js, litbox.js, litbox.css, litboxflash.js, prototype.js, scriptaculous.js.</p>
+<p>El primer paso para usar LITBox es llamar a los archivos antes mencionados,  para ello crearemos un archivo llamado <strong>prueba.html</strong> y escribiremos lo siguiente: </p>
+<pre>&lt;html&gt;
+   &lt;head&gt;
+   &lt;title&gt;Probando litbox&lt;/title&gt;
+   &lt;script type=&quot;text/javascript&quot; src=&quot;prototype.js&quot;&gt;&lt;/script&gt;
+   &lt;script type=&quot;text/javascript&quot; src=&quot;effects.js&quot;&gt;&lt;/script&gt;
+   &lt;script type=&quot;text/javascript&quot; src=&quot;dragdrop.js&quot;&gt;&lt;/script&gt;
+   &lt;script type=&quot;text/javascript&quot; src=&quot;litboxflash.js&quot;&gt;&lt;/script&gt;
+   &lt;script type=&quot;text/javascript&quot; src=&quot;scriptaculous.js&quot;&gt;&lt;/script&gt;
+   &lt;script type=&quot;text/javascript&quot; src=&quot;funciones.js&quot;&gt;&lt;/script&gt;
+   &lt;link rel=&quot;stylesheet&quot; href=&quot;litbox.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot; /&gt;
+   &lt;/head&gt; </pre>
+<p>LITBox nos permite configurar 3 tipos de ventanas a traves de su parametro <strong>type</strong>: <strong>alert</strong>, <strong>confirm</strong> y <strong>window</strong>. Empezemos entonces por el primer tipo.</p>
+<h4>Alert</h4>
+<p>Una vez hecha la llamada de los archivos .js y .css, estamos listos para usar LITBox, as&iacute; que en nuestra pagina <strong>prueba.html</strong> agregaremos un bot&oacute;n para que muestre una ventana de tipo <strong>Alert</strong>. Escribiremos lo siguiente:</p>
+<pre>&lt;p&gt;
+   &lt;input type=&quot;button&quot; onclick=&quot;new LITBox('HOLA MUNDO!', {type:'alert', overlay:false, height:60, width:300, resizable:false, opacity:.6});&quot; value=&quot;Hola Mundo&quot; /&gt;
+&lt;/p&gt; </pre>
+<p>As&iacute; de f&aacute;cil! Podr&aacute; ver una explicaci&oacute;n de cada parametro en el art&iacute;culo anterior.</p>
+<h4>Window</h4>
+<p>El tipo <strong>window</strong>, se usa <em>mayormente</em> para mostrar el contenido de una p&aacute;gina web. En este caso vamos a tratar de mostrar una fotografia en el LITBox. Para ello vamos a crear otro archivo html llamado<strong> imagen.html</strong> y en &eacute;ste agregaremos una imagen. quedar&iacute;a algo as&iacute;:</p>
+<pre>&lt;html&gt;
+   &lt;head&gt;
+   &lt;title&gt;Imagen&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+   &lt;img src=&quot;imagen1.jpg&quot; alt=&quot;paisaje&quot; width=&quot;448&quot; height=&quot;336&quot; /&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+<p>Ahora volvemos al archivo <strong>prueba.html</strong> y vamos a llamar al archivo <strong>imagen.html</strong> para que sea mostrado a trav&eacute;s del LITBox, ser&iacute;a algo as&iacute;:</p>
+<pre>&lt;p&gt;
+   &lt;input type=&quot;button&quot; onclick=&quot;new LITBox('imagen.html',{type:'window',overlay:true,height:370, width:450});&quot; value=&quot;Mostrar imagen&quot; /&gt;
+&lt;/p&gt;</pre>
+<p>Nota: No podemos hacer referencia directa al archivo de imagen, recuerde que el tipo window acepta refencia a archivos web. Por ello es que hemos creado el archivo imagen.html y luego lo llamamos en el archivo prueba.html usando el LITBox.</p>
+<h4>Confirm</h4>
+<p>Ahora veremos el &uacute;ltimo tipo de ventanas: <strong>confirm</strong>. Este muestra un cuadro con una pregunta y debajo las opciones Yes y No. Lo podemos usar para hacer una pregunta antes de realizar alguna acci&oacute;n. Este tipo trabaja con el par&aacute;metro <strong>func</strong>, donde debemos expecificar el nombre de la funci&oacute;n que responder&aacute; si nosotros elegimos Yes. Entonces empezemos creando un archivo adicional llamado <strong>funciones.js</strong>, y escribiremos all&iacute;:</p>
+<pre> respuesta_si = function(){
+ new LITBox('Tu respondistes que SI, excelente!', {type:'alert',overlay:false,width:200,height:150});
+ }</pre>
+<p>Ahora en el archivo <strong>prueba.html</strong> crearemos un boton para mostrar una ventana del tipo confirm. Escribiremos lo siguiente:</p>
+<pre>&lt;p&gt;
+ &lt;input type=&quot;button&quot; onClick=&quot;new LITBox('&iquest;Te gusta el ejemplo? (Tienes que elegir SI para ver el resultado)',{type:'confirm',overlay:false,func:respuesta_si,width:350,height:150});&quot; value=&quot;Pregunta&quot;&gt;
+&lt;/p&gt;</pre>
+<p>Como se dar&aacute; cuenta, en el par&aacute;metro <strong>func</strong> especificamos  la funcion respuesta_si. Entonces cuando se elija la opci&oacute;n Yes se mostrar&aacute; una ventana con el mensaje 'Tu respondistes que SI', caso contrario no mostrar&aacute; nada. </p>
+<p>Hemos visto como configurar y usar LITBox, de manera sencilla y pr&aacute;ctica. Pueden descargar el archivo con los ejercicios que aplicamos en este tutorial. Espero que el art&iacute;culo les pueda servir ya que por parte del autor no hay mucha documentaci&oacute;n.</p>
+</body>
+</html>

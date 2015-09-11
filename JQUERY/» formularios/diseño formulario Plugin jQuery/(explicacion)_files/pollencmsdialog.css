@@ -1,0 +1,141 @@
+@import "../../../../vendors/jscripts/jqueryui/themes/themerollers/jquery-ui-themeroller.css";
+
+.frameContent{
+	width:100%;
+	height: 100%;
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	border:0px solid blue;
+	overflow: hidden;
+}
+.pcms  .ui-dialog-content{border:0px solid red;padding:0px;}
+
+
+.ui-dialog {
+	background-color: #F5F5F5;
+	border-bottom:1px solid Gray;
+	border-left:1px solid Gray;
+	border-right:1px solid Gray;
+	border-top:1px solid Gray;
+}
+.ui-dialog .ui-dialog-container{
+	border:0px solid green;
+	padding:0px;
+	margin:0px;
+}
+.ui-dialog .ui-dialog-titlebar {
+	background: #000 url(img/top.gif) repeat-x;
+	font-size:12px;
+	color: #FFFFFF;
+	border-bottom: 0px solid #d8d2aa;
+	margin:0px;
+}
+.pcms  .ui-dialog-titlebar{
+	border-bottom: 16px solid #EEEEEE;
+	height: 14px;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+	background: url(img/close.gif) no-repeat;
+	width: 22px;
+	height: 22px;
+	top: 2px;
+	right: 4px;
+}
+.ui-dialog .ui-dialog-titlebar-close-hover, .ui-dialog .ui-dialog-titlebar-close:hover {
+	background: url(img/close-on.gif) no-repeat;
+}
+
+
+.ui-dialog-buttonpane {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: right;
+	border-top: 1px solid #d3d3d3;
+	background: ;
+}
+.ui-dialog-buttonpane button, .pcmButton {
+	margin: .5em 8px .5em 0;
+	color: #cccccc;
+	background: #272626 url(images/272626_40x100_textures_03_highlight_soft_20.png) 0 50% repeat-x;
+	font-size: 1em;
+	border: 1px solid #d3d3d3;
+	cursor: pointer;
+	padding: .2em .6em .3em .6em;
+	line-height: 1.2em;
+}
+.ui-dialog-buttonpane button:hover, .pcmButton:hover {
+	color: #333333;
+	background: #FF9C08 url(images/FF9C08_40x100_textures_03_highlight_soft_25.png) 0 50% repeat-x;
+	border: 1px solid #999999;
+}
+.ui-dialog-buttonpane button:active, .pcmButton:active {
+	color: #FF9C08;
+	background: #ffffff url(images/ffffff_40x100_textures_02_glass_65.png) 0 50% repeat-x;
+	border: 1px solid #dddddd;
+}
+
+.ui-tabs-nav-item a {
+	font-size: 1em;
+}
+
+.ui-tabs-panel {
+	padding-top: 10px;
+}
+
+.ui-dialog-content {
+	padding-left:0;
+	padding-right:0;
+		
+	}
+
+
+
+/* ProgressBar */
+
+.ui-progressbar {
+	width: 400px; height: 20px;
+	border: 1px #ccc solid;
+	background:#E0E8F3 url(img/bg.gif) repeat-x scroll 0%;
+	position:relative;
+}
+
+.ui-progressbar-wrap {
+	position: relative;
+	height: auto;
+	width: auto;
+	line-height: 18px;
+	_line-height: 16px;
+}
+
+.ui-progressbar-bar {
+	background:#9CBFEE url(img/progress-bg.gif) repeat-x scroll left center;
+	border-bottom:1px solid #7FA9E4;
+	border-right:1px solid #7FA9E4;
+	border-top:1px solid #D1E4FD;
+	position: absolute;
+}
+
+.ui-progressbar-text {
+	color:#fff;
+	overflow: hidden;
+	white-space: nowrap;
+	font-size: 11px;
+	font-weight: bold;
+	padding-left: 5px;
+}
+
+.ui-progressbar-text-back {
+	color:#000;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	padding-right: 1px;
+}
+
+.ui-progressbar-disabled {
+	opacity:.5;
+	filter:Alpha(Opacity=50);
+}
+

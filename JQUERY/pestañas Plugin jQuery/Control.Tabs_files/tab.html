@@ -1,0 +1,428 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Control.Tabs</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+		<link rel="stylesheet" href="screen.css" media="screen">
+		<script src="all.js" type="text/javascript"></script>
+		<style>
+			.tabbed_images {
+				list-style:none;
+				margin:0;
+				padding:0;
+				clear:both;
+			}
+			.tabbed_images li {
+				list-style:none;
+				float:left;
+				margin:0;
+				padding:0;
+			}
+			.tabbed_images li a {
+				border:1px solid #ccc;
+				display:block;
+				float:left;
+				margin:0 10px 0 0;
+			}
+			.tabbed_images li a.active,
+			.tabbed_images li a:hover {
+				border:1px solid #333;
+			}
+			.tabbed_images li a img {
+				border:none;
+				padding:2px;
+				margin:0;
+				margin-bottom:-5px;
+			}
+			#image_1,
+			#image_2,
+			#image_3,
+			#image_4,
+			#image_5 {
+				margin-top:10px;
+				padding:2px;
+				border:1px solid #ccc;
+			}
+		</style>
+		<script>
+			document.observe('dom:loaded',function(){
+				//example 1
+				new Control.Tabs('tabs_example_one');
+			});
+		</script>
+		</head>
+		<body class="control">
+			<div id="outer_container">
+				<div id="container">
+					<div id="main">
+						<div id="main_container">
+							<!-- example 1 -->
+							<ul id="tabs_example_one" class="subsection_tabs">
+							<li class="tab"><a class="" href="#one">One</a></li>
+							<li class="tab"><a class="active" href="#two">Two</a></li>
+							</ul>
+							<div style="display: none;" id="one">
+								<table align="center" bgcolor="white" border="1">
+									<caption><h1 class="encabezado2">Febrero 2009</h1></caption>
+									<thead class="titulo2">
+										<tr><th rowspan="2" colspan="2"></th><th colspan="6">BOTELLA</th><th colspan="2">PLANO</th><th rowspan="2" colspan="2"></th></tr>
+										<tr><th colspan="2">CISTALINO</th><th colspan="2">VERDE</th><th colspan="2">CAFE</th><th colspan="2">CISTALINO</th></tr>
+										<tr><th>RECIBOS</th><th>PROVEEDORES</th><th>QQ</th><th>$$</th><th>QQ</th><th>$$</th><th>QQ</th><th>$$</th><th>QQ</th><th>$$</th><th>QQ</th><th>$$</th></tr>
+									</thead>
+									<tbody class="subtitulo1" align="center">
+																	<tr>
+											<td>1174</td><!--recibo-->
+											<td>SAN GERARDO</td><!--proveedor-->
+																						<td>0.49</td><!--botella/cristalino q-->
+													<td>0.59</td><!--botella/cristalino $-->
+													<td>&nbsp;</td><!--botella/verde q-->
+													<td>&nbsp;</td><!--botella/verde $-->
+													<td>&nbsp;</td><!--botella/ambar q-->
+													<td>&nbsp;</td><!--botella/ambar $-->
+													<td>&nbsp;</td><!--plano/claro q-->
+													<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1175</td><!--recibo-->
+											<td>MULTIPROYECTOS (TITAC)</td><!--proveedor-->
+																						<td>1.56</td><!--botella/cristalino q-->
+													<td>1.87</td><!--botella/cristalino $-->
+													<td>&nbsp;</td><!--botella/verde q-->
+													<td>&nbsp;</td><!--botella/verde $-->
+													<td>&nbsp;</td><!--botella/ambar q-->
+													<td>&nbsp;</td><!--botella/ambar $-->
+													<td>&nbsp;</td><!--plano/claro q-->
+													<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1176</td><!--recibo-->
+											<td>SHERATON P.</td><!--proveedor-->
+																					<td>&nbsp;</td><!--botella/cristalino q-->
+												<td>&nbsp;</td><!--botella/cristalino $-->
+												<td>&nbsp;</td><!--botella/verde q-->
+												<td>&nbsp;</td><!--botella/verde $-->
+												<td>&nbsp;</td><!--botella/ambar q-->
+												<td>&nbsp;</td><!--botella/ambar $-->
+												<td>&nbsp;</td><!--plano/claro q-->
+												<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1177</td><!--recibo-->
+											<td>HILTON PRINSES</td><!--proveedor-->
+																					<td>&nbsp;</td><!--botella/cristalino q-->
+												<td>&nbsp;</td><!--botella/cristalino $-->
+												<td>&nbsp;</td><!--botella/verde q-->
+												<td>&nbsp;</td><!--botella/verde $-->
+												<td>&nbsp;</td><!--botella/ambar q-->
+												<td>&nbsp;</td><!--botella/ambar $-->
+												<td>&nbsp;</td><!--plano/claro q-->
+												<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1178</td><!--recibo-->
+											<td>RANCHOS EL SALVADOR</td><!--proveedor-->
+																					<td>&nbsp;</td><!--botella/cristalino q-->
+												<td>&nbsp;</td><!--botella/cristalino $-->
+												<td>&nbsp;</td><!--botella/verde q-->
+												<td>&nbsp;</td><!--botella/verde $-->
+												<td>&nbsp;</td><!--botella/ambar q-->
+												<td>&nbsp;</td><!--botella/ambar $-->
+												<td>&nbsp;</td><!--plano/claro q-->
+												<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1179</td><!--recibo-->
+											<td>SOPON ZACAMIL</td><!--proveedor-->
+																					<td>&nbsp;</td><!--botella/cristalino q-->
+												<td>&nbsp;</td><!--botella/cristalino $-->
+												<td>&nbsp;</td><!--botella/verde q-->
+												<td>&nbsp;</td><!--botella/verde $-->
+												<td>&nbsp;</td><!--botella/ambar q-->
+												<td>&nbsp;</td><!--botella/ambar $-->
+												<td>&nbsp;</td><!--plano/claro q-->
+												<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1180</td><!--recibo-->
+											<td>DISCO SKEY</td><!--proveedor-->
+																					<td>&nbsp;</td><!--botella/cristalino q-->
+												<td>&nbsp;</td><!--botella/cristalino $-->
+												<td>&nbsp;</td><!--botella/verde q-->
+												<td>&nbsp;</td><!--botella/verde $-->
+												<td>&nbsp;</td><!--botella/ambar q-->
+												<td>&nbsp;</td><!--botella/ambar $-->
+												<td>&nbsp;</td><!--plano/claro q-->
+												<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1181</td><!--recibo-->
+											<td>LA OLA VETOS</td><!--proveedor-->
+																					<td>&nbsp;</td><!--botella/cristalino q-->
+												<td>&nbsp;</td><!--botella/cristalino $-->
+												<td>&nbsp;</td><!--botella/verde q-->
+												<td>&nbsp;</td><!--botella/verde $-->
+												<td>&nbsp;</td><!--botella/ambar q-->
+												<td>&nbsp;</td><!--botella/ambar $-->
+												<td>&nbsp;</td><!--plano/claro q-->
+												<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1182</td><!--recibo-->
+											<td>DIVENTANAS</td><!--proveedor-->
+																						<td>&nbsp;</td><!--botella/cristalino q-->
+													<td>&nbsp;</td><!--botella/cristalino $-->
+													<td>2.2</td><!--botella/verde q-->
+													<td>2.64</td><!--botella/verde $-->
+													<td>&nbsp;</td><!--botella/ambar q-->
+													<td>&nbsp;</td><!--botella/ambar $-->
+													<td>&nbsp;</td><!--plano/claro q-->
+													<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1183</td><!--recibo-->
+											<td>UNIVERSALES</td><!--proveedor-->
+																						<td>3.19</td><!--botella/cristalino q-->
+													<td>3.83</td><!--botella/cristalino $-->
+													<td>&nbsp;</td><!--botella/verde q-->
+													<td>&nbsp;</td><!--botella/verde $-->
+													<td>&nbsp;</td><!--botella/ambar q-->
+													<td>&nbsp;</td><!--botella/ambar $-->
+													<td>&nbsp;</td><!--plano/claro q-->
+													<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1184</td><!--recibo-->
+											<td>LEMUS</td><!--proveedor-->
+																						<td>&nbsp;</td><!--botella/cristalino q-->
+													<td>&nbsp;</td><!--botella/cristalino $-->
+													<td>4.2</td><!--botella/verde q-->
+													<td>5.04</td><!--botella/verde $-->
+													<td>&nbsp;</td><!--botella/ambar q-->
+													<td>&nbsp;</td><!--botella/ambar $-->
+													<td>&nbsp;</td><!--plano/claro q-->
+													<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1185</td><!--recibo-->
+											<td>NATANAEL</td><!--proveedor-->
+																						<td>5.19</td><!--botella/cristalino q-->
+													<td>6.23</td><!--botella/cristalino $-->
+													<td>&nbsp;</td><!--botella/verde q-->
+													<td>&nbsp;</td><!--botella/verde $-->
+													<td>&nbsp;</td><!--botella/ambar q-->
+													<td>&nbsp;</td><!--botella/ambar $-->
+													<td>&nbsp;</td><!--plano/claro q-->
+													<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1186</td><!--recibo-->
+											<td>INCO BELLOSO</td><!--proveedor-->
+																						<td>&nbsp;</td><!--botella/cristalino q-->
+													<td>&nbsp;</td><!--botella/cristalino $-->
+													<td>6.18</td><!--botella/verde q-->
+													<td>7.42</td><!--botella/verde $-->
+													<td>&nbsp;</td><!--botella/ambar q-->
+													<td>&nbsp;</td><!--botella/ambar $-->
+													<td>&nbsp;</td><!--plano/claro q-->
+													<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1187</td><!--recibo-->
+											<td>INSTACIELO</td><!--proveedor-->
+																						<td>7.19</td><!--botella/cristalino q-->
+													<td>8.63</td><!--botella/cristalino $-->
+													<td>&nbsp;</td><!--botella/verde q-->
+													<td>&nbsp;</td><!--botella/verde $-->
+													<td>&nbsp;</td><!--botella/ambar q-->
+													<td>&nbsp;</td><!--botella/ambar $-->
+													<td>&nbsp;</td><!--plano/claro q-->
+													<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1188</td><!--recibo-->
+											<td>VITRA</td><!--proveedor-->
+																						<td>&nbsp;</td><!--botella/cristalino q-->
+													<td>&nbsp;</td><!--botella/cristalino $-->
+													<td>8.09</td><!--botella/verde q-->
+													<td>9.71</td><!--botella/verde $-->
+													<td>&nbsp;</td><!--botella/ambar q-->
+													<td>&nbsp;</td><!--botella/ambar $-->
+													<td>&nbsp;</td><!--plano/claro q-->
+													<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1189</td><!--recibo-->
+											<td>MARTINEZ</td><!--proveedor-->
+																						<td>9.02</td><!--botella/cristalino q-->
+													<td>10.82</td><!--botella/cristalino $-->
+													<td>&nbsp;</td><!--botella/verde q-->
+													<td>&nbsp;</td><!--botella/verde $-->
+													<td>&nbsp;</td><!--botella/ambar q-->
+													<td>&nbsp;</td><!--botella/ambar $-->
+													<td>&nbsp;</td><!--plano/claro q-->
+													<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1190</td><!--recibo-->
+											<td>INCO UNIVERSITARIA</td><!--proveedor-->
+																						<td>&nbsp;</td><!--botella/cristalino q-->
+													<td>&nbsp;</td><!--botella/cristalino $-->
+													<td>10.9</td><!--botella/verde q-->
+													<td>13.08</td><!--botella/verde $-->
+													<td>&nbsp;</td><!--botella/ambar q-->
+													<td>&nbsp;</td><!--botella/ambar $-->
+													<td>&nbsp;</td><!--plano/claro q-->
+													<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1191</td><!--recibo-->
+											<td>PENIEL</td><!--proveedor-->
+																						<td>11.19</td><!--botella/cristalino q-->
+													<td>13.43</td><!--botella/cristalino $-->
+													<td>&nbsp;</td><!--botella/verde q-->
+													<td>&nbsp;</td><!--botella/verde $-->
+													<td>&nbsp;</td><!--botella/ambar q-->
+													<td>&nbsp;</td><!--botella/ambar $-->
+													<td>&nbsp;</td><!--plano/claro q-->
+													<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1192</td><!--recibo-->
+											<td>ALUMINARTE</td><!--proveedor-->
+																						<td>&nbsp;</td><!--botella/cristalino q-->
+													<td>&nbsp;</td><!--botella/cristalino $-->
+													<td>12.5</td><!--botella/verde q-->
+													<td>15</td><!--botella/verde $-->
+													<td>&nbsp;</td><!--botella/ambar q-->
+													<td>&nbsp;</td><!--botella/ambar $-->
+													<td>&nbsp;</td><!--plano/claro q-->
+													<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1193</td><!--recibo-->
+											<td>INCO</td><!--proveedor-->
+																						<td>13.89</td><!--botella/cristalino q-->
+													<td>16.67</td><!--botella/cristalino $-->
+													<td>&nbsp;</td><!--botella/verde q-->
+													<td>&nbsp;</td><!--botella/verde $-->
+													<td>&nbsp;</td><!--botella/ambar q-->
+													<td>&nbsp;</td><!--botella/ambar $-->
+													<td>&nbsp;</td><!--plano/claro q-->
+													<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1194</td><!--recibo-->
+											<td>ALU ARQ</td><!--proveedor-->
+																						<td>&nbsp;</td><!--botella/cristalino q-->
+													<td>&nbsp;</td><!--botella/cristalino $-->
+													<td>14.19</td><!--botella/verde q-->
+													<td>17.03</td><!--botella/verde $-->
+													<td>&nbsp;</td><!--botella/ambar q-->
+													<td>&nbsp;</td><!--botella/ambar $-->
+													<td>&nbsp;</td><!--plano/claro q-->
+													<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1195</td><!--recibo-->
+											<td>PRISMA</td><!--proveedor-->
+																						<td>15.19</td><!--botella/cristalino q-->
+													<td>18.23</td><!--botella/cristalino $-->
+													<td>&nbsp;</td><!--botella/verde q-->
+													<td>&nbsp;</td><!--botella/verde $-->
+													<td>&nbsp;</td><!--botella/ambar q-->
+													<td>&nbsp;</td><!--botella/ambar $-->
+													<td>&nbsp;</td><!--plano/claro q-->
+													<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1196</td><!--recibo-->
+											<td>INDUSTRIAS PANOAMERICANAS</td><!--proveedor-->
+																						<td>&nbsp;</td><!--botella/cristalino q-->
+													<td>&nbsp;</td><!--botella/cristalino $-->
+													<td>16.09</td><!--botella/verde q-->
+													<td>19.31</td><!--botella/verde $-->
+													<td>&nbsp;</td><!--botella/ambar q-->
+													<td>&nbsp;</td><!--botella/ambar $-->
+													<td>&nbsp;</td><!--plano/claro q-->
+													<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1197</td><!--recibo-->
+											<td>VIDRERIA PINEDA</td><!--proveedor-->
+																						<td>4.13</td><!--botella/cristalino q-->
+													<td>4.96</td><!--botella/cristalino $-->
+													<td>&nbsp;</td><!--botella/verde q-->
+													<td>&nbsp;</td><!--botella/verde $-->
+													<td>&nbsp;</td><!--botella/ambar q-->
+													<td>&nbsp;</td><!--botella/ambar $-->
+													<td>&nbsp;</td><!--plano/claro q-->
+													<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1198</td><!--recibo-->
+											<td>INDUSTRIAL</td><!--proveedor-->
+																						<td>&nbsp;</td><!--botella/cristalino q-->
+													<td>&nbsp;</td><!--botella/cristalino $-->
+													<td>&nbsp;</td><!--botella/verde q-->
+													<td>&nbsp;</td><!--botella/verde $-->
+													<td>13.4</td><!--botella/ambar q-->
+													<td>16.08</td><!--botella/ambar $-->
+													<td>&nbsp;</td><!--plano/claro q-->
+													<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1199</td><!--recibo-->
+											<td>LUZ AIRE</td><!--proveedor-->
+																					<td>&nbsp;</td><!--botella/cristalino q-->
+												<td>&nbsp;</td><!--botella/cristalino $-->
+												<td>&nbsp;</td><!--botella/verde q-->
+												<td>&nbsp;</td><!--botella/verde $-->
+												<td>&nbsp;</td><!--botella/ambar q-->
+												<td>&nbsp;</td><!--botella/ambar $-->
+												<td>&nbsp;</td><!--plano/claro q-->
+												<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1200</td><!--recibo-->
+											<td>LA ROCA</td><!--proveedor-->
+																					<td>&nbsp;</td><!--botella/cristalino q-->
+												<td>&nbsp;</td><!--botella/cristalino $-->
+												<td>&nbsp;</td><!--botella/verde q-->
+												<td>&nbsp;</td><!--botella/verde $-->
+												<td>&nbsp;</td><!--botella/ambar q-->
+												<td>&nbsp;</td><!--botella/ambar $-->
+												<td>&nbsp;</td><!--plano/claro q-->
+												<td>&nbsp;</td><!--plano/claro $-->
+																			</tr><tr>
+											<td>1201</td><!--recibo-->
+											<td>PROALVI</td><!--proveedor-->
+																					<td>&nbsp;</td><!--botella/cristalino q-->
+												<td>&nbsp;</td><!--botella/cristalino $-->
+												<td>&nbsp;</td><!--botella/verde q-->
+												<td>&nbsp;</td><!--botella/verde $-->
+												<td>&nbsp;</td><!--botella/ambar q-->
+												<td>&nbsp;</td><!--botella/ambar $-->
+												<td>&nbsp;</td><!--plano/claro q-->
+												<td>&nbsp;</td><!--plano/claro $-->
+																				<th>173.42</th><!--total q-->
+											<th>208.14</th><!--total $-->
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div style="" id="two">
+								<center><table class="rejilla" border bgcolor="white">
+							<caption><h1 class="encabezado2">Mayo 2009</h1></caption>
+														<thead class="titulo2">
+								<tr><th rowspan=2 colspan=1></th><th colspan=2>BOTELLA</th></tr>
+								<tr><th>QQ</th><th>$$</th></tr>
+
+							</thead>
+							<tbody align="center">
+								<tr>
+									<th class="titulo2">VERDE</th>
+									<td class="subtitulo1">7.08</td>
+									<td class="subtitulo1">8.5</td>
+								</tr>
+
+								<tr>
+									<th class="titulo2">CRISTALINO</th>
+									<td class="subtitulo1">4</td>
+									<td class="subtitulo1">4.8</td>
+								</tr>
+								<tr>
+									<th class="titulo2">CAFE</th>
+
+									<td class="subtitulo1">18</td>
+									<td class="subtitulo1">21.6</td>
+								</tr>
+								<tr>
+									<th class="titulo2">TOTAL</th>
+									<th>29.08</th>
+									<th>34.9</th>
+
+								</tr>
+							</tbody>
+													</table></center>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</body>
+</html>

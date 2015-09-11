@@ -1,0 +1,139 @@
+/* Enlace de apertura del calendario
+---------------------------------------------------------------------------------------------------- */
+	a.enl_cal img,
+	a.enl_cal_group img {
+ 		border: none ! important;
+	}
+	
+/* Contenedor del calendario
+---------------------------------------------------------------------------------------------------- */
+	#bio_calendar {
+		position: absolute ! important;
+		width: 300px ! important;
+		border: 1px solid ! important;
+		background-color: #FFF ! important;
+		padding: 20px 5px 18px ! important;
+		text-align: center ! important;
+                color: #000;
+	}
+
+/* Otros contenedores
+---------------------------------------------------------------------------------------------------- */
+	#bio_calendar div {
+		position: absolute ! important;
+		top: 0 ! important;
+		left: 0 ! important;
+		width: 100% ! important;
+		background-color: #000 ! important;
+		text-align: right ! important;
+	}
+
+/* Calendario
+---------------------------------------------------------------------------------------------------- */
+	#bio_calendar table {
+	  margin: 0 auto ! important; 
+	  width: 100% ! important;
+	  border: 1px solid silver ! important;
+	}
+	#bio_calendar caption {
+	  position: relative ! important;
+	  margin: 0 auto ! important;
+	  color: #333 ! important; 
+	  background: #EAE0C3 ! important; 
+	  padding: .3em ! important;
+	  font-weight: bold ! important; 
+	  text-align: center ! important;
+	}
+	#bio_calendar colgroup.end {
+	}
+	#bio_calendar th {
+		color: #FFF ! important;
+		background-color: #666 ! important;
+	}
+	#bio_calendar td {
+		width: 14.2% ! important;
+	}
+	#bio_calendar td.hoy {
+	}
+	#bio_calendar td.act {
+		background-color: #Fd0 ! important;
+	}
+	#bio_calendar td.inact {
+	}
+	#bio_calendar td.sat,
+	#bio_calendar td.sun {
+		font-style: italic ! important;
+	}
+	#bio_calendar td.elect {
+		border: 1px solid #000 ! important;
+	}
+
+/* Navegacion entre calendarios
+---------------------------------------------------------------------------------------------------- */
+
+		/* Listas
+		---------------------------------------------------------------------------------------- */
+		#bio_calendar ul {
+			clear: both;
+			margin: 0 ! important;
+			padding: 0 ! important;
+		}
+		#bio_calendar ul#nav_mes {
+			position: absolute ! important;
+			top: 2em ! important;
+			left: 0 ! important;
+			width: 100% ! important;
+			margin-top: 20px ! important;
+		}
+		#bio_calendar li {
+			margin: 0 ! important;
+			float: right ! important;
+			padding: 5px ! important;
+			list-style: none ! important;
+		}
+		#bio_calendar li.post {
+			float: left ! important;
+		}
+
+		/* Enlaces
+		---------------------------------------------------------------------------------------- */
+		#bio_calendar a {
+			color: #000 ! important;
+			text-decoration: none ! important;
+		}
+		#bio_calendar div a {
+			color: #FFF ! important;
+		}
+		#bio_calendar td a {
+			display: block ! important;
+			width: 100% ! important;
+			height: 100% ! important;
+         background-color: #FC0;
+			text-decoration: underline !important;		}
+		#bio_calendar td a:hover,
+		#bio_calendar td a:active,
+		#bio_calendar td a:focus {
+			background-color: #F00 ! important;
+			color: #FFF ! important;
+		}
+		/* Select
+		---------------------------------------------------------------------------------------- */
+		#bio_calendar input {
+			font-size: 1em ! important;
+		}
+		#bio_calendar label {
+			line-height: 2em ! important;
+			margin: 0 2px ! important;
+		}
+		#bio_calendar select {
+			margin: 0 auto ! important;
+		}
+
+/* Créditos
+---------------------------------------------------------------------------------------- */
+	#bio_calendar img#niquelao {
+		position: absolute ! important;
+		bottom: 0 ! important;
+		left: 50% ! important;
+		margin-left: -50px ! important;
+	}

@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<html><head>
+
+	
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>Filament Group Lab Example From: jQuery Visualize Plugin: Accessible Charts &amp; Graphs from Table Elements using HTML 5 Canvas</title>	
+		<link rel="shortcut icon" href="http://www.filamentgroup.com/images/favicon2.ico" type="image/x-icon">
+		<link href="jQuery%20Visualize,%20gr%C3%A1ficas%20con%20canvas%20y%20Javascript_files/demoPages.css" media="screen" rel="Stylesheet" type="text/css">
+		<link type="text/css" rel="stylesheet" href="jQuery%20Visualize,%20gr%C3%A1ficas%20con%20canvas%20y%20Javascript_files/visualize.css">
+		<link type="text/css" rel="stylesheet" href="jQuery%20Visualize,%20gr%C3%A1ficas%20con%20canvas%20y%20Javascript_files/demopage.css">
+		<script type="text/javascript" src="jQuery%20Visualize,%20gr%C3%A1ficas%20con%20canvas%20y%20Javascript_files/jquery.js"></script>
+		<!--[if IE]><script type="text/javascript" src="excanvas.compiled.js"></script><![endif]-->
+		<script type="text/javascript" src="jQuery%20Visualize,%20gr%C3%A1ficas%20con%20canvas%20y%20Javascript_files/visualize.js"></script>
+		<script type="text/javascript">
+		
+			$(function(){
+				$('table').visualize();
+			
+				//hide table
+				$('table').addClass('accessHide');
+				
+				$('.chartConfiguratorThingy')
+					.show()
+					.find('.typeOptions>.fieldGroup>input[type=radio]')
+						.bind('updateDependencies',function(){
+							if($(this).is(':checked')){
+								$(this).next().next(':hidden').slideDown(function(){ $(this).find('input,select').removeAttr('disabled');  });
+							}
+							else{
+								$(this).next().next(':visible').slideUp(function(){ $(this).find('input,select').attr('disabled','disabled'); });
+							}
+						})
+						.trigger('updateDependencies')
+						.click(function(){ $('.typeOptions>.fieldGroup>input[type=radio]').trigger('updateDependencies'); })
+						.end()
+					.bind('click keyup',function(){
+						var chartOptions = {};
+						var formVars = $(this).serialize();
+						$.each(formVars.split('&'),function(){
+							var thisPair = this.split('=');
+							if(thisPair[1]){ 
+								//fix non-string types
+								var thisVal = unescape(thisPair[1]);
+								//bool true
+								if(thisVal == 'true'){ thisVal = true; }
+								//bool false
+								if(thisVal == 'false'){ thisVal = false; }
+								//arrays
+								if(thisPair[0] == 'colors' || thisPair[0] == 'textColors'){
+									thisVal = thisVal.replace(/[\[\]\']/g,'').split(',');
+								}
+								
+								chartOptions[thisPair[0]] = thisVal;
+							}
+						});
+						$('.visualize').remove();
+						$('table').visualize(chartOptions);
+					});	
+				
+			});
+		</script>
+	<script src="jQuery%20Visualize,%20gr%C3%A1ficas%20con%20canvas%20y%20Javascript_files/a_002" type="text/javascript"></script><script src="jQuery%20Visualize,%20gr%C3%A1ficas%20con%20canvas%20y%20Javascript_files/a" type="text/javascript"></script>
+</head><body>	
+<div id="demoHeader">
+		<a href="http://www.filamentgroup.com/"><img src="jQuery%20Visualize,%20gr%C3%A1ficas%20con%20canvas%20y%20Javascript_files/logo_examples.png" alt="Filament Group, Inc." id="logo" height="26" width="141"></a>	
+		<h1>This is an example from the Filament Group Lab Article: <a href="http://www.filamentgroup.com/lab/jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas/">jQuery Visualize Plugin: Accessible Charts &amp; Graphs from Table Elements using HTML 5 Canvas</a></h1>
+		<p id="copyright">©2011 Filament Group, Inc. All Rights Reserved.</p>
+</div><!-- /demoHeader -->
+	<form style="display: block;" class="chartConfiguratorThingy">
+		<h2>Visualize Options:</h2>
+		<fieldset class="typeOptions">
+			<legend>Chart Type Options</legend>
+			
+				<div class="fieldGroup">
+					<input name="type" id="bar" value="bar" checked="checked" type="radio">
+					<label for="bar" class="radio">Bar</label>
+					<div class="dependencies">
+						<div class="fieldGroup">
+							<label for="barMargin">barMargin:</label>
+							<input name="barMargin" id="barMargin" value="1" type="text">
+						</div>
+						<div class="fieldGroup">
+							<label for="barGroupMargin">barGroupMargin:</label>
+							<input name="barGroupMargin" id="barGroupMargin" value="10" type="text">
+						</div>
+					</div>
+				</div>
+				<div class="fieldGroup">
+					<input name="type" id="line" value="line" type="radio">
+					<label for="line" class="radio">Line</label>
+					<div style="display: none;" class="dependencies">
+						<div class="fieldGroup">
+							<label for="lineWeight">lineWeight</label>
+							<input disabled="disabled" name="lineWeight" id="lineWeight" value="4" type="text">
+						</div>
+					</div>
+				</div>
+				<div class="fieldGroup">
+					<input name="type" id="area" value="area" type="radio">
+					<label for="area" class="radio">Area</label>
+					<div style="display: none;" class="dependencies">
+						<div class="fieldGroup">
+							<label for="lineWeight">lineWeight</label>
+							<input disabled="disabled" name="lineWeight" id="lineWeight" value="4" type="text">
+						</div>
+					</div>
+				</div>
+				<div class="fieldGroup">
+					<input name="type" id="pie" value="pie" type="radio">
+					<label for="pie" class="radio">Pie</label>
+					<div style="display: none;" class="dependencies">
+						<div class="fieldGroup">
+							<label for="pieMargin">pieMargin</label>
+							<input disabled="disabled" name="pieMargin" id="pieMargin" value="20" type="text">
+						</div>
+						<div class="fieldGroup">
+							<label for="pieLabelPos">pieLabelPos:</label>
+							<select disabled="disabled" name="pieLabelPos" id="pieLabelPos">
+								<option selected="selected" value="inside">inside</option>
+								<option value="outside">outside</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+			
+			
+			<fieldset>
+			<legend>Global Options:</legend>
+			
+			<div class="fieldGroup">
+				<label for="width">Width:</label>
+				<input name="width" id="width" type="text">
+			</div>
+			
+			<div class="fieldGroup">
+				<label for="height">Height:</label>
+				<input name="height" id="height" type="text">
+			</div>
+			
+			<div class="fieldGroup">
+				<label for="appendTitle">appendTitle:</label>
+				<select name="appendTitle" id="appendTitle">
+					<option selected="selected" value="true">True</option>
+					<option value="false">False</option>
+				</select>
+			</div>
+			
+			<div class="fieldGroup">
+				<label for="title">title:</label>
+				<input name="title" id="title" type="text">
+			</div>
+			
+			<div class="fieldGroup">
+				<label for="appendKey">appendKey:</label>
+				<select name="appendKey" id="appendKey">
+					<option selected="selected" value="true">True</option>
+					<option value="false">False</option>
+				</select>
+			</div>
+			
+			<div class="fieldGroup">
+				<label for="colors">colors:</label>
+				<input name="colors" id="colors" value="['#be1e2d','#666699','#92d5ea','#ee8310','#8d10ee','#5a3b16','#26a4ed','#f45a90','#e9e744']" type="text">
+			</div>
+			
+			<div class="fieldGroup">
+				<label for="textColors">textColors:</label>
+				<input name="textColors" id="textColors" value="[]" type="text">
+			</div>
+			
+			<div class="fieldGroup">
+				<label for="parseDirection">parseDirection:</label>
+				<select name="parseDirection" id="parseDirection">
+					<option selected="selected" value="x">x</option>
+					<option value="y">y</option>
+				</select>
+			</div>
+			
+		</fieldset>
+	
+	</form>
+
+
+
+<table class="accessHide">
+	<caption>2009 Individual Sales by Category</caption>
+	<thead>
+		<tr>
+			<td></td>
+			<th>food</th>
+			<th>auto</th>
+			<th>household</th>
+			<th>furniture</th>
+			<th>kitchen</th>
+			<th>bath</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>Mary</th>
+			<td>150</td>
+			<td>160</td>
+			<td>40</td>
+			<td>120</td>
+			<td>30</td>
+			<td>70</td>
+		</tr>
+		<tr>
+			<th>Tom</th>
+			<td>3</td>
+			<td>40</td>
+			<td>30</td>
+			<td>45</td>
+			<td>35</td>
+			<td>49</td>
+		</tr>
+		<tr>
+			<th>Brad</th>
+			<td>10</td>
+			<td>180</td>
+			<td>10</td>
+			<td>85</td>
+			<td>25</td>
+			<td>79</td>
+		</tr>
+		<tr>
+			<th>Kate</th>
+			<td>40</td>
+			<td>80</td>
+			<td>90</td>
+			<td>25</td>
+			<td>15</td>
+			<td>119</td>
+		</tr>		
+	</tbody>
+</table><div style="height: 199px; width: 499px;" class="visualize visualize-bar" role="img" aria-label="Chart representing data from the table: 2009 Individual Sales by Category"><ul style="width: 499px; height: 199px;" class="visualize-labels-x"><li style="left: 0px; width: 83.1667px;"><span style="border: medium none;" class="line"></span><span class="label">food</span></li><li style="left: 83.1667px; width: 83.1667px;"><span class="line"></span><span class="label">auto</span></li><li style="left: 166.333px; width: 83.1667px;"><span class="line"></span><span class="label">household</span></li><li style="left: 249.5px; width: 83.1667px;"><span class="line"></span><span class="label">furniture</span></li><li style="left: 332.667px; width: 83.1667px;"><span class="line"></span><span class="label">kitchen</span></li><li style="left: 415.833px; width: 83.1667px;"><span class="line"></span><span class="label">bath</span></li></ul><ul style="width: 499px; height: 199px;" class="visualize-labels-y"><li style="bottom: 199px;"><span style="border: medium none;" class="line"></span><span class="label" style="margin-top: 0px;">180</span></li><li style="bottom: 170.571px;"><span class="line"></span><span class="label" style="margin-top: -6px;">156</span></li><li style="bottom: 142.143px;"><span class="line"></span><span class="label" style="margin-top: -6px;">130</span></li><li style="bottom: 113.714px;"><span class="line"></span><span class="label" style="margin-top: -6px;">104</span></li><li style="bottom: 85.2857px;"><span class="line"></span><span class="label" style="margin-top: -6px;">78</span></li><li style="bottom: 56.8571px;"><span class="line"></span><span class="label" style="margin-top: -6px;">52</span></li><li style="bottom: 28.4286px;"><span class="line"></span><span class="label" style="margin-top: -6px;">26</span></li><li style="bottom: 0px;"><span style="border: medium none;" class="line"></span><span class="label" style="margin-top: -12px;">0</span></li></ul><canvas width="499" height="199"></canvas><div class="visualize-info"><div class="visualize-title">2009 Individual Sales by Category</div><ul class="visualize-key"><li><span class="visualize-key-color" style="background: none repeat scroll 0% 0% rgb(190, 30, 45);"></span><span class="visualize-key-label">Mary</span></li><li><span class="visualize-key-color" style="background: none repeat scroll 0% 0% rgb(102, 102, 153);"></span><span class="visualize-key-label">Tom</span></li><li><span class="visualize-key-color" style="background: none repeat scroll 0% 0% rgb(146, 213, 234);"></span><span class="visualize-key-label">Brad</span></li><li><span class="visualize-key-color" style="background: none repeat scroll 0% 0% rgb(238, 131, 16);"></span><span class="visualize-key-label">Kate</span></li></ul></div></div>
+	</body></html>

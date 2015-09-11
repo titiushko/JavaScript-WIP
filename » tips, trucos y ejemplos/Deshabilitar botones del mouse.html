@@ -1,0 +1,38 @@
+<HTML>   
+<HEAD>   
+  
+<script language="javascript">   
+  
+// Definimos si se debe mostrar el mensaje   
+var mostrarMensaje = true;   
+// Definimos el mensaje a mostrar   
+var mensaje = "Botones del Mouse deshabilitados";   
+  
+/* Creamos una función para que se ejecute ante el evento onmousedown  
+es decir, cada vez que se presiona un botón del mouse, ya sea el izquierdo,  
+el derecho o la rueda */  
+function noClick() {  
+    if (mostrarMensaje) {  
+    alert(mensaje);   
+    }  
+}  
+    // Llamamos a la función cada vez que se presiona un botón   
+    document.onmousedown = noClick;   
+    /* Ante el evento oncontextmenu creamos un nuevo objeto (función)  
+    para que anule el menú contextual del navegador */  
+    document.oncontextmenu = new Function("return false");   
+  
+</script>   
+  
+</HEAD>   
+  
+<BODY>   
+  
+<pre>   
+Se han deshabilitado los botones del Mouse en esta página.   
+Puedes hacer la prueba tratando de seleccionar este texto mediante   
+el botón izquierdo o presionando el botón derecho en cualquier parte de la página.   
+</pre>   
+  
+</BODY>   
+</HTML>  

@@ -1,0 +1,668 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+
+
+
+
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+	<title>Coda-Slider 2.0 - Niall Doherty's dot biz</title>
+	<meta http-equiv="Content-Language" content="en-us">
+	
+	<meta name="author" content="Niall Doherty">
+	
+	
+    <link rel="icon" href="http://www.ndoherty.biz/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://www.ndoherty.biz/favicon.ico" type="image/x-icon">
+	
+	<link href="Coda-Slider%202.0_files/reset.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="Coda-Slider%202.0_files/demo-menu.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if IE 6]><link href="../../stylesheets/ie6.css" media="screen, projection" rel="stylesheet" type="text/css" /><![endif]-->	<link href="Coda-Slider%202.0_files/coda-slider-2.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" id="syntaxhighlighter-core-css" href="Coda-Slider%202.0_files/shCore.css" type="text/css" media="all">
+	<link rel="stylesheet" id="syntaxhighlighter-theme-default-css" href="Coda-Slider%202.0_files/shThemeDefault.css" type="text/css" media="all">
+	<style type="text/css">.syntaxhighlighter { font-size: 12px !important; }</style>
+
+	<!-- Begin JavaScript -->
+		<script type="text/javascript" src="Coda-Slider%202.0_files/jquery-1.js"></script>
+		<script type="text/javascript" src="Coda-Slider%202.0_files/jquery_002.js"></script>
+		<script type="text/javascript" src="Coda-Slider%202.0_files/jquery.js"></script>
+		 <script type="text/javascript">
+            $().ready(function() {
+                $('#coda-slider-1').codaSlider();
+                $('#coda-slider-2').codaSlider({
+                    autoSlide: true,
+                    autoSlideInterval: 4000,
+                    autoSlideStopWhenClicked: true
+                });
+                $('#coda-slider-3').codaSlider();
+                $('#coda-slider-4').codaSlider();
+				$('#coda-slider-5').codaSlider({
+					dynamicArrows: false,
+					dynamicTabs: false
+				});
+				$('#coda-slider-6').codaSlider({
+                	crossLinking: false,
+					firstPanelToLoad: 3
+				});
+				$('#coda-slider-7').codaSlider({
+					autoHeightEaseDuration: 300,
+					autoHeightEaseFunction: "easeInOutExpo",
+					slideEaseDuration: 300,
+					slideEaseFunction: "easeInOutExpo"
+				});
+				$('#coda-slider-8').codaSlider({
+					autoHeightEaseDuration: 2500,
+					autoHeightEaseFunction: "easeInOutElastic",
+					slideEaseDuration: 2500,
+					slideEaseFunction: "easeInOutElastic"
+				});
+            	$('#coda-slider-9').codaSlider({
+					dynamicArrows: false
+				});
+            });
+         </script>
+	<!-- End JavaScript -->
+		
+</head><body class="">
+
+<a name="top"></a>
+
+	<div id="demo-menu">
+
+        <a href="http://www.ndoherty.biz/" id="home-link" title="Click here to return to ndoherty.biz">ndoherty.biz</a>
+    
+        <ul id="nav" class="dropdown dropdown-horizontal">
+            <li class="dir">Demo Menu
+                <ul>
+                    <li class="dir"><a href="http://www.ndoherty.biz/demos/coda-slider/2.0/">Coda-Slider</a>
+                        <ul>
+                            <li><a href="http://www.ndoherty.biz/demos/coda-slider/1.0/">Version 1.0</a></li>
+                            <li><a href="http://www.ndoherty.biz/demos/coda-slider/1.1/">Version 1.1</a></li>
+                            <li><a href="http://www.ndoherty.biz/demos/coda-slider/1.1.1/">Version 1.1.1</a></li>
+                            <li><a href="http://www.ndoherty.biz/demos/coda-slider/2.0/">Version 2.0</a></li>
+                        </ul>
+                    </li>
+                    <!--<li><a href="./">Another demo</a></li>-->
+                </ul>
+            </li>
+        </ul>
+        
+	</div><!-- #demo-menu -->
+    
+  <div id="inner-body">
+
+    <p class="intro">
+    Coda-Slider 2.0 - October, 2009<br>
+    <a href="http://www.ndoherty.biz/tag/coda-slider/">See here for more information <strong>and updated versions</strong></a>.
+    <br><br>» <a href="http://www.ndoherty.biz/demos/coda-slider/2.0/coda-slider-2.0.zip">Download</a> «
+    </p>
+    
+    <script type="text/javascript"><!--
+google_ad_client = "ca-pub-2309722975838100";
+/* Coda-Slider ads v1 */
+google_ad_slot = "4319436239";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="Coda-Slider%202.0_files/show_ads.htm">
+</script>
+    
+    <noscript>
+      <div>
+            <p>Unfortunately your browser does not hava JavaScript capabilities which are required to exploit full functionality of our site. This could be the result of two possible scenarios:</p>
+            <ol>
+                <li>You are using an old web browser, in which case you should upgrade it to a newer version. We recommend the latest version of <a href="http://www.getfirefox.com">Firefox</a>.</li>
+                <li>You have disabled JavaScript in you browser, in which case you will have to enable it to properly use our site. <a href="http://www.google.com/support/bin/answer.py?answer=23852">Learn how to enable JavaScript</a>.</li>
+            </ol>
+        </div>
+    </noscript>
+    
+    <hr>
+    
+    <a name="example-1"></a>
+    <h2>Example 1: Default settings</h2>
+
+    <div class="coda-slider-wrapper arrows"><div style="width: 780px;" class="coda-nav" id="coda-nav-1"><ul style="width: 236px;"><li style="" class="tab1"><a class="current" href="#1">Panel 1</a></li><li class="tab2"><a href="#2">Panel 2</a></li><li class="tab3"><a href="#3">Panel 3</a></li><li class="tab4"><a href="#4">Panel 4</a></li></ul></div>
+        <div class="coda-nav-left" id="coda-nav-left-1"><a href="#">« left</a></div><div style="height: 266px;" class="coda-slider" id="coda-slider-1">
+            <div style="width: 2240px;" class="panel-container"><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 1</h2>
+                    <p>This slider uses default settings.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim 
+pretium nunc. Nam et lacus neque. Sed volutpat ante id mauris laoreet 
+vestibulum. Nam blandit felis non neque cursus aliquet. Morbi vel enim 
+dignissim massa dignissim commodo vitae quis tellus. Nunc non mollis 
+nulla. Sed consectetur elit id mi consectetur bibendum. Ut enim massa, 
+sodales tempor convallis et, iaculis ac massa. Etiam suscipit nisl eget 
+lorem pellentesque quis iaculis mi mattis. Aliquam sit amet purus 
+lectus. Maecenas tempor ornare sollicitudin.</p>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 2</h2>
+                    <p>Proin nec turpis eget dolor dictum lacinia. 
+Nullam nunc magna, tincidunt eu porta in, faucibus sed magna. 
+Suspendisse laoreet ornare ullamcorper. Nulla in tortor nibh. 
+Pellentesque sed est vitae odio vestibulum aliquet in nec leo.</p>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 3</h2>
+                    <p>Cras luctus fringilla odio vel hendrerit. Cras 
+pulvinar auctor sollicitudin. Sed lacus quam, sodales sit amet feugiat 
+sit amet, viverra nec augue. Sed enim ipsum, malesuada quis blandit vel,
+ posuere eget erat. Sed a arcu justo. Integer ultricies, nunc at 
+lobortis facilisis, ligula lacus vestibulum quam, id tincidunt sapien 
+arcu in velit. Vestibulum consequat augue et turpis condimentum mollis 
+sed vitae metus. Morbi leo libero, tincidunt lobortis fermentum eget, 
+rhoncus vel sem. Morbi varius viverra velit vel tempus. Morbi enim 
+turpis, facilisis vel volutpat at, condimentum quis erat. Morbi auctor 
+rutrum libero sed placerat. Etiam ipsum velit, eleifend in vehicula eu, 
+tristique a ipsum. Donec vitae quam vel diam iaculis bibendum eget ut 
+diam. Fusce quis interdum diam. Ut urna justo, dapibus a tempus sit 
+amet, bibendum at lectus. Sed venenatis molestie commodo.</p>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 4</h2>
+                    <p>Nulla ultricies ornare erat, a rutrum lacus 
+varius nec. Pellentesque vehicula lobortis dignissim. Ut scelerisque 
+auctor eros sed porttitor. Nullam pulvinar ultrices malesuada. Quisque 
+lobortis bibendum nisi et condimentum. Mauris quis erat vel dui lobortis
+ dignissim.</p>
+                </div>
+            </div></div>
+            
+            
+            
+        </div><div class="coda-nav-right" id="coda-nav-right-1"><a href="#">right »</a></div><!-- .coda-slider -->
+    </div><!-- .coda-slider-wrapper -->
+    
+    <p>The above slider is initiated in the &lt;head&gt; like so:</p>
+    
+    <div class="syntaxhighlighter " id="highlighter_839971"><div class="bar"><div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_839971_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_839971" menu="false" src="Coda-Slider%202.0_files/clipboard.swf" height="16" width="16"></div><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div></div><div class="lines"><div class="line alt1"><code class="number">1.</code><span class="content"><span class="block" style="margin-left: 0px ! important;"><code class="plain">$().ready(</code><code class="keyword">function</code><code class="plain">() {</code></span></span></div><div class="line alt2"><code class="number">2.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 28px ! important;"><code class="plain">$(</code><code class="string">'#coda-slider-1'</code><code class="plain">).codaSlider();</code></span></span></div><div class="line alt1"><code class="number">3.</code><span class="content"><span class="block" style="margin-left: 0px ! important;"><code class="plain">});</code></span></span></div></div></div>
+    
+    <hr>
+    
+    <a name="example-2"></a>
+    <h2>Example 2: Auto Slide</h2>
+
+    <div class="coda-slider-wrapper arrows"><div style="width: 780px;" class="coda-nav" id="coda-nav-2"><ul style="width: 236px;"><li style="" class="tab1"><a class="current" href="#1">Panel 1</a></li><li class="tab2"><a class="" href="#2">Panel 2</a></li><li class="tab3"><a class="" href="#3">Panel 3</a></li><li class="tab4"><a class="" href="#4">Panel 4</a></li></ul></div>
+        <div class="coda-nav-left" id="coda-nav-left-2"><a href="#">« left</a></div><div style="height: 284px; display: block;" class="coda-slider" id="coda-slider-2">
+            <div style="width: 2240px; margin-left: 0px;" class="panel-container"><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 1</h2>
+                    <p>This slider slides automatically, but will stop when the users clicks on any nav button (tabs or arrows).</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim 
+pretium nunc. Nam et lacus neque. Sed volutpat ante id mauris laoreet 
+vestibulum. Nam blandit felis non neque cursus aliquet. Morbi vel enim 
+dignissim massa dignissim commodo vitae quis tellus. Nunc non mollis 
+nulla. Sed consectetur elit id mi consectetur bibendum. Ut enim massa, 
+sodales tempor convallis et, iaculis ac massa. Etiam suscipit nisl eget 
+lorem pellentesque quis iaculis mi mattis. Aliquam sit amet purus 
+lectus. Maecenas tempor ornare sollicitudin.</p>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 2</h2>
+                    <p>This slider slides automatically, but will stop when the users clicks on any nav button (tabs or arrows).</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim 
+pretium nunc. Nam et lacus neque. Sed volutpat ante id mauris laoreet 
+vestibulum. Nam blandit felis non neque cursus aliquet. Morbi vel enim 
+dignissim massa dignissim commodo vitae quis tellus. Nunc non mollis 
+nulla. Sed consectetur elit id mi consectetur bibendum. Ut enim massa, 
+sodales tempor convallis et, iaculis ac massa. Etiam suscipit nisl eget 
+lorem pellentesque quis iaculis mi mattis. Aliquam sit amet purus 
+lectus. Maecenas tempor ornare sollicitudin.</p>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 3</h2>
+                    <p>This slider slides automatically, but will stop when the users clicks on any nav button (tabs or arrows).</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim 
+pretium nunc. Nam et lacus neque. Sed volutpat ante id mauris laoreet 
+vestibulum. Nam blandit felis non neque cursus aliquet. Morbi vel enim 
+dignissim massa dignissim commodo vitae quis tellus. Nunc non mollis 
+nulla. Sed consectetur elit id mi consectetur bibendum. Ut enim massa, 
+sodales tempor convallis et, iaculis ac massa. Etiam suscipit nisl eget 
+lorem pellentesque quis iaculis mi mattis. Aliquam sit amet purus 
+lectus. Maecenas tempor ornare sollicitudin.</p>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 4</h2>
+                    <p>This slider slides automatically, but will stop when the users clicks on any nav button (tabs or arrows).</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim 
+pretium nunc. Nam et lacus neque. Sed volutpat ante id mauris laoreet 
+vestibulum. Nam blandit felis non neque cursus aliquet. Morbi vel enim 
+dignissim massa dignissim commodo vitae quis tellus. Nunc non mollis 
+nulla. Sed consectetur elit id mi consectetur bibendum. Ut enim massa, 
+sodales tempor convallis et, iaculis ac massa. Etiam suscipit nisl eget 
+lorem pellentesque quis iaculis mi mattis. Aliquam sit amet purus 
+lectus. Maecenas tempor ornare sollicitudin.</p>
+                </div>
+            </div></div>
+            
+            
+            
+        </div><div class="coda-nav-right" id="coda-nav-right-2"><a href="#">right »</a></div><!-- .coda-slider -->
+    </div><!-- .coda-slider-wrapper -->
+    
+    <p>The above slider is initiated in the &lt;head&gt; like so:</p>
+    
+    <div class="syntaxhighlighter " id="highlighter_316290"><div class="bar"><div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_316290_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_316290" menu="false" src="Coda-Slider%202.0_files/clipboard.swf" height="16" width="16"></div><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div></div><div class="lines"><div class="line alt1"><code class="number">1.</code><span class="content"><span class="block" style="margin-left: 0px ! important;"><code class="plain">$().ready(</code><code class="keyword">function</code><code class="plain">() {</code></span></span></div><div class="line alt2"><code class="number">2.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 28px ! important;"><code class="plain">$(</code><code class="string">'#coda-slider-2'</code><code class="plain">).codaSlider({</code></span></span></div><div class="line alt1"><code class="number">3.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">autoSlide: </code><code class="keyword">true</code><code class="plain">,</code></span></span></div><div class="line alt2"><code class="number">4.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">autoSlideInterval: 4000,</code></span></span></div><div class="line alt1"><code class="number">5.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">autoSlideStopWhenClicked: </code><code class="keyword">true</code></span></span></div><div class="line alt2"><code class="number">6.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 28px ! important;"><code class="plain">});</code></span></span></div><div class="line alt1"><code class="number">7.</code><span class="content"><span class="block" style="margin-left: 0px ! important;"><code class="plain">});</code></span></span></div></div></div>
+    
+    <hr>
+    
+    <a name="example-3"></a>
+    <h2>Example 3: Cross Linking</h2>
+    
+    <p>The first set of links controls the first slider below. The 
+second set of links controls the second slider. Note that the URL hash 
+changes for each click. This allows you to link to a certain panel from 
+other pages (but be aware that every slider with cross linking enabled 
+will also load the same panel).</p>
+    
+    <p>Cross links for the first slider below: <a class="xtrig" href="#1" rel="coda-slider-3">Panel 1</a> | <a class="xtrig" href="#2" rel="coda-slider-3">Panel 2</a> | <a class="xtrig" href="#3" rel="coda-slider-3">Panel 3</a>
+    <br>Cross links for the second slider below: <a class="xtrig" href="#1" rel="coda-slider-4">Panel 1</a> | <a class="xtrig" href="#2" rel="coda-slider-4">Panel 2</a> | <a class="xtrig" href="#3" rel="coda-slider-4">Panel 3</a></p>
+
+    <div class="coda-slider-wrapper arrows"><div style="width: 780px;" class="coda-nav" id="coda-nav-3"><ul style="width: 177px;"><li style="" class="tab1"><a class="current" href="#1">Panel 1</a></li><li class="tab2"><a href="#2">Panel 2</a></li><li class="tab3"><a href="#3">Panel 3</a></li></ul></div>
+        <div class="coda-nav-left" id="coda-nav-left-3"><a href="#">« left</a></div><div style="height: 175px;" class="coda-slider" id="coda-slider-3">
+            <div style="width: 1680px;" class="panel-container"><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 1</h2>
+                    <p>This slider can be controlled by the first set of links above.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim 
+pretium nunc. Nam et lacus neque.</p>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 2</h2>
+                    <p>This slider can be controlled by the first set of links above.</p>
+                    <p>Proin nec turpis eget dolor dictum lacinia. 
+Nullam nunc magna, tincidunt eu porta in, faucibus sed magna. 
+Suspendisse laoreet ornare ullamcorper. Nulla in tortor nibh. 
+Pellentesque sed est vitae odio vestibulum aliquet in nec leo.</p>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 3</h2>
+                    <p>This slider can be controlled by the first set of links above.</p>
+                    <p>Cras luctus fringilla odio vel hendrerit. Cras pulvinar auctor sollicitudin.</p>
+                </div>
+            </div></div>
+            
+            
+        </div><div class="coda-nav-right" id="coda-nav-right-3"><a href="#">right »</a></div><!-- .coda-slider -->
+    </div><!-- .coda-slider-wrapper -->
+
+    <div class="coda-slider-wrapper arrows"><div style="width: 780px;" class="coda-nav" id="coda-nav-4"><ul style="width: 177px;"><li style="" class="tab1"><a class="current" href="#1">Panel 1</a></li><li class="tab2"><a href="#2">Panel 2</a></li><li class="tab3"><a href="#3">Panel 3</a></li></ul></div>
+        <div class="coda-nav-left" id="coda-nav-left-4"><a href="#">« left</a></div><div style="height: 175px;" class="coda-slider" id="coda-slider-4">
+            <div style="width: 1680px;" class="panel-container"><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 1</h2>
+                    <p>This slider can be controlled by the second set of links above.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim 
+pretium nunc. Nam et lacus neque.</p>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 2</h2>
+                    <p>This slider can be controlled by the second set of links above.</p>
+                    <p>Proin nec turpis eget dolor dictum lacinia. 
+Nullam nunc magna, tincidunt eu porta in, faucibus sed magna. 
+Suspendisse laoreet ornare ullamcorper. Nulla in tortor nibh. 
+Pellentesque sed est vitae odio vestibulum aliquet in nec leo.</p>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 3</h2>
+                    <p>This slider can be controlled by the second set of links above.</p>
+                    <p>Cras luctus fringilla odio vel hendrerit. Cras pulvinar auctor sollicitudin.</p>
+                </div>
+            </div></div>
+            
+            
+        </div><div class="coda-nav-right" id="coda-nav-right-4"><a href="#">right »</a></div><!-- .coda-slider -->
+    </div><!-- .coda-slider-wrapper -->
+    
+    <p>Each cross link should have an appropriate class and a rel 
+attribute. The class needs to be "xtrig" by default, but you can specify
+ something different via the settings. The rel value should correspond 
+to the id of the target slider. Example:</p>
+    
+    <div class="syntaxhighlighter " id="highlighter_189869"><div class="bar"><div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_189869_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_189869" menu="false" src="Coda-Slider%202.0_files/clipboard.swf" height="16" width="16"></div><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div></div><div class="lines"><div class="line alt1"><code class="number">1.</code><span class="content"><span class="block" style="margin-left: 0px ! important;"><code class="plain">&lt;</code><code class="keyword">a</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"xtrig"</code> <code class="color1">href</code><code class="plain">=</code><code class="string">"#1"</code> <code class="color1">rel</code><code class="plain">=</code><code class="string">"coda-slider-3"</code><code class="plain">&gt;Panel 1&lt;/</code><code class="keyword">a</code><code class="plain">&gt;</code></span></span></div></div></div>
+    
+    <p>Note that you can also place cross links within a slider (e.g. if you wanted a "Next" link at the end of each slide).</p>
+    
+    <hr>
+    
+    <a name="example-4"></a>
+    <h2>Example 4: Non-dynamic tabs and arrows</h2>
+    
+    <p>If you want more control over the positioning of the navigation 
+elements, you can hardcode them wherever you want on the page. In the 
+example below, the arrows are left and right of the tabs.</p>
+
+    <div class="coda-slider-wrapper">
+    	<div id="coda-nav-left-5" class="coda-nav-left"><a href="#" title="Slide left">«</a></div>
+        <div id="coda-nav-5" class="coda-nav"><ul><li class="tab1"><a class="current" href="#1">Panel 1</a></li><li class="tab2"><a href="#2">Panel 2</a></li><li class="tab3"><a href="#3">Panel 3</a></li><li class="tab4"><a href="#4">Panel 4</a></li></ul></div>
+        <div id="coda-nav-right-5" class="coda-nav-right"><a href="#" title="Slide right">»</a></div>
+        <div style="height: 232px;" class="coda-slider" id="coda-slider-5">
+            <div style="width: 2240px;" class="panel-container"><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 1</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim 
+pretium nunc. Nam et lacus neque. Sed volutpat ante id mauris laoreet 
+vestibulum. Nam blandit felis non neque cursus aliquet. Morbi vel enim 
+dignissim massa dignissim commodo vitae quis tellus. Nunc non mollis 
+nulla. Sed consectetur elit id mi consectetur bibendum. Ut enim massa, 
+sodales tempor convallis et, iaculis ac massa. Etiam suscipit nisl eget 
+lorem pellentesque quis iaculis mi mattis. Aliquam sit amet purus 
+lectus. Maecenas tempor ornare sollicitudin.</p>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 2</h2>
+                    <p>Proin nec turpis eget dolor dictum lacinia. 
+Nullam nunc magna, tincidunt eu porta in, faucibus sed magna. 
+Suspendisse laoreet ornare ullamcorper. Nulla in tortor nibh. 
+Pellentesque sed est vitae odio vestibulum aliquet in nec leo.</p>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 3</h2>
+                    <p>Cras luctus fringilla odio vel hendrerit. Cras 
+pulvinar auctor sollicitudin. Sed lacus quam, sodales sit amet feugiat 
+sit amet, viverra nec augue. Sed enim ipsum, malesuada quis blandit vel,
+ posuere eget erat. Sed a arcu justo. Integer ultricies, nunc at 
+lobortis facilisis, ligula lacus vestibulum quam, id tincidunt sapien 
+arcu in velit. Vestibulum consequat augue et turpis condimentum mollis 
+sed vitae metus. Morbi leo libero, tincidunt lobortis fermentum eget, 
+rhoncus vel sem. Morbi varius viverra velit vel tempus. Morbi enim 
+turpis, facilisis vel volutpat at, condimentum quis erat. Morbi auctor 
+rutrum libero sed placerat. Etiam ipsum velit, eleifend in vehicula eu, 
+tristique a ipsum. Donec vitae quam vel diam iaculis bibendum eget ut 
+diam. Fusce quis interdum diam. Ut urna justo, dapibus a tempus sit 
+amet, bibendum at lectus. Sed venenatis molestie commodo.</p>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 4</h2>
+                    <p>Nulla ultricies ornare erat, a rutrum lacus 
+varius nec. Pellentesque vehicula lobortis dignissim. Ut scelerisque 
+auctor eros sed porttitor. Nullam pulvinar ultrices malesuada. Quisque 
+lobortis bibendum nisi et condimentum. Mauris quis erat vel dui lobortis
+ dignissim.</p>
+                </div>
+            </div></div>
+            
+            
+            
+        </div><!-- .coda-slider -->
+    </div><!-- .coda-slider-wrapper -->
+    
+    <p>The above slider is initiated in the &lt;head&gt; like so:</p>
+    
+    <div class="syntaxhighlighter " id="highlighter_865894"><div class="bar"><div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_865894_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_865894" menu="false" src="Coda-Slider%202.0_files/clipboard.swf" height="16" width="16"></div><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div></div><div class="lines"><div class="line alt1"><code class="number">1.</code><span class="content"><span class="block" style="margin-left: 0px ! important;"><code class="plain">$().ready(</code><code class="keyword">function</code><code class="plain">() {</code></span></span></div><div class="line alt2"><code class="number">2.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 28px ! important;"><code class="plain">$(</code><code class="string">'#coda-slider-5'</code><code class="plain">).codaSlider({</code></span></span></div><div class="line alt1"><code class="number">3.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">dynamicArrows: </code><code class="keyword">false</code><code class="plain">,</code></span></span></div><div class="line alt2"><code class="number">4.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">dynamicTabs: </code><code class="keyword">false</code></span></span></div><div class="line alt1"><code class="number">5.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 28px ! important;"><code class="plain">});</code></span></span></div><div class="line alt2"><code class="number">6.</code><span class="content"><span class="block" style="margin-left: 0px ! important;"><code class="plain">});</code></span></span></div></div></div>
+    
+    <p>The HTML for the above slider is as follows. Note the highlighted sections, which is where the navigation is hardcoded.</p>
+    
+    <div class="syntaxhighlighter " id="highlighter_93652"><div class="bar"><div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_93652_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_93652" menu="false" src="Coda-Slider%202.0_files/clipboard.swf" height="16" width="16"></div><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div></div><div class="lines"><div class="line alt1"><code class="number">01.</code><span class="content"><span class="block" style="margin-left: 0px ! important;"><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"coda-slider-wrapper"</code><code class="plain">&gt;</code></span></span></div><div class="line alt2 highlighted"><code class="number">02.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 28px ! important;"><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">id</code><code class="plain">=</code><code class="string">"coda-nav-left-5"</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"coda-nav-left"</code><code class="plain">&gt;&lt;</code><code class="keyword">a</code> <code class="color1">href</code><code class="plain">=</code><code class="string">"#"</code> <code class="color1">title</code><code class="plain">=</code><code class="string">"Slide left"</code><code class="plain">&gt;&amp;#171;&lt;/</code><code class="keyword">a</code><code class="plain">&gt;&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code></span></span></div><div class="line alt1 highlighted"><code class="number">03.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 28px ! important;"><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">id</code><code class="plain">=</code><code class="string">"coda-nav-5"</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"coda-nav"</code><code class="plain">&gt;</code></span></span></div><div class="line alt2 highlighted"><code class="number">04.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">&lt;</code><code class="keyword">ul</code><code class="plain">&gt;</code></span></span></div><div class="line alt1 highlighted"><code class="number">05.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 84px ! important;"><code class="plain">&lt;</code><code class="keyword">li</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"tab1"</code><code class="plain">&gt;&lt;</code><code class="keyword">a</code> <code class="color1">href</code><code class="plain">=</code><code class="string">"#1"</code><code class="plain">&gt;Panel 1&lt;/</code><code class="keyword">a</code><code class="plain">&gt;&lt;/</code><code class="keyword">li</code><code class="plain">&gt;</code></span></span></div><div class="line alt2 highlighted"><code class="number">06.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 84px ! important;"><code class="plain">&lt;</code><code class="keyword">li</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"tab2"</code><code class="plain">&gt;&lt;</code><code class="keyword">a</code> <code class="color1">href</code><code class="plain">=</code><code class="string">"#2"</code><code class="plain">&gt;Panel 2&lt;/</code><code class="keyword">a</code><code class="plain">&gt;&lt;/</code><code class="keyword">li</code><code class="plain">&gt;</code></span></span></div><div class="line alt1 highlighted"><code class="number">07.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 84px ! important;"><code class="plain">&lt;</code><code class="keyword">li</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"tab3"</code><code class="plain">&gt;&lt;</code><code class="keyword">a</code> <code class="color1">href</code><code class="plain">=</code><code class="string">"#3"</code><code class="plain">&gt;Panel 3&lt;/</code><code class="keyword">a</code><code class="plain">&gt;&lt;/</code><code class="keyword">li</code><code class="plain">&gt;</code></span></span></div><div class="line alt2 highlighted"><code class="number">08.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 84px ! important;"><code class="plain">&lt;</code><code class="keyword">li</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"tab4"</code><code class="plain">&gt;&lt;</code><code class="keyword">a</code> <code class="color1">href</code><code class="plain">=</code><code class="string">"#4"</code><code class="plain">&gt;Panel 4&lt;/</code><code class="keyword">a</code><code class="plain">&gt;&lt;/</code><code class="keyword">li</code><code class="plain">&gt;</code></span></span></div><div class="line alt1 highlighted"><code class="number">09.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">&lt;/</code><code class="keyword">ul</code><code class="plain">&gt;</code></span></span></div><div class="line alt2 highlighted"><code class="number">10.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 28px ! important;"><code class="plain">&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code></span></span></div><div class="line alt1 highlighted"><code class="number">11.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 28px ! important;"><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">id</code><code class="plain">=</code><code class="string">"coda-nav-right-5"</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"coda-nav-right"</code><code class="plain">&gt;&lt;</code><code class="keyword">a</code> <code class="color1">href</code><code class="plain">=</code><code class="string">"#"</code> <code class="color1">title</code><code class="plain">=</code><code class="string">"Slide right"</code><code class="plain">&gt;&amp;#187;&lt;/</code><code class="keyword">a</code><code class="plain">&gt;&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code></span></span></div><div class="line alt2"><code class="number">12.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 28px ! important;"><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"coda-slider preload"</code> <code class="color1">id</code><code class="plain">=</code><code class="string">"coda-slider-5"</code><code class="plain">&gt;</code></span></span></div><div class="line alt1"><code class="number">13.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"panel"</code><code class="plain">&gt;</code></span></span></div><div class="line alt2"><code class="number">14.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 84px ! important;"><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"panel-wrapper"</code><code class="plain">&gt;</code></span></span></div><div class="line alt1"><code class="number">15.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 112px ! important;"><code class="plain">&lt;</code><code class="keyword">h2</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"title"</code><code class="plain">&gt;Panel 1&lt;/</code><code class="keyword">h2</code><code class="plain">&gt;</code></span></span></div><div class="line alt2"><code class="number">16.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 112px ! important;"><code class="plain">&lt;</code><code class="keyword">p</code><code class="plain">&gt;Lorem ipsum dolor sit amet...&lt;/</code><code class="keyword">p</code><code class="plain">&gt;</code></span></span></div><div class="line alt1"><code class="number">17.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 84px ! important;"><code class="plain">&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code></span></span></div><div class="line alt2"><code class="number">18.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code></span></span></div><div class="line alt1"><code class="number">19.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"panel"</code><code class="plain">&gt;</code></span></span></div><div class="line alt2"><code class="number">20.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 84px ! important;"><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"panel-wrapper"</code><code class="plain">&gt;</code></span></span></div><div class="line alt1"><code class="number">21.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 112px ! important;"><code class="plain">&lt;</code><code class="keyword">h2</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"title"</code><code class="plain">&gt;Panel 2&lt;/</code><code class="keyword">h2</code><code class="plain">&gt;</code></span></span></div><div class="line alt2"><code class="number">22.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 112px ! important;"><code class="plain">&lt;</code><code class="keyword">p</code><code class="plain">&gt;Proin nec turpis eget dolor dictum lacinia...&lt;/</code><code class="keyword">p</code><code class="plain">&gt;</code></span></span></div><div class="line alt1"><code class="number">23.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 84px ! important;"><code class="plain">&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code></span></span></div><div class="line alt2"><code class="number">24.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code></span></span></div><div class="line alt1"><code class="number">25.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"panel"</code><code class="plain">&gt;</code></span></span></div><div class="line alt2"><code class="number">26.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 84px ! important;"><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"panel-wrapper"</code><code class="plain">&gt;</code></span></span></div><div class="line alt1"><code class="number">27.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 112px ! important;"><code class="plain">&lt;</code><code class="keyword">h2</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"title"</code><code class="plain">&gt;Panel 3&lt;/</code><code class="keyword">h2</code><code class="plain">&gt;</code></span></span></div><div class="line alt2"><code class="number">28.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 112px ! important;"><code class="plain">&lt;</code><code class="keyword">p</code><code class="plain">&gt;Cras luctus fringilla odio vel hendrerit....&lt;/</code><code class="keyword">p</code><code class="plain">&gt;</code></span></span></div><div class="line alt1"><code class="number">29.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 84px ! important;"><code class="plain">&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code></span></span></div><div class="line alt2"><code class="number">30.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code></span></span></div><div class="line alt1"><code class="number">31.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"panel"</code><code class="plain">&gt;</code></span></span></div><div class="line alt2"><code class="number">32.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 84px ! important;"><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"panel-wrapper"</code><code class="plain">&gt;</code></span></span></div><div class="line alt1"><code class="number">33.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 112px ! important;"><code class="plain">&lt;</code><code class="keyword">h2</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"title"</code><code class="plain">&gt;Panel 4&lt;/</code><code class="keyword">h2</code><code class="plain">&gt;</code></span></span></div><div class="line alt2"><code class="number">34.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 112px ! important;"><code class="plain">&lt;</code><code class="keyword">p</code><code class="plain">&gt;Nulla ultricies ornare erat...&lt;/</code><code class="keyword">p</code><code class="plain">&gt;</code></span></span></div><div class="line alt1"><code class="number">35.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 84px ! important;"><code class="plain">&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code></span></span></div><div class="line alt2"><code class="number">36.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code></span></span></div><div class="line alt1"><code class="number">37.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 28px ! important;"><code class="plain">&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code><code class="comments">&lt;!-- .coda-slider --&gt;</code></span></span></div><div class="line alt2"><code class="number">38.</code><span class="content"><span class="block" style="margin-left: 0px ! important;"><code class="plain">&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code><code class="comments">&lt;!-- .coda-slider-wrapper --&gt;</code></span></span></div></div></div>
+    
+    <p>Appropriate CSS is then used to style the navigation as needed.</p>
+    
+    <hr>
+    
+    <a name="example-5"></a>
+    <h2>Example 5: Specify first panel to load</h2>
+
+    <div class="coda-slider-wrapper arrows"><div style="width: 780px;" class="coda-nav" id="coda-nav-6"><ul style="width: 295px;"><li style="" class="tab1"><a href="#1">Panel 1</a></li><li class="tab2"><a href="#2">Panel 2</a></li><li class="tab3"><a class="current" href="#3">Panel 3</a></li><li class="tab4"><a href="#4">Panel 4</a></li><li class="tab5"><a href="#5">Panel 5</a></li></ul></div>
+        <div class="coda-nav-left" id="coda-nav-left-6"><a href="#">« left</a></div><div style="height: 156px;" class="coda-slider" id="coda-slider-6">
+            <div style="width: 2800px; margin-left: -1120px;" class="panel-container"><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 1</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim 
+pretium nunc. Nam et lacus neque.</p>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 2</h2>
+                    <p>Proin nec turpis eget dolor dictum lacinia. Nullam nunc magna, tincidunt eu porta in, faucibus sed magna.</p>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 3</h2>
+                    <p>This panel loads first.</p>
+                    <p>Cras luctus fringilla odio vel hendrerit. Cras pulvinar auctor sollicitudin.</p>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 4</h2>
+                    <p>Nulla ultricies ornare erat, a rutrum lacus 
+varius nec. Pellentesque vehicula lobortis dignissim. Ut scelerisque 
+auctor eros sed porttitor.</p>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 5</h2>
+                    <p>Pellentesque vehicula lobortis dignissim. Proin nec turpis eget dolor dictum lacinia. Nullam nunc magna, tincidunt eu porta in.</p>
+                </div>
+            </div></div>
+            
+            
+            
+            
+        </div><div class="coda-nav-right" id="coda-nav-right-6"><a href="#">right »</a></div><!-- .coda-slider -->
+    </div><!-- .coda-slider-wrapper -->
+    
+    <p>The above slider is initiated in the &lt;head&gt; like so:</p>
+    
+    <div class="syntaxhighlighter " id="highlighter_128865"><div class="bar"><div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_128865_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_128865" menu="false" src="Coda-Slider%202.0_files/clipboard.swf" height="16" width="16"></div><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div></div><div class="lines"><div class="line alt1"><code class="number">1.</code><span class="content"><span class="block" style="margin-left: 0px ! important;"><code class="plain">$().ready(</code><code class="keyword">function</code><code class="plain">() {</code></span></span></div><div class="line alt2"><code class="number">2.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 28px ! important;"><code class="plain">$(</code><code class="string">'#coda-slider-6'</code><code class="plain">).codaSlider({</code></span></span></div><div class="line alt1"><code class="number">3.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">crossLinking: </code><code class="keyword">false</code><code class="plain">,</code></span></span></div><div class="line alt2"><code class="number">4.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">firstPanelToLoad: 3</code></span></span></div><div class="line alt1"><code class="number">5.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 28px ! important;"><code class="plain">});</code></span></span></div><div class="line alt2"><code class="number">6.</code><span class="content"><span class="block" style="margin-left: 0px ! important;"><code class="plain">});</code></span></span></div></div></div>
+    
+    <p>Note that cross-linking is disabled so firstPanelToLoad is not overruled by a hash in the URL.</p>
+    
+    <hr>
+    
+    <a name="example-6"></a>
+    <h2>Example 6: Adjusted speed and easing effects</h2>
+
+    <div class="coda-slider-wrapper arrows"><div style="width: 780px;" class="coda-nav" id="coda-nav-7"><ul style="width: 236px;"><li style="" class="tab1"><a class="current" href="#1">Panel 1</a></li><li class="tab2"><a href="#2">Panel 2</a></li><li class="tab3"><a href="#3">Panel 3</a></li><li class="tab4"><a href="#4">Panel 4</a></li></ul></div>
+        <div class="coda-nav-left" id="coda-nav-left-7"><a href="#">« left</a></div><div style="height: 175px;" class="coda-slider" id="coda-slider-7">
+            <div style="width: 2240px;" class="panel-container"><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 1</h2>
+    				<p>This slider is fast.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim 
+pretium nunc. Nam et lacus neque.</p>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 2</h2>
+    				<p>This slider is fast.</p>
+                    <p>Proin nec turpis eget dolor dictum lacinia.</p>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 3</h2>
+    				<p>This slider is fast.</p>
+                    <p>Cras luctus fringilla odio vel hendrerit. Cras 
+pulvinar auctor sollicitudin. Quisque pellentesque diam vitae odio 
+consectetur non varius nunc sagittis. Etiam pharetra sem nec lectus 
+auctor a interdum nunc pulvinar. Etiam ac mauris turpis, sit amet 
+tristique sem. Aenean lobortis pretium odio. Pellentesque malesuada 
+posuere eros.</p>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 4</h2>
+    				<p>This slider is fast.</p>
+                    <p>Nulla ultricies ornare erat, a rutrum lacus 
+varius nec. Pellentesque vehicula lobortis dignissim. Ut scelerisque 
+auctor eros sed porttitor.</p>
+                </div>
+            </div></div>
+            
+            
+            
+        </div><div class="coda-nav-right" id="coda-nav-right-7"><a href="#">right »</a></div><!-- .coda-slider -->
+    </div><!-- .coda-slider-wrapper -->
+    
+    <p>The above slider is initiated in the &lt;head&gt; like so:</p>
+    
+    <div class="syntaxhighlighter " id="highlighter_574852"><div class="bar"><div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_574852_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_574852" menu="false" src="Coda-Slider%202.0_files/clipboard.swf" height="16" width="16"></div><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div></div><div class="lines"><div class="line alt1"><code class="number">1.</code><span class="content"><span class="block" style="margin-left: 0px ! important;"><code class="plain">$().ready(</code><code class="keyword">function</code><code class="plain">() {</code></span></span></div><div class="line alt2"><code class="number">2.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 28px ! important;"><code class="plain">$(</code><code class="string">'#coda-slider-7'</code><code class="plain">).codaSlider({</code></span></span></div><div class="line alt1"><code class="number">3.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">autoHeightEaseDuration: 300,</code></span></span></div><div class="line alt2"><code class="number">4.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">autoHeightEaseFunction: </code><code class="string">"easeInBounce"</code><code class="plain">,</code></span></span></div><div class="line alt1"><code class="number">5.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">slideEaseDuration: 300,</code></span></span></div><div class="line alt2"><code class="number">6.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">slideEaseFunction: </code><code class="string">"easeInBounce"</code></span></span></div><div class="line alt1"><code class="number">7.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 28px ! important;"><code class="plain">});</code></span></span></div><div class="line alt2"><code class="number">8.</code><span class="content"><span class="block" style="margin-left: 0px ! important;"><code class="plain">});</code></span></span></div></div></div>
+
+    <div class="coda-slider-wrapper arrows"><div style="width: 780px;" class="coda-nav" id="coda-nav-8"><ul style="width: 236px;"><li style="" class="tab1"><a class="current" href="#1">Panel 1</a></li><li class="tab2"><a href="#2">Panel 2</a></li><li class="tab3"><a href="#3">Panel 3</a></li><li class="tab4"><a href="#4">Panel 4</a></li></ul></div>
+        <div class="coda-nav-left" id="coda-nav-left-8"><a href="#">« left</a></div><div style="height: 175px;" class="coda-slider" id="coda-slider-8">
+            <div style="width: 2240px;" class="panel-container"><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 1</h2>
+    				<p>This slider is slow.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim 
+pretium nunc. Nam et lacus neque.</p>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 2</h2>
+    				<p>This slider is slow.</p>
+                    <p>Proin nec turpis eget dolor dictum lacinia.</p>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 3</h2>
+    				<p>This slider is slow.</p>
+                    <p>Cras luctus fringilla odio vel hendrerit. Cras 
+pulvinar auctor sollicitudin. Quisque pellentesque diam vitae odio 
+consectetur non varius nunc sagittis. Etiam pharetra sem nec lectus 
+auctor a interdum nunc pulvinar. Etiam ac mauris turpis, sit amet 
+tristique sem. Aenean lobortis pretium odio. Pellentesque malesuada 
+posuere eros.</p>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 4</h2>
+    				<p>This slider is slow.</p>
+                    <p>Nulla ultricies ornare erat, a rutrum lacus 
+varius nec. Pellentesque vehicula lobortis dignissim. Ut scelerisque 
+auctor eros sed porttitor.</p>
+                </div>
+            </div></div>
+            
+            
+            
+        </div><div class="coda-nav-right" id="coda-nav-right-8"><a href="#">right »</a></div><!-- .coda-slider -->
+    </div><!-- .coda-slider-wrapper -->
+    
+    <p>The above slider is initiated in the &lt;head&gt; like so:</p>
+    
+    <div class="syntaxhighlighter " id="highlighter_717800"><div class="bar"><div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_717800_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_717800" menu="false" src="Coda-Slider%202.0_files/clipboard.swf" height="16" width="16"></div><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div></div><div class="lines"><div class="line alt1"><code class="number">1.</code><span class="content"><span class="block" style="margin-left: 0px ! important;"><code class="plain">$().ready(</code><code class="keyword">function</code><code class="plain">() {</code></span></span></div><div class="line alt2"><code class="number">2.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 28px ! important;"><code class="plain">$(</code><code class="string">'#coda-slider-8'</code><code class="plain">).codaSlider({</code></span></span></div><div class="line alt1"><code class="number">3.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">autoHeightEaseDuration: 2500,</code></span></span></div><div class="line alt2"><code class="number">4.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">autoHeightEaseFunction: </code><code class="string">"easeInOutElastic"</code><code class="plain">,</code></span></span></div><div class="line alt1"><code class="number">5.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">slideEaseDuration: 2500,</code></span></span></div><div class="line alt2"><code class="number">6.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">slideEaseFunction: </code><code class="string">"easeInOutElastic"</code></span></span></div><div class="line alt1"><code class="number">7.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 28px ! important;"><code class="plain">});</code></span></span></div><div class="line alt2"><code class="number">8.</code><span class="content"><span class="block" style="margin-left: 0px ! important;"><code class="plain">});</code></span></span></div></div></div>
+    
+    <hr>
+    
+    <a name="example-7"></a>
+    <h2>Example 7: Videos within a slider</h2>
+    
+    <p></p>
+
+    <div class="coda-slider-wrapper"><div style="width: 465px;" class="coda-nav" id="coda-nav-9"><ul style="width: 236px;"><li style="" class="tab1"><a class="current" href="#1">Panel 1</a></li><li class="tab2"><a href="#2">Panel 2</a></li><li class="tab3"><a href="#3">Panel 3</a></li><li class="tab4"><a href="#4">Panel 4</a></li></ul></div>
+        <div style="height: 390px;" class="coda-slider" id="coda-slider-9">
+            <div style="width: 1860px;" class="panel-container"><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 1</h2>
+					<div style="height: 350px;"><!-- Extra div helps us set the correct height when video panel is cross-linked -->
+						<object type="application/x-shockwave-flash" style="width: 425px; height: 350px;" data="Coda-Slider%202.0_files/7WmMcqp670s.swf">
+							<param name="movie" value="http://www.youtube.com/v/7WmMcqp670s">
+							<param name="wmode" value="transparent">
+						</object>
+					</div>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 2</h2>
+					<div style="height: 350px;"><!-- Extra div helps us set the correct height when video panel is cross-linked -->
+						<object type="application/x-shockwave-flash" style="width: 425px; height: 350px;" data="Coda-Slider%202.0_files/bNF_P281Uu4.swf">
+							<param name="movie" value="http://www.youtube.com/v/bNF_P281Uu4">
+							<param name="wmode" value="transparent">
+						</object>
+					</div>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 3</h2>
+					<div style="height: 350px;"><!-- Extra div helps us set the correct height when video panel is cross-linked -->
+						<object type="application/x-shockwave-flash" style="width: 425px; height: 350px;" data="Coda-Slider%202.0_files/zlfKdbWwruY.swf">
+							<param name="movie" value="http://www.youtube.com/v/zlfKdbWwruY">
+							<param name="wmode" value="transparent">
+						</object>
+					</div>
+                </div>
+            </div><div style="display: block;" class="panel">
+                <div class="panel-wrapper">
+                    <h2 class="title">Panel 4</h2>
+					<p>Thanks for watching. Find out more about these videos <a href="http://wherethehellismatt.com/">here</a>.</p>
+                </div>
+            </div></div>
+            
+            
+            
+        </div><!-- .coda-slider -->
+    </div><!-- .coda-slider-wrapper -->
+    
+    <p>The above slider is initiated in the &lt;head&gt; like so:</p>
+    
+    <div class="syntaxhighlighter " id="highlighter_739554"><div class="bar"><div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_739554_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_739554" menu="false" src="Coda-Slider%202.0_files/clipboard.swf" height="16" width="16"></div><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div></div><div class="lines"><div class="line alt1"><code class="number">1.</code><span class="content"><span class="block" style="margin-left: 0px ! important;"><code class="plain">$().ready(</code><code class="keyword">function</code><code class="plain">() {</code></span></span></div><div class="line alt2"><code class="number">2.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 28px ! important;"><code class="plain">$(</code><code class="string">'#coda-slider-9'</code><code class="plain">).codaSlider({</code></span></span></div><div class="line alt1"><code class="number">3.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">dynamicArrows: </code><code class="keyword">false</code></span></span></div><div class="line alt2"><code class="number">4.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 28px ! important;"><code class="plain">});</code></span></span></div><div class="line alt1"><code class="number">5.</code><span class="content"><span class="block" style="margin-left: 0px ! important;"><code class="plain">});</code></span></span></div></div></div>
+    
+    <p>The following HTML code is used to embed a YouTube video in a panel (note the extra wrapper div):</p>
+    
+    <div class="syntaxhighlighter " id="highlighter_956436"><div class="bar"><div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_956436_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_956436" menu="false" src="Coda-Slider%202.0_files/clipboard.swf" height="16" width="16"></div><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div></div><div class="lines"><div class="line alt1"><code class="number">01.</code><span class="content"><span class="block" style="margin-left: 0px ! important;"><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"panel"</code><code class="plain">&gt;</code></span></span></div><div class="line alt2"><code class="number">02.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 28px ! important;"><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"panel-wrapper"</code><code class="plain">&gt;</code></span></span></div><div class="line alt1"><code class="number">03.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">&lt;</code><code class="keyword">h2</code> <code class="color1">class</code><code class="plain">=</code><code class="string">"title"</code><code class="plain">&gt;Panel 3&lt;/</code><code class="keyword">h2</code><code class="plain">&gt;</code></span></span></div><div class="line alt2"><code class="number">04.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">style</code><code class="plain">=</code><code class="string">"height:350px;"</code><code class="plain">&gt;</code><code class="comments">&lt;!-- Extra div helps us set the correct height when video panel is cross-linked --&gt;</code></span></span></div><div class="line alt1"><code class="number">05.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 84px ! important;"><code class="plain">&lt;</code><code class="keyword">object</code> <code class="color1">type</code><code class="plain">=</code><code class="string">"application/x-shockwave-flash"</code> <code class="color1">style</code><code class="plain">=</code><code class="string">"width:425px; height:350px;"</code> <code class="color1">data</code><code class="plain">=</code><code class="string">"<a href="http://www.youtube.com/v/zlfKdbWwruY">http://www.youtube.com/v/zlfKdbWwruY</a>"</code><code class="plain">&gt;</code></span></span></div><div class="line alt2"><code class="number">06.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 112px ! important;"><code class="plain">&lt;</code><code class="keyword">param</code> <code class="color1">name</code><code class="plain">=</code><code class="string">"movie"</code> <code class="color1">value</code><code class="plain">=</code><code class="string">"<a href="http://www.youtube.com/v/zlfKdbWwruY">http://www.youtube.com/v/zlfKdbWwruY</a>"</code> <code class="plain">/&gt;</code></span></span></div><div class="line alt1"><code class="number">07.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 112px ! important;"><code class="plain">&lt;</code><code class="keyword">param</code> <code class="color1">name</code><code class="plain">=</code><code class="string">"wmode"</code> <code class="color1">value</code><code class="plain">=</code><code class="string">"transparent"</code> <code class="plain">/&gt;</code></span></span></div><div class="line alt2"><code class="number">08.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 84px ! important;"><code class="plain">&lt;/</code><code class="keyword">object</code><code class="plain">&gt;</code></span></span></div><div class="line alt1"><code class="number">09.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 56px ! important;"><code class="plain">&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code></span></span></div><div class="line alt2"><code class="number">10.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 28px ! important;"><code class="plain">&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code></span></span></div><div class="line alt1"><code class="number">11.</code><span class="content"><span class="block" style="margin-left: 0px ! important;"><code class="plain">&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code></span></span></div></div></div>
+    
+    <p>Additional styling is used to set the width of the slider, and to hide the panel titles:</p>
+    
+    <div class="syntaxhighlighter " id="highlighter_183924"><div class="bar"><div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_183924_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_183924" menu="false" src="Coda-Slider%202.0_files/clipboard.swf" height="16" width="16"></div><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div></div><div class="lines"><div class="line alt1"><code class="number">1.</code><span class="content"><span class="block" style="margin-left: 0px ! important;"><code class="plain">#coda-slider</code><code class="value">-9</code><code class="plain">, #coda-slider</code><code class="value">-9</code> <code class="plain">.panel { </code><code class="keyword">width</code><code class="plain">: </code><code class="value">465px</code> <code class="plain">}</code></span></span></div><div class="line alt2"><code class="number">2.</code><span class="content"><span class="block" style="margin-left: 0px ! important;"><code class="plain">#coda-slider</code><code class="value">-9</code> <code class="plain">h</code><code class="value">2</code><code class="plain">.title { </code><code class="keyword">display</code><code class="plain">: </code><code class="value">none</code> <code class="plain">}</code></span></span></div></div></div>
+    
+    <hr>
+    
+    <p class="intro"><a href="#top">back to the top</a></p>
+
+  </div><!-- #inner-body -->
+
+<script type="text/javascript" src="Coda-Slider%202.0_files/shCore.js"></script>
+<script type="text/javascript" src="Coda-Slider%202.0_files/shBrushXml.js"></script>
+<script type="text/javascript" src="Coda-Slider%202.0_files/shBrushJScript.js"></script>
+<script type="text/javascript" src="Coda-Slider%202.0_files/shBrushCss.js"></script>
+<script type="text/javascript">
+	SyntaxHighlighter.config.clipboardSwf = 'http://www.ndoherty.biz/wp-content/plugins/syntaxhighlighter/syntaxhighlighter/scripts/clipboard.swf';
+	SyntaxHighlighter.config.strings.expandSource = 'expand source';
+	SyntaxHighlighter.config.strings.viewSource = 'view source';
+	SyntaxHighlighter.config.strings.copyToClipboard = 'copy to clipboard';
+	SyntaxHighlighter.config.strings.copyToClipboardConfirmation = 'The code is in your clipboard now';
+	SyntaxHighlighter.config.strings.print = 'print';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.all();
+</script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="Coda-Slider%202.0_files/ga.htm" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2593995-5");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+</body></html>

@@ -1,0 +1,154 @@
+<HTML>
+	<HEAD>
+		<SCRIPT language="JavaScript">
+			function valorselect1(form,nombre){
+				var cadena="window.document."+form+"."+nombre+".options";
+				cadena+="[window.document."+form+"."+nombre+".selectedIndex].value";
+				return eval (cadena);
+			}
+
+			function valorselect2(objeto){
+				return objeto.options[objeto.selectedIndex].value
+			}
+
+			function activaopcionselect1(form,nombre,valor){
+				var objeto=eval('window.document.'+form+'.'+nombre);
+				activaopcionselect2(objeto,valor);
+			}
+
+			function activaopcionselect2(objeto,valor){
+				for (var i=0;i<objeto.length;i++){
+					if (objeto.options[i].value==valor)
+					objeto.options[i].selected=true;
+				}
+			}
+
+			function desactivaopcionselect1(form,nombre,valor){
+				var objeto=eval('window.document.'+form+'.'+nombre);
+				desactivaopcionselect2(objeto,valor);
+			}
+
+			function desactivaopcionselect2(objeto,valor){
+				for (var i=0;i<objeto.length;i++){
+					if (objeto.options[i].value==valor)
+					objeto.options[i].selected=false;
+				}
+			}
+
+			function cambiaestadoopcionselect1(form,nombre,valor){
+				var objeto=eval('window.document.'+form+'.'+nombre);
+				cambiaestadoopcionselect2(objeto,valor);
+			}
+
+			function cambiaestadoopcionselect2(objeto,valor){
+				for (var i=0;i<objeto.length;i++){
+					if (objeto.options[i].value==valor)
+					objeto.options[i].selected=!objeto.options[i].selected;
+				}
+			}
+
+			function incluyeopcionselect1(form,nombre,valor){
+				var objeto=eval('window.document.'+form+'.'+nombre);
+				incluyeopcionselect2(objeto,valor);
+			}
+
+			function incluyeopcionselect2(objeto,valor){
+				objeto.length++;
+				objeto.options[objeto.length-1].text=valor;
+				objeto.options[objeto.length-1].value=valor;
+			}
+
+			function eliminaopcionselect1(form,nombre,valor){
+				var objeto=eval('window.document.'+form+'.'+nombre);
+				eliminaopcionselect2(objeto,valor);
+			}
+
+			function eliminaopcionselect2(objeto,valor){
+				for (var i=0;i<objeto.length;i++){
+					if (objeto.options[i].value==valor){
+						objeto.options[i].text=objeto.options[objeto.length-1].text;
+						objeto.options[i].value=objeto.options[objeto.length-1].value;
+						objeto.length--;
+						break;
+					}
+				}
+			}
+		</SCRIPT>
+	</HEAD>
+	<BODY>
+		<FORM NAME="formulario" ACTION="">
+			<BR><BR>
+			<CENTER>
+				<B>Acceso a elementos Select</B><BR><BR>
+				CampotipoSELECT:
+				<SELECT Name="select">
+					<OPTION VALUE="opcion1">opcion1</OPTION>
+					<OPTION VALUE="opcion2">opcion2</OPTION>
+				</SELECT>
+				<BR><BR><BR><BR>
+				<TABLE BORDER=1>
+					<TR>
+						<TH>Estado
+						<TH>Activar
+						<TH>Desactivar
+						<TH>Cambiar Estado
+						<TH>Incluir Opción
+						<TH>Eliminar Opción
+					</TR>
+					<TR ALIGN="CENTER">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método1"
+						onClick="var valor=valorselect1('formulario','select');
+						alert('Activado campo Select='+valor)">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método1"
+						onClick="var valor=prompt('Número del Opción que quiere activar','1');
+						activaopcionselect1('formulario','select','opcion'+valor);">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método1"
+						onClick="var valor=prompt('Número del Opción que quiere desactivar','1');
+						desactivaopcionselect1('formulario','select','opcion'+valor);">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método1"
+						onClick="var valor=prompt('Número del Opción que quiere cambiar','1');
+						cambiaestadoopcionselect1('formulario','select','opcion'+valor);">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método1"
+						onClick="var valor=prompt('Número del Opción que quiere incluir','3');
+						incluyeopcionselect1('formulario','select','opcion'+valor);">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método1"
+						onClick="var valor=prompt('Número del Opción que quiere eliminar','1');
+						eliminaopcionselect1('formulario','select','opcion'+valor);">
+					</TR>
+					<TR ALIGN="CENTER">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método2"
+						onClick="var valor=valorselect2(window.document.formulario.select);
+						alert('Activado campo Select='+valor)">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método2"
+						onClick="var valor=prompt('Número del Opción que quiere activar','1');
+						activaopcionselect2(window.document.formulario.select,'opcion'+valor);">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método2"
+						onClick="var valor=prompt('Número del Opción que quiere desactivar','1');
+						desactivaopcionselect2(window.document.formulario.select,'opcion'+valor);">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método2"
+						onClick="var valor=prompt('Número del Opción que quiere cambiar','1');
+						cambiaestadoopcionselect2(window.document.formulario.select,'opcion'+valor);">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método2"
+						onClick="var valor=prompt('Número del Opción que quiere incluir','3');
+						incluyeopcionselect2(window.document.formulario.select,'opcion'+valor);">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método2"
+						onClick="var valor=prompt('Número del Opción que quiere eliminar','1');
+						eliminaopcionselect2(window.document.formulario.select,'opcion'+valor);">
+					</TR>
+				</TABLE>
+			</CENTER>
+		</FORM>
+	</BODY>
+</HTML>

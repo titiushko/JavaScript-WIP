@@ -1,0 +1,112 @@
+<HTML>
+	<HEAD>
+		<SCRIPT language="JavaScript">
+			function activacheckbox1(form,nombre){
+				eval('window.document.'+form+'.'+nombre+'.checked=true');
+			}
+
+			function activacheckbox2(objetocheckbox){
+				objetocheckbox.checked=true;
+			}
+
+			function desactivacheckbox1(form,nombre){
+				eval('window.document.'+form+'.'+nombre+'.checked=false');
+			}
+
+			function desactivacheckbox2(objetocheckbox){
+				objetocheckbox.checked=false;
+			}
+
+			function cambiaestadocheckbox1(form,nombre){
+				eval('window.document.'+form+'.'+nombre+'.checked='+
+				'!window.document.'+form+'.'+nombre+'.checked');
+			}
+
+			function cambiaestadocheckbox2(objetocheckbox){
+				objetocheckbox.checked=!objetocheckbox.checked;
+			}
+
+			function valorcheckbox1(form,nombre){
+				return eval('window.document.'+form+'.'+nombre+'.checked');
+			}
+
+			function valorcheckbox2(objetocheckbox){
+				return objetocheckbox.checked;
+			}
+		</SCRIPT>
+	</HEAD>
+	<BODY>
+		<FORM NAME="formulario" ACTION="">
+			<BR><BR>
+			<CENTER>
+				<B>Acceso a elementos Checkbox</B><BR><BR>
+				Checkbox1:
+				<INPUT TYPE="Checkbox" Name="checkbox1"><BR>
+				Checkbox2:
+				<INPUT TYPE="Checkbox" Name="checkbox2"><BR><BR><BR>
+				<TABLE BORDER=1>
+					<TR>
+						<TH>Estado
+						<TH>Activar
+						<TH>Desactivar
+						<TH>Cambiar Estado
+					</TR>
+					<TR ALIGN="CENTER">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método1"
+						onClick="var valor1=prompt('Número del Checkbox que quiere consultar','1');
+						var valor2=valorcheckbox1('formulario','checkbox'+valor1);
+						alert('Activado Checkbox'+valor1+'='+valor2)">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método1"
+						onClick="var valor=prompt('Número del Checkbox que quiere activar','1');
+						activacheckbox1('formulario','checkbox'+valor)">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método1"
+						onClick="var valor=prompt('Número del Checkbox que quiere desactivar','1');
+						desactivacheckbox1('formulario','checkbox'+valor)">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método1"
+						onClick="var valor=prompt('Número del Checkbox que quiere cambiar','1');
+						cambiaestadocheckbox1('formulario','checkbox'+valor)">
+					</TR>
+					<TR ALIGN="CENTER">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método2"
+						onClick="var valor1=prompt('Número del Checkbox que quiere consultar','1');
+						if (valor1==1)
+						var valor2=valorcheckbox2(window.document.formulario.checkbox1)
+						else
+						if(valor1==2)
+						var valor2=valorcheckbox2(window.document.formulario.checkbox2);
+						alert('Activado Checkbox'+valor1+'='+valor2)">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método2"
+						onClick="var valor1=prompt('Número del Checkbox que quiere activar','1');
+						if (valor1==1)
+						var valor2=activacheckbox2(window.document.formulario.checkbox1)
+						else
+						if(valor1==2)
+						var valor2=activacheckbox2(window.document.formulario.checkbox2);">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método2"
+						onClick="var valor1=prompt('Número del Checkbox que quiere desactivar','1');
+						if (valor1==1)
+						var valor2=desactivacheckbox2(window.document.formulario.checkbox1)
+						else
+						if(valor1==2)
+						var valor2=desactivacheckbox2(window.document.formulario.checkbox2);">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método2"
+						onClick="var valor1=prompt('Número del Checkbox que quiere cambiar','1');
+						if (valor1==1)
+						var valor2=cambiaestadocheckbox2(window.document.formulario.checkbox1)
+						else
+						if(valor1==2)
+						var valor2=cambiaestadocheckbox2(window.document.formulario.checkbox2);">
+					</TR>
+				</TABLE>
+			</CENTER>
+			</FORM>
+	</BODY>
+</HTML>

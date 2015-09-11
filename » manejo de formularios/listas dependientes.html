@@ -1,0 +1,384 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script>
+function fillCategory(){ 
+// this function is used to fill the category list on load
+//addOption(document.drop_list.Category, "Ahuachapán", "Ahuachapán", "");
+addOption(document.drop_list.Category, "Ahuachapán", "Ahuachapán", "");
+addOption(document.drop_list.Category, "Cabañas", "Cabañas", "");
+addOption(document.drop_list.Category, "Chalatenango", "Chalatenango", "");
+addOption(document.drop_list.Category, "Cuscatlán", "Cuscatlán", "");
+addOption(document.drop_list.Category, "La Libertad", "La Libertad", "");
+addOption(document.drop_list.Category, "La Paz", "La Paz", "");
+addOption(document.drop_list.Category, "La Unión", "La Unión", "");
+addOption(document.drop_list.Category, "Morazán", "Morazán", "");
+addOption(document.drop_list.Category, "San Miguel", "San Miguel", "");
+addOption(document.drop_list.Category, "San Salvador", "San Salvador", "");
+addOption(document.drop_list.Category, "San Vicente", "San Vicente", "");
+addOption(document.drop_list.Category, "Santa Ana", "Santa Ana", "");
+addOption(document.drop_list.Category, "Sonsonate", "Sonsonate", "");
+addOption(document.drop_list.Category, "Usulután", "Usulután", "");
+}
+
+function SelectSubCat(){
+// ON selection of category this function will work
+
+
+removeAllOptions(document.drop_list.SubCat);
+addOption(document.drop_list.SubCat, "", "--MUNICIPIO--", "");
+if(document.drop_list.Category.value == "Ahuachapán"){
+addOption(document.drop_list.SubCat,"Ahuachapán", "Ahuachapán");
+addOption(document.drop_list.SubCat,"Jujutla", "Jujutla");
+addOption(document.drop_list.SubCat,"Atiquizaya", "Atiquizaya");
+addOption(document.drop_list.SubCat,"Concepción de Ataco", "Concepción de Ataco");
+addOption(document.drop_list.SubCat,"El Refugio", "El Refugio");
+addOption(document.drop_list.SubCat,"Guaymango", "Guaymango");
+addOption(document.drop_list.SubCat,"Apaneca", "Apaneca");
+addOption(document.drop_list.SubCat,"San Francisco Menéndez", "San Francisco Menéndez");
+addOption(document.drop_list.SubCat,"San Lorenzo", "San Lorenzo");
+addOption(document.drop_list.SubCat,"San Pedro Puxtla", "San Pedro Puxtla");
+addOption(document.drop_list.SubCat,"Tacuba", "Tacuba");
+addOption(document.drop_list.SubCat,"Turín", "Turín");
+}
+if(document.drop_list.Category.value == "Cabañas"){
+addOption(document.drop_list.SubCat,"Cinquera", "Cinquera");
+addOption(document.drop_list.SubCat,"Villa Dolores", "Villa Dolores");
+addOption(document.drop_list.SubCat,"Guacotecti", "Guacotecti");
+addOption(document.drop_list.SubCat,"Ilobasco", "Ilobasco");
+addOption(document.drop_list.SubCat,"Jutiapa", "Jutiapa");
+addOption(document.drop_list.SubCat,"San Isidro", "San Isidro");
+addOption(document.drop_list.SubCat,"Sensuntepeque", "Sensuntepeque");
+addOption(document.drop_list.SubCat,"Ciudad de Tejutepeque", "Ciudad de Tejutepeque");
+addOption(document.drop_list.SubCat,"Victoria", "Victoria");
+}
+if(document.drop_list.Category.value == "Chalatenango"){
+addOption(document.drop_list.SubCat,"Agua Caliente", "Agua Caliente");
+addOption(document.drop_list.SubCat,"Arcatao", "Arcatao");
+addOption(document.drop_list.SubCat,"Azacualpa", "Azacualpa");
+addOption(document.drop_list.SubCat,"Chalatenango", "Chalatenango");
+addOption(document.drop_list.SubCat,"Citalá", "Citalá");
+addOption(document.drop_list.SubCat,"Comalapa", "Comalapa");
+addOption(document.drop_list.SubCat,"Concepción Quezaltepeque", "Concepción Quezaltepeque");
+addOption(document.drop_list.SubCat,"Dulce Nombre de María", "Dulce Nombre de María");
+addOption(document.drop_list.SubCat,"El Carrizal", "El Carrizal");
+addOption(document.drop_list.SubCat,"El Paraíso", "El Paraíso");
+addOption(document.drop_list.SubCat,"La Laguna", "La Laguna");
+addOption(document.drop_list.SubCat,"La Palma", "La Palma");
+addOption(document.drop_list.SubCat,"La Reina", "La Reina");
+addOption(document.drop_list.SubCat,"Las Vueltas", "Las Vueltas");
+addOption(document.drop_list.SubCat,"Nombre de Jesús", "Nombre de Jesús");
+addOption(document.drop_list.SubCat,"Nueva Concepción", "Nueva Concepción");
+addOption(document.drop_list.SubCat,"Nueva Trinidad", "Nueva Trinidad");
+addOption(document.drop_list.SubCat,"Ojos de Agua", "Ojos de Agua");
+addOption(document.drop_list.SubCat,"Potonico", "Potonico");
+addOption(document.drop_list.SubCat,"San Antonio de la Cruz", "San Antonio de la Cruz");
+addOption(document.drop_list.SubCat,"San Antonio Los Ranchos", "San Antonio Los Ranchos");
+addOption(document.drop_list.SubCat,"San Fernando", "San Fernando");
+addOption(document.drop_list.SubCat,"San Francisco Lempa", "San Francisco Lempa");
+addOption(document.drop_list.SubCat,"San Francisco Morazán", "San Francisco Morazán");
+addOption(document.drop_list.SubCat,"San Ignacio", "San Ignacio");
+addOption(document.drop_list.SubCat,"San Isidro Labrador", "San Isidro Labrador");
+addOption(document.drop_list.SubCat,"San José Cancasque", "San José Cancasque");
+addOption(document.drop_list.SubCat,"San José Las Flores", "San José Las Flores");
+addOption(document.drop_list.SubCat,"San Luis del Carmen", "San Luis del Carmen");
+addOption(document.drop_list.SubCat,"San Miguel de Mercedes", "San Miguel de Mercedes");
+addOption(document.drop_list.SubCat,"San Rafael", "San Rafael");
+addOption(document.drop_list.SubCat,"Santa Rita", "Santa Rita");
+addOption(document.drop_list.SubCat,"Tejutla", "Tejutla");
+}
+if(document.drop_list.Category.value == "Cuscatlán"){
+addOption(document.drop_list.SubCat,"Candelaria", "Candelaria");
+addOption(document.drop_list.SubCat,"Cojutepeque", "Cojutepeque");
+addOption(document.drop_list.SubCat,"El Carmen", "El Carmen");
+addOption(document.drop_list.SubCat,"El Rosario", "El Rosario");
+addOption(document.drop_list.SubCat,"Monte San Juan", "Monte San Juan");
+addOption(document.drop_list.SubCat,"Oratorio de Concepción", "Oratorio de Concepción");
+addOption(document.drop_list.SubCat,"San Bartolomé Perulapía", "San Bartolomé Perulapía");
+addOption(document.drop_list.SubCat,"San Cristóbal", "San Cristóbal");
+addOption(document.drop_list.SubCat,"San José Guayabal", "San José Guayabal");
+addOption(document.drop_list.SubCat,"San Pedro Perulapán", "San Pedro Perulapán");
+addOption(document.drop_list.SubCat,"San Rafael Cedros", "San Rafael Cedros");
+addOption(document.drop_list.SubCat,"San Ramón", "San Ramón");
+addOption(document.drop_list.SubCat,"Santa Cruz Analquito", "Santa Cruz Analquito");
+addOption(document.drop_list.SubCat,"Santa Cruz Michapa", "Santa Cruz Michapa");
+addOption(document.drop_list.SubCat,"Suchitoto", "Suchitoto");
+addOption(document.drop_list.SubCat,"Tenancingo", "Tenancingo");
+}
+if(document.drop_list.Category.value == "La Libertad"){
+addOption(document.drop_list.SubCat,"Antiguo Cuscatlán", "Antiguo Cuscatlán");
+addOption(document.drop_list.SubCat,"Chiltiupán", "Chiltiupán");
+addOption(document.drop_list.SubCat,"Ciudad Arce", "Ciudad Arce");
+addOption(document.drop_list.SubCat,"Colón", "Colón");
+addOption(document.drop_list.SubCat,"Comasagua", "Comasagua");
+addOption(document.drop_list.SubCat,"Huizúcar", "Huizúcar");
+addOption(document.drop_list.SubCat,"Jayaque", "Jayaque");
+addOption(document.drop_list.SubCat,"Jicalapa", "Jicalapa");
+addOption(document.drop_list.SubCat,"La Libertad", "La Libertad");
+addOption(document.drop_list.SubCat,"Nueva San Salvador", "Nueva San Salvador");
+addOption(document.drop_list.SubCat,"Nuevo Cuscatlán", "Nuevo Cuscatlán");
+addOption(document.drop_list.SubCat,"Opico", "Opico");
+addOption(document.drop_list.SubCat,"Quezaltepeque", "Quezaltepeque");
+addOption(document.drop_list.SubCat,"Sacacoyo", "Sacacoyo");
+addOption(document.drop_list.SubCat,"San José Villanueva", "San José Villanueva");
+addOption(document.drop_list.SubCat,"San Matías", "San Matías");
+addOption(document.drop_list.SubCat,"San Pablo Tacachico", "San Pablo Tacachico");
+addOption(document.drop_list.SubCat,"Talnique", "Talnique");
+addOption(document.drop_list.SubCat,"Tamanique", "Tamanique");
+addOption(document.drop_list.SubCat,"Teotepeque", "Teotepeque");
+addOption(document.drop_list.SubCat,"Tepecoyo", "Tepecoyo");
+addOption(document.drop_list.SubCat,"Zaragoza", "Zaragoza");
+}
+if(document.drop_list.Category.value == "La Paz"){
+addOption(document.drop_list.SubCat,"Cuyultitán", "Cuyultitán");
+addOption(document.drop_list.SubCat,"El Rosario", "El Rosario");
+addOption(document.drop_list.SubCat,"Jerusalén", "Jerusalén");
+addOption(document.drop_list.SubCat,"Mercedes La Ceiba", "Mercedes La Ceiba");
+addOption(document.drop_list.SubCat,"Olocuilta", "Olocuilta");
+addOption(document.drop_list.SubCat,"Paraíso de Osorio", "Paraíso de Osorio");
+addOption(document.drop_list.SubCat,"San Antonio Masahuat", "San Antonio Masahuat");
+addOption(document.drop_list.SubCat,"San Emigdio", "San Emigdio");
+addOption(document.drop_list.SubCat,"San Francisco Chinameca", "San Francisco Chinameca");
+addOption(document.drop_list.SubCat,"San Juan Nonualco", "San Juan Nonualco");
+addOption(document.drop_list.SubCat,"San Juan Talpa", "San Juan Talpa");
+addOption(document.drop_list.SubCat,"San Juan Tepezontes", "San Juan Tepezontes");
+addOption(document.drop_list.SubCat,"San Luis La Herradura", "San Luis La Herradura");
+addOption(document.drop_list.SubCat,"San Luis Talpa", "San Luis Talpa");
+addOption(document.drop_list.SubCat,"San Miguel Tepezontes", "San Miguel Tepezontes");
+addOption(document.drop_list.SubCat,"San Pedro Masahuat", "San Pedro Masahuat");
+addOption(document.drop_list.SubCat,"San Pedro Nonualco", "San Pedro Nonualco");
+addOption(document.drop_list.SubCat,"San Rafael Obrajuelo", "San Rafael Obrajuelo");
+addOption(document.drop_list.SubCat,"Santa María Ostuma", "Santa María Ostuma");
+addOption(document.drop_list.SubCat,"Santiago Nonualco", "Santiago Nonualco");
+addOption(document.drop_list.SubCat,"Tapalhuaca", "Tapalhuaca");
+addOption(document.drop_list.SubCat,"Zacatecoluca", "Zacatecoluca");
+}
+if(document.drop_list.Category.value == "La Unión"){
+addOption(document.drop_list.SubCat,"Anamorós", "Anamorós");
+addOption(document.drop_list.SubCat,"Bolívar", "Bolívar");
+addOption(document.drop_list.SubCat,"Concepción de Oriente", "Concepción de Oriente");
+addOption(document.drop_list.SubCat,"Conchagua", "Conchagua");
+addOption(document.drop_list.SubCat,"El Carmen", "El Carmen");
+addOption(document.drop_list.SubCat,"El Sauce", "El Sauce");
+addOption(document.drop_list.SubCat,"Intipucá", "Intipucá");
+addOption(document.drop_list.SubCat,"La Unión", "La Unión");
+addOption(document.drop_list.SubCat,"Lislique", "Lislique");
+addOption(document.drop_list.SubCat,"Meanguera del Golfo", "Meanguera del Golfo");
+addOption(document.drop_list.SubCat,"Nueva Esparta", "Nueva Esparta");
+addOption(document.drop_list.SubCat,"Pasaquina", "Pasaquina");
+addOption(document.drop_list.SubCat,"Polorós", "Polorós");
+addOption(document.drop_list.SubCat,"San Alejo", "San Alejo");
+addOption(document.drop_list.SubCat,"San José", "San José");
+addOption(document.drop_list.SubCat,"Santa Rosa de Lima", "Santa Rosa de Lima");
+addOption(document.drop_list.SubCat,"Yayantique", "Yayantique");
+addOption(document.drop_list.SubCat,"Yucuayquín", "Yucuayquín");
+}
+if(document.drop_list.Category.value == "Morazán"){
+addOption(document.drop_list.SubCat,"Arambala", "Arambala");
+addOption(document.drop_list.SubCat,"Cacaopera", "Cacaopera");
+addOption(document.drop_list.SubCat,"Chilanga", "Chilanga");
+addOption(document.drop_list.SubCat,"Corinto", "Corinto");
+addOption(document.drop_list.SubCat,"Delicias de Concepción", "Delicias de Concepción");
+addOption(document.drop_list.SubCat,"El Divisadero", "El Divisadero");
+addOption(document.drop_list.SubCat,"El Rosario", "El Rosario");
+addOption(document.drop_list.SubCat,"Gualococti", "Gualococti");
+addOption(document.drop_list.SubCat,"Guatajiagua", "Guatajiagua");
+addOption(document.drop_list.SubCat,"Joateca", "Joateca");
+addOption(document.drop_list.SubCat,"Jocoaitique", "Jocoaitique");
+addOption(document.drop_list.SubCat,"Jocoro", "Jocoro");
+addOption(document.drop_list.SubCat,"Lolotiquillo", "Lolotiquillo");
+addOption(document.drop_list.SubCat,"Meanguera", "Meanguera");
+addOption(document.drop_list.SubCat,"Osicala", "Osicala");
+addOption(document.drop_list.SubCat,"Perquín", "Perquín");
+addOption(document.drop_list.SubCat,"San Carlos", "San Carlos");
+addOption(document.drop_list.SubCat,"San Fernando", "San Fernando");
+addOption(document.drop_list.SubCat,"San Francisco Gotera", "San Francisco Gotera");
+addOption(document.drop_list.SubCat,"San Isidro", "San Isidro");
+addOption(document.drop_list.SubCat,"San Simón", "San Simón");
+addOption(document.drop_list.SubCat,"Sensembra", "Sensembra");
+addOption(document.drop_list.SubCat,"Sociedad", "Sociedad");
+addOption(document.drop_list.SubCat,"Torola", "Torola");
+addOption(document.drop_list.SubCat,"Yamabal", "Yamabal");
+addOption(document.drop_list.SubCat,"Yoloaiquín", "Yoloaiquín");
+}
+if(document.drop_list.Category.value == "San Miguel"){
+addOption(document.drop_list.SubCat,"Carolina", "Carolina");
+addOption(document.drop_list.SubCat,"Chapeltique", "Chapeltique");
+addOption(document.drop_list.SubCat,"Chinameca", "Chinameca");
+addOption(document.drop_list.SubCat,"Chirilagua", "Chirilagua");
+addOption(document.drop_list.SubCat,"Ciudad Barrios", "Ciudad Barrios");
+addOption(document.drop_list.SubCat,"Comacarán", "Comacarán");
+addOption(document.drop_list.SubCat,"El Tránsito", "El Tránsito");
+addOption(document.drop_list.SubCat,"Lolotique", "Lolotique");
+addOption(document.drop_list.SubCat,"Moncagua", "Moncagua");
+addOption(document.drop_list.SubCat,"Nueva Guadalupe", "Nueva Guadalupe");
+addOption(document.drop_list.SubCat,"Nuevo Edén de San Juan", "Nuevo Edén de San Juan");
+addOption(document.drop_list.SubCat,"Quelepa", "Quelepa");
+addOption(document.drop_list.SubCat,"San Antonio", "San Antonio");
+addOption(document.drop_list.SubCat,"San Gerardo", "San Gerardo");
+addOption(document.drop_list.SubCat,"San Jorge", "San Jorge");
+addOption(document.drop_list.SubCat,"San Luis de la Reina", "San Luis de la Reina");
+addOption(document.drop_list.SubCat,"San Miguel", "San Miguel");
+addOption(document.drop_list.SubCat,"San Rafael", "San Rafael");
+addOption(document.drop_list.SubCat,"Sesori", "Sesori");
+addOption(document.drop_list.SubCat,"Uluazapa", "Uluazapa");
+}
+if(document.drop_list.Category.value == "San Salvador"){
+addOption(document.drop_list.SubCat,"Aguilares", "Aguilares");
+addOption(document.drop_list.SubCat,"Apopa", "Apopa");
+addOption(document.drop_list.SubCat,"Ayutuxtepeque", "Ayutuxtepeque");
+addOption(document.drop_list.SubCat,"Cuscatancingo", "Cuscatancingo");
+addOption(document.drop_list.SubCat,"Delgado", "Delgado");
+addOption(document.drop_list.SubCat,"El Paisnal", "El Paisnal");
+addOption(document.drop_list.SubCat,"Guazapa", "Guazapa");
+addOption(document.drop_list.SubCat,"Ilopango", "Ilopango");
+addOption(document.drop_list.SubCat,"Mejicanos", "Mejicanos");
+addOption(document.drop_list.SubCat,"Nejapa", "Nejapa");
+addOption(document.drop_list.SubCat,"Panchimalco", "Panchimalco");
+addOption(document.drop_list.SubCat,"Rosario de Mora", "Rosario de Mora");
+addOption(document.drop_list.SubCat,"San Marcos", "San Marcos");
+addOption(document.drop_list.SubCat,"San Martín", "San Martín");
+addOption(document.drop_list.SubCat,"San Salvador", "San Salvador");
+addOption(document.drop_list.SubCat,"Santiago Texacuangos", "Santiago Texacuangos");
+addOption(document.drop_list.SubCat,"Santo Tomás", "Santo Tomás");
+addOption(document.drop_list.SubCat,"Soyapango", "Soyapango");
+addOption(document.drop_list.SubCat,"Tonacatepeque", "Tonacatepeque");
+}
+if(document.drop_list.Category.value == "San Vicente"){
+addOption(document.drop_list.SubCat,"Apastepeque", "Apastepeque");
+addOption(document.drop_list.SubCat,"Guadalupe", "Guadalupe");
+addOption(document.drop_list.SubCat,"San Cayetano Istepeque", "San Cayetano Istepeque");
+addOption(document.drop_list.SubCat,"San Esteban Catarina", "San Esteban Catarina");
+addOption(document.drop_list.SubCat,"San Ildefonso", "San Ildefonso");
+addOption(document.drop_list.SubCat,"San Lorenzo", "San Lorenzo");
+addOption(document.drop_list.SubCat,"San Sebastián", "San Sebastián");
+addOption(document.drop_list.SubCat,"Santa Clara", "Santa Clara");
+addOption(document.drop_list.SubCat,"Santo Domingo", "Santo Domingo");
+addOption(document.drop_list.SubCat,"San Vicente", "San Vicente");
+addOption(document.drop_list.SubCat,"Tecoluca", "Tecoluca");
+addOption(document.drop_list.SubCat,"Tepetitán", "Tepetitán");
+addOption(document.drop_list.SubCat,"Verapaz", "Verapaz");
+}
+if(document.drop_list.Category.value == "Santa Ana"){
+addOption(document.drop_list.SubCat,"Candelaria de la Frontera", "Candelaria de la Frontera");
+addOption(document.drop_list.SubCat,"Chalchuapa", "Chalchuapa");
+addOption(document.drop_list.SubCat,"Coatepeque", "Coatepeque");
+addOption(document.drop_list.SubCat,"El Congo", "El Congo");
+addOption(document.drop_list.SubCat,"El Porvenir", "El Porvenir");
+addOption(document.drop_list.SubCat,"Masahuat", "Masahuat");
+addOption(document.drop_list.SubCat,"Metapán", "Metapán");
+addOption(document.drop_list.SubCat,"San Antonio Pajonal", "San Antonio Pajonal");
+addOption(document.drop_list.SubCat,"San Sebastián Salitrillo", "San Sebastián Salitrillo");
+addOption(document.drop_list.SubCat,"Santa Ana", "Santa Ana");
+addOption(document.drop_list.SubCat,"Santa Rosa Guachipilín", "Santa Rosa Guachipilín");
+addOption(document.drop_list.SubCat,"Santiago de la Frontera", "Santiago de la Frontera");
+addOption(document.drop_list.SubCat,"Texistepeque", "Texistepeque");
+}
+if(document.drop_list.Category.value == "Sonsonate"){
+addOption(document.drop_list.SubCat,"Acajutla", "Acajutla");
+addOption(document.drop_list.SubCat,"Armenia", "Armenia");
+addOption(document.drop_list.SubCat,"Caluco", "Caluco");
+addOption(document.drop_list.SubCat,"Cuisnahuat", "Cuisnahuat");
+addOption(document.drop_list.SubCat,"Izalco", "Izalco");
+addOption(document.drop_list.SubCat,"Juayúa", "Juayúa");
+addOption(document.drop_list.SubCat,"Nahuizalco", "Nahuizalco");
+addOption(document.drop_list.SubCat,"Nahulingo", "Nahulingo");
+addOption(document.drop_list.SubCat,"Salcoatitán", "Salcoatitán");
+addOption(document.drop_list.SubCat,"San Antonio del Monte", "San Antonio del Monte");
+addOption(document.drop_list.SubCat,"San Julián", "San Julián");
+addOption(document.drop_list.SubCat,"Santa Catarina Masahuat", "Santa Catarina Masahuat");
+addOption(document.drop_list.SubCat,"Santa Isabel Ishuatán", "Santa Isabel Ishuatán");
+addOption(document.drop_list.SubCat,"Santo Domingo", "Santo Domingo");
+addOption(document.drop_list.SubCat,"Sonsonate", "Sonsonate");
+addOption(document.drop_list.SubCat,"Sonzacate", "Sonzacate");
+}
+if(document.drop_list.Category.value == "Usulután"){
+addOption(document.drop_list.SubCat,"Alegría", "Alegría");
+addOption(document.drop_list.SubCat,"Berlín", "Berlín");
+addOption(document.drop_list.SubCat,"California", "California");
+addOption(document.drop_list.SubCat,"Concepción Batres", "Concepción Batres");
+addOption(document.drop_list.SubCat,"El Triunfo", "El Triunfo");
+addOption(document.drop_list.SubCat,"Ereguayquín", "Ereguayquín");
+addOption(document.drop_list.SubCat,"Estanzuelas", "Estanzuelas");
+addOption(document.drop_list.SubCat,"Jiquilisco", "Jiquilisco");
+addOption(document.drop_list.SubCat,"Jucuapa", "Jucuapa");
+addOption(document.drop_list.SubCat,"Jucuarán", "Jucuarán");
+addOption(document.drop_list.SubCat,"Mercedes Umaña", "Mercedes Umaña");
+addOption(document.drop_list.SubCat,"Nueva Granada", "Nueva Granada");
+addOption(document.drop_list.SubCat,"Ozatlán", "Ozatlán");
+addOption(document.drop_list.SubCat,"Puerto El Triunfo", "Puerto El Triunfo");
+addOption(document.drop_list.SubCat,"San Agustín", "San Agustín");
+addOption(document.drop_list.SubCat,"San Buenaventura", "San Buenaventura");
+addOption(document.drop_list.SubCat,"San Dionisio", "San Dionisio");
+addOption(document.drop_list.SubCat,"San Francisco Javier", "San Francisco Javier");
+addOption(document.drop_list.SubCat,"Santa Elena", "Santa Elena");
+addOption(document.drop_list.SubCat,"Santa María", "Santa María");
+addOption(document.drop_list.SubCat,"Santiago de María", "Santiago de María");
+addOption(document.drop_list.SubCat,"Tecapán", "Tecapán");
+addOption(document.drop_list.SubCat,"Usulután", "Usulután");
+}
+// check if both select are valid
+copy_dom();
+}
+////////////////// 
+
+function removeAllOptions(selectbox)
+{
+	var i;
+	for(i=selectbox.options.length-1;i>=0;i--)
+	{
+		//selectbox.options.remove(i);
+		selectbox.remove(i);
+	}
+}
+
+
+function addOption(selectbox, value, text )
+{
+	var optn = document.createElement("OPTION");
+	optn.text = text;
+	optn.value = value;
+
+	selectbox.options.add(optn);
+}
+
+  function dispHandle(obj) {
+	if (obj.style.display == "none")
+		obj.style.display = "";
+	else
+		obj.style.display = "none";
+  }
+  
+  function copy_dom(){
+	  if(document.drop_list.Category.selectedIndex != 0 && document.drop_list.SubCat.selectedIndex != 0){
+		  document.drop_list.domicilio.value = 
+		  document.drop_list.Category.options[document.drop_list.Category.selectedIndex].value 
+		  + ", " + 
+		  document.drop_list.SubCat.options[document.drop_list.SubCat.selectedIndex].value
+		  } else {
+			document.drop_list.domicilio.value = '';  
+		  }
+	  }
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body onload="fillCategory();">
+<FORM name="drop_list" action="yourpage.php" method="POST" >
+<input name="domicilio" type="text" id="domicilio" value="" size="75" readonly="readonly"/>		
+<br />
+<a href="javascript:dispHandle(vanisher)">Hide/Show</a>
+<div id=vanisher  style="display:none;">
+<SELECT  NAME="Category" onChange="SelectSubCat();" >
+<Option value="">--DEPARTAMENTO--</option>
+</SELECT>&nbsp;
+<SELECT id="SubCat" NAME="SubCat" onchange="copy_dom();">
+<Option value="">--MUNICIPIO--</option>
+</SELECT>
+</div>
+
+
+</form>
+</body>
+</html>

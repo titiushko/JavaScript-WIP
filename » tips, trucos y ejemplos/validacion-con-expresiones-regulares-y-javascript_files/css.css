@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Molengo';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Molengo'), url('http://themes.googleusercontent.com/font?kit=95sXIHqogzr_KwuabLimZA') format('truetype');
+}
+@font-face {
+  font-family: 'Droid Serif';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Droid Serif'), local('DroidSerif'), url('http://themes.googleusercontent.com/font?kit=0AKsP294HTD-nvJgucYTaJ0EAVxt0G0biEntp43Qt6E') format('truetype');
+}

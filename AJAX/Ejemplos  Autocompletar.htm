@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="es"><head>
+
+<!-- 
+
+
+
+Este contenido es de libre uso y modificación bajo la siguiente licencia: http://creativecommons.org/licenses/by-nc-sa/2.5/deed.es
+
+Sobre el reconocimiento:
+Todos los códigos han sido realizados con la idea de que sirvan para colaborar con el aprendizage de aquellos que se están introduciendo
+en estas tecnologías y no con el objetivo de que sean utilizados directamente en sitios web. No obstante si utilizas algún código en tu sitio 
+(ya sea sin modificar o modificado), o si ofreces los fuentes para descargar o si bien decides publicar alguno de los artículos debes cumplir con:
+-Colocar un link a http://www.formatoweb.com.ar/ajax/ visible por tus usuarios como forma de mención a la fuente original del contenido.
+-Si publicas los fuentes para descargar este texto no debe ser eliminado ni alterado.
+
+Más ejemplos y material sobre AJAX en: http://www.formatoweb.com.ar/ajax/
+Cualquier sugerencia, crítica o comentario son bienvenidos.
+
+
+
+-->
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>AJAX, Ejemplos: Autocompletar (suggest), codigo fuente - ejemplo</title>
+<meta name="keywords" content="ajax, ejemplo, ejemplos, formulario, contacto, xmlhttprequest, validacion, validar, codigo fuente, web 2.0, demo, demos">
+<meta name="description" content="Autocompletar (suggest) con AJAX - ejemplo practico">
+<script type="text/javascript" src="Ejemplos%20%20Autocompletar_files/procesos_comunes.js"></script>
+<script type="text/javascript" src="Ejemplos%20%20Autocompletar_files/index.js"></script>
+<link rel="STYLESHEET" type="text/css" href="Ejemplos%20%20Autocompletar_files/estilos_comunes.css">
+<link rel="STYLESHEET" type="text/css" href="Ejemplos%20%20Autocompletar_files/index.css">
+</head><body onload="asignaVariables();">
+<div id="contenedor">
+	<script src="Ejemplos%20%20Autocompletar_files/urchin.htm" type="text/javascript"></script>
+	<script type="text/javascript">
+		_uacct = "UA-631103-1";
+		urchinTracker();
+	</script>
+	<div id="header">
+		<div id="ejemplos">
+			<h2><span>Ejemplos de AJAX</span></h2>
+			<ul>
+				<li><a href="http://www.formatoweb.com.ar/ajax/">Autocompletador (suggest)</a></li>
+				<li><a href="http://www.formatoweb.com.ar/ajax/select_dependientes.php">SELECT dependientes en 2 niveles</a></li>
+				<li><a href="http://www.formatoweb.com.ar/ajax/select_dependientes_3_niveles.php">SELECT dependientes en 3 niveles</a></li>
+				<li><a href="http://www.formatoweb.com.ar/ajax/ingreso_sin_recargar.php">Ingreso a base de datos sin recargar</a></li>
+				<li><a href="http://www.formatoweb.com.ar/ajax/comprobar_disponibilidad_de_apodo.php">Comprobar la disponibilidad de un apodo</a></li>
+				<li>
+					<a href="http://www.formatoweb.com.ar/ajax/ejemplo_basico_xmlhttprequest_post.php">Ejemplo de 40 líneas para principiantes</a>
+				</li>
+				<li><a href="http://www.formatoweb.com.ar/ajax/formulario_de_contacto_en_ajax.php">Formulario de contacto en AJAX con validación cliente y
+				servidor</a></li>
+				<li><a href="http://www.formatoweb.com.ar/ajax/tabs_o_pestanas_con_javascript_no_intrusivo.php">Tabs o pestañas con base de datos
+				</a></li>
+				<li><a href="http://www.formatoweb.com.ar/blog/2007/08/20/clase-para-generar-automaticamente-select-combos-dependientes-multinivel/">
+				Clase en PHP5 para generar Select dependientes automáticamente</a> <img src="Ejemplos%20%20Autocompletar_files/new2.gif" alt="Nuevo"></li>
+			</ul>
+		</div>
+		<div id="articulos">
+			<h2><span>Artículos y tutoriales</span></h2>
+			<ul>
+				<li>
+					<s>Solución para el botón atrás y el bookmarking</s>
+				</li>
+				<li><a href="http://www.formatoweb.com.ar/ajax/cache_y_refresco_de_datos.php">Solución para el problema de cache en IE</a></li>
+				<li>
+					<a href="http://www.formatoweb.com.ar/ajax/ejecutar_codigo_javascript_css_cargado_ajax.php">Ejecutar JavaScript y CSS cargado/añadido 
+					con AJAX</a>
+				</li>
+			</ul>
+		</div>
+	</div>	
+	<div id="cuerpo">
+		
+		<div id="contenido">
+			<h1><span>Autocompletar (suggest) con AJAX - ejemplo práctico</span></h1>
+			
+			<p>Para obtener los códigos clickeá <a href="http://www.formatoweb.com.ar/ajax/download/3.zip">aquí</a> y no olvides revisar a nuestros anunciantes :)</p>
+			
+			<h2><span>Instrucciones</span></h2>
+			<p>
+				En el input de la izquierda se pueden agregar palabras a la base de 
+datos del autocompletador. Escribir alguna y presionar el 
+				botón "Ingresar" y esperar el mensaje de confirmación.
+				<br>
+				En el input derecho al escribir dos letras o más (no buscará 
+sugerencias al tipear sólo una letra) se desplegará una 
+				lista con 20 sugerencias (o menos, dependiendo de la cantidad de 
+coincidencias en BD) para completarla. Se puede navegar por el listado 
+con el mouse 
+				o con las flechas abajo/arriba del teclado y clickear o presionar 
+enter en cualquier sugerencia.		
+			</p>
+			
+			<div id="demo">
+				<div id="demoDer">
+					<input value="google" id="input_2" class="input" onfocus="if(document.getElementById('lista').childNodes[0]!=null &amp;&amp; this.value!='') { filtraLista(this.value); formateaLista(this.value); 
+						reiniciaSeleccion(); document.getElementById('lista').style.display='block'; }" onblur="if(v==1) document.getElementById('lista').style.display='none';" onkeyup="if(navegaTeclado(event)==1) {
+						clearTimeout(ultimoIdentificador); 
+						ultimoIdentificador=setTimeout('rellenaLista()', 1000); }" type="text">
+					<div style="display: none;" id="lista" onmouseout="v=1;" onmouseover="v=0;"><div class="resaltado" id="1" onclick="clickLista(this);" onmouseover="mouseDentro(this);"><b>google</b></div></div>
+				</div>
+				<div id="demoIzq">
+					<input id="input_1" class="input" type="text">
+					<button type="button" class="boton" id="boton_1" onclick="nuevoDato();">Ingresar</button>
+				</div>
+				<div class="mensaje" id="error">Hay demasiados registros en la Base de Datos</div>
+			</div>
+			
+			<h2><span>Funcionamiento</span></h2>
+			<p>Se trata de un script que no accede a la BD con cada tecla 
+presionada. Solo accede cuando lo cree necesario siguiendo las pautas 
+siguientes:</p>
+			<ul>
+				<li>
+					Si se agrega un nuevo caracter al input, se determina si la 
+anterior busqueda arrojó resultados que no se pudieron mostrar debido al
+					límite existente de cantidad de coindidencias a mostrar. En ese 
+caso, con la nueva búsqueda se regresará a la BD y se 
+					traerá esos nuevos resultados. En caso contrario, no se regresa a 
+BD y se filtran los elementos de la lista puramente desde JavaScript 
+					(eliminando sugerencias no coincidentes y resaltando con negrita 
+las palabras).
+				</li>
+				<li>
+					Si se borra un caracter, se determina cual fue la última cadena que
+ devolvió resultados nulos. Si esa cadena es igual a las 
+					primeras letras de la cadena actual, se sabe de antemano que no 
+habrá resultados, por lo que no se accede a ella.
+				</li>
+			</ul>
+			
+			<p>Para obtener los códigos cliqueá <a href="http://www.formatoweb.com.ar/ajax/download/3.zip">aquí</a>.</p> 
+			
+			
+			<h2><span>Actualización</span></h2>
+			<p>Este código fuente queda pendiente de actualización debido a su complejidad y el poco tiempo del que dispongo. De todas
+			formas he añadido algunos comentarios entre líneas para hacer más ameno su estudio.</p>
+		</div>
+	</div>
+	
+	<div id="footer">
+		<p><strong>18/05/2009</strong> - Añadido ejemplo de formulario de contacto en AJAX</p>
+		<p>
+			Sitios amigos: <a href="http://www.cabezaderaton.com.ar/blog">Cabeza de ratón</a> |
+			<a href="http://www.clubdesarrolladores.com/">Club Desarrolladores</a> | 
+			<a href="http://es.r4-revolution.com/">R4 Revolution (R4DS)</a> |
+			<a href="http://www.aquiloencuentras.com.ar/">Aquí lo encuentas</a>
+		</p>
+		<p>Comentarios, sugerencias: edanps@gmail.com | <a href="http://www.formatoweb.com.ar/ajax/privacidad.php" target="_blank">Política de privacidad</a></p>
+	</div></div>
+</body></html>

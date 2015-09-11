@@ -1,0 +1,26 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<title></title>
+<script type="text/javascript">
+<!--
+function validatePass(campo) {
+    var RegExPattern = /(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,10})$/;
+    var errorMessage = 'Password Incorrecta.';
+    if ((campo.value.match(RegExPattern)) && (campo.value!='')) {
+        alert('Password Correcta'); 
+    } else {
+        alert(errorMessage);
+        campo.focus();
+    } 
+}
+//-->
+</script>
+</head><body>
+<form action="#" method="post">
+<p><input name="date" onblur="validatePass(this);" type="text">
+  <input name="button" value="Probar" type="button">
+  <br>
+  Entre 8 y 10 caracteres, por lo menos un digito y un alfanumérico, y no  puede contener caracteres espaciales
+
+</p></form></body></html>

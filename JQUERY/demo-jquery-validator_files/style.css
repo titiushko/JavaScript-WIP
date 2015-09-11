@@ -1,0 +1,163 @@
+*{ padding:0; margin:0 }
+p{ margin-bottom: 10px; }
+h1{
+	font-size: 1.6em;
+	line-height: 28px;
+	font-weight: bold;
+}
+h2{
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-size: 1.4em;
+}
+label{
+	font-weight: bold;
+}
+label span{
+	font-weight: normal;
+	font-size: 10px;
+	position:relative;
+	top:-5px
+}
+textarea{
+	width:500px;
+	height: 28px;
+	border:1px solid #ccc;
+	padding: 5px;
+	overflow:hidden;
+	font-size: 12px;
+	line-height: 14px;
+	resize:none;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+body{
+	font-family: Verdana, Arial,sans-serif;
+	font-size: 14px;
+	line-height: 22px;
+	background: #2C3643;
+}
+body.small{
+	font-size: 12px;
+	line-height: 20px;
+}
+body.medium{
+	font-size: 14px;
+	line-height: 22px;
+}
+body.large{
+	font-size: 16px;
+	line-height: 24px;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#header{
+	background: #9b0103;
+	color: #fff;
+}
+body.red #header{background:#9b0103;}
+body.blue #header{background:#55ABD2;}
+body.orange #header{background:#EC5519;}
+body.green #header{background:#647420;}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#content{
+	background: #fff;
+	padding: 20px 0 15px;
+}
+#content #main{
+	float:left;
+	width: 600px;
+}
+#content #sidebar{
+	float:right;
+	width: 320px;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#footer{
+	padding: 15px 0 70px;
+	color: #fff;
+	font-size: .8em;
+}
+#footer a, #footer a:link, #footer a:visited {
+	color:#9b0103;
+	font-weight:bold;
+	text-decoration:underline;
+}
+body.red #footer a{color:#9b0103;}
+body.blue #footer a{color:#55ABD2;}
+body.orange #footer a{color:#EC5519;}
+body.green #footer a{color:#647420;}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.content{
+	margin: 0 auto;
+	width:960px;
+}
+.block{
+	rgin: 10px 0;
+}
+.elementoVacio{
+	border: 2px solid #f00;
+	background: #f99;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#title{
+	padding-top: 32px;
+	padding-bottom: 5px;
+}
+#title a, #title a:link, #title a:visited {
+	color:#FFFFFF;
+	text-decoration:none;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#sidebar ul{
+	padding: 6px 0 20px;
+	clear:both;
+}
+#sidebar ul li{
+	padding: 3px 0 3px 14px;
+	list-style-type: none;
+}
+#sidebar a{
+	text-decoration: none;
+	color: #9b0103;
+}
+body.red #sidebar a{color:#9b0103;}
+body.blue #sidebar a{color:#55ABD2;}
+body.orange #sidebar a{color:#EC5519;}
+body.green #sidebar a{color:#647420;}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+ul.selector li{
+	float:left;
+}
+ul.selector a{
+	text-decoration: none;
+	font-weight: bold;
+}
+li.selected a{
+	border-bottom-size: 2px;
+	border-bottom-style: solid;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* Size */
+ul#size-selector a.small{
+	font-size: .8em;
+}
+ul#size-selector a.medium{
+	font-size: 1em;
+}
+ul#size-selector a.large{
+	font-size: 1.2em;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* Color */
+ul#color-selector li a.red{
+	color: #9b0103;
+}
+ul#color-selector a.blue{
+color: #55ABD2;
+}
+ul#color-selector a.orange{
+	color: #EC5519;
+}
+ul#color-selector a.green{
+	color: #647420;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

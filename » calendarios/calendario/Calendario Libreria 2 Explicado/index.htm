@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Calendario en javascript accesible y no intrusivo</title>
+<meta name="keywords" content="Niquelao, javascript no intrusivo, Accesibilidad, estandares, script, usabilidad, buenas practicas,editores de contenido,formulario usable, marcado correcto y accesible" />
+<link href="estilos.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="acc_calendar/acc_calendar.js"></script>
+</head>
+<body>
+<h1>Ejemplo</h1>
+<div class="ejemplo">
+<div>
+<p>
+  <label for="fecha1"><span>Fecha futura, en formato <abbr title="día / mes con dos dígitos / año">d/mm/yyyy</abbr>, de este año (<code>class="fecha post"</code>) </span><input class="fecha post" type="text" id="fecha1" name="fecha1" value="" /></label></p>
+<pre>&lt;input class="fecha post" type="text"
+     id="fecha1" name="fecha1" value="" /&gt;</pre>
+</div>
+<div>
+<p><label for="fecha2"><span>Fecha futura, en formato <abbr title="día / mes con dos dígitos / año">d/mm/yyyy,</abbr> de este año sin incluir hoy (<code>class="fecha post todnact"</code>)</span><input class="fecha post todnact" type="text" id="fecha2" name="fecha2" value="" /></label></p>
+<pre>&lt;input class="fecha post todnact" type="text"
+     id="fecha2" name="fecha2" value="" /&gt;</pre>
+</div>
+<div>
+<p><label for="fecha3"><span>Fecha de nacimiento, en formato <abbr title="día / mes con dos dígitos / año">d/mm/yyyy,</abbr> hasta 100 años (<code>class="fecha prev rang100"</code>)</span><input class="fecha prev rang100" type="text" id="fecha3" name="fecha3" value="" /></label></p>
+<pre>&lt;input class="fecha prev rang100" type="text"
+     id="fecha3" name="fecha3" value="" /&gt;</pre>
+</div>
+<div>
+<p><label for="fecha4"><span>fecha de los próximos 20 años, en formato <abbr title="día / mes con dos dígitos / año">d/mm/yyyy,</abbr> sin incluir hoy (<code>class="fecha post rang20 todnact"</code>)</span><input class="fecha post rang20 todnact" type="text" id="fecha4" name="fecha4" value="" /></label></p>
+<pre>&lt;input class="fecha post rang20 todnact" type="text"
+     id="fecha4" name="fecha4" value="" /&gt;</pre>
+</div>
+<div>
+<p><label for="fecha5"><span>Fecha de los últimos 15 años, en formato <abbr title="día / mes con dos dígitos / año">d/mm/y</abbr> (<code>class="fecha prev rang15"</code>)</span><input class="fecha prev rang15" type="text" id="fecha5" name="fecha5" value="" /></label></p>
+<pre>&lt;input class="fecha prev rang15" type="text"
+     id="fecha5" name="fecha5" value="" /&gt;</pre>
+</div>
+<div>
+<p><label for="fecha6"><span>Fecha 10 años hacia atrás y hacia delante, en formato <abbr title="día / mes con dos dígitos / año">d/mm/y</abbr> (<code>class="fecha rang10"</code>)</span><input class="fecha rang10" type="text" id="fecha6" name="fecha6" value="" /></label></p>
+<pre>&lt;input class="fecha rang10" type="text"
+     id="fecha6" name="fecha6" value="" /&gt;</pre>
+</div>
+</div>
+<h1>Segundo ejemplo</h1>
+<div class="ejemplo">
+<div>
+<p>Fecha de los próximos 10 años en formato día, mes, año: <span class="grupo"><label for="dia"><span class="nota">Día</span><input class="fechaA day post rang10" maxlength="2" type="text" id="dia" name="dia" value="" /></label> / <label for="mes"><span class="nota">Mes</span><input class="fechaA month" maxlength="2" type="text" id="mes" name="mes" value="" /></label> / <label for="year"><span class="nota">Año</span><input class="fechaA year" maxlength="4" type="text" id="year" name="year" value="" /></label></span></p>
+<pre>&lt;input class=&quot;fechaA day post rang10&quot;
+     maxlength=&quot;2&quot; type=&quot;text&quot; id=&quot;dia&quot; name=&quot;dia&quot; value=&quot;&quot; /&gt;
+&lt;input class=&quot;fechaA month&quot;
+     maxlength=&quot;2&quot; type=&quot;text&quot; id=&quot;mes&quot; name=&quot;mes&quot; value=&quot;&quot; /&gt;
+&lt;input class=&quot;fechaA year&quot;
+     maxlength=&quot;4&quot; type=&quot;text&quot; id=&quot;year&quot; name=&quot;year&quot; value=&quot;&quot; /&gt;</pre>
+</div>
+<div>
+<p>Fecha de los últimos 15 años en formato año, mes, día: <span class="grupo"><label for="otroyear"><span class="nota">Año</span><input class="fechaB year prev rang15" maxlength="4" type="text" id="otroyear" name="otroyear" value="" /></label> / <label for="otromes"><span class="nota">Mes</span><input class="fechaB month" maxlength="2" type="text" id="otromes" name="otromes" value="" /></label> / <label for="otrodia"><span class="nota">Día</span><input class="fechaB day" maxlength="2" type="text" id="otrodia" name="otrodia" value="" /></label></span></p>
+<pre>&lt;input class=&quot;fechaB year prev rang15&quot;
+     maxlength=&quot;4&quot; type=&quot;text&quot; id=&quot;otroyear&quot; name=&quot;otroyear&quot; value=&quot;&quot; /&gt;
+&lt;input class=&quot;fechaB month&quot;
+     maxlength=&quot;2&quot; type=&quot;text&quot; id=&quot;otromes&quot; name=&quot;otromes&quot; value=&quot;&quot; /&gt;
+&lt;input class=&quot;fechaB day&quot;
+     maxlength=&quot;2&quot; type=&quot;text&quot; id=&quot;otrodia&quot; name=&quot;otrodia&quot; value=&quot;&quot; /&gt;</pre>
+</div>
+</div>
+<h1>Tercer ejemplo</h1>
+<div class="ejemplo">
+<div>
+<p>Fecha de este año (el calendario permitirá la elección exclusiva de días disponibles gracias a la clase "disp"): <span class="grupo"><label for="dian"><span class="nota">Día</span><input class="fechaN day disp" maxlength="2" type="text" id="dian" name="dian" value="" /></label> / <label for="mesn"><span class="nota">Mes</span><input class="fechaN month" maxlength="2" type="text" id="mesn" name="mesn" value="" /></label> / <label for="yearn"><span class="nota">Año</span><input class="fechaN year" maxlength="4" type="text" id="yearn" name="yearn" value="" /></label></span></p>
+<pre>&lt;input class=&quot;fechaN day disp&quot;
+     maxlength=&quot;2&quot; type=&quot;text&quot; id=&quot;dian&quot; name=&quot;dian&quot; value=&quot;&quot; /&gt;
+&lt;input class=&quot;fechaN month&quot;
+     maxlength=&quot;2&quot; type=&quot;text&quot; id=&quot;mesn&quot; name=&quot;mesn&quot; value=&quot;&quot; /&gt;
+&lt;input class=&quot;fechaN year&quot;
+     maxlength=&quot;4&quot; type=&quot;text&quot; id=&quot;yearn&quot; name=&quot;yearn&quot; value=&quot;&quot; /&gt;</pre>
+<p>Este ejemplo no desplegará el calendario, al requerir AJAX. Se incluye para mostrar cual es el marcado a emplear.</p>
+</div>
+</div>
+<h1>Cuarto ejemplo</h1>
+<div class="ejemplo">
+<div>
+<p><label for="fechaj"><span>Fecha futura, en formato <abbr title="día / mes con dos dígitos / año">d/mm/yyyy,</abbr> de este año (<code>class="fecha post"</code>) </span><span id="nombre_dia_fechaj"></span><input class="fecha post" type="text" id="fechaj" name="fechaj" value="" /></label></p>
+<pre>&lt;span id="nombre_dia_fechaj"&gt;&lt;/span&gt;
+&lt;input class="fecha post" type="text"
+     id="fechaj" name="fechaj" value="" /&gt;</pre>
+</div>
+</div>
+</body>
+</html>

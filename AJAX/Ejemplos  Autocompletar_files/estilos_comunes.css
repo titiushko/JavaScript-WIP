@@ -1,0 +1,115 @@
+#avisoTemp
+{
+	background-color: #FFFFCA; color: #AEAE00; 
+	border:1px solid #AEAE00;
+	text-align:center;
+	padding:12px 10px 12px 10px;
+	font-size:11px;
+	line-height:16px;
+	margin-top:15px;
+}
+
+a:link, a:visited, a:active, a:hover { text-decoration:none; color:#000000; border-bottom:1px dashed; }
+
+*
+{
+	margin:0;
+	padding:0;
+}
+
+button { height:21px; font-family:Verdana; font-size:11px; }
+
+#contenedor
+{
+	width:760px;
+	margin:auto;
+	font-family:Verdana;
+	font-size:13px;
+}
+
+#header
+{
+	border:1px solid;
+	width:100%;
+	overflow:auto;
+	padding:15px 0 0 0;
+	margin:15px 0 15px 0;
+	line-height:26px;
+}
+
+#header h2
+{
+	font-size:22px;
+	font-variant:small-caps;
+	margin-left:36px;
+}
+
+#header ul
+{
+	padding:12px 0 5px 55px;
+	list-style-type:disc;
+}
+
+#ejemplos
+{
+	float:left;
+	width:49%;
+}
+
+#articulos
+{
+	float:right;
+	width:49%;
+}
+
+#aviso
+{
+	background-color:#FFF4F0; color:#FF0000; 
+	border:1px solid #FF0000;
+	text-align:center;
+	padding:12px 10px 12px 10px;
+	font-size:11px;
+	line-height:16px;
+}
+
+#cuerpo
+{
+	margin: 30px 0px 20px 0px;
+	width:100%;
+	overflow:auto;
+}
+
+#publicidad
+{
+	margin:0 0 15px 20px;
+	float:right;
+	width:120px;
+}
+
+#footer
+{
+	border:1px solid;
+	width:740px;
+	text-align:center;
+	padding:12px 10px 15px 10px;
+	line-height:28px;
+	margin-bottom:15px;
+}
+
+#demo { width:600px; position:relative; }
+
+#contenido h1 { font-size:24px; margin-bottom:35px; }
+
+#contenido h2 { font-size:16px; }
+
+#contenido p, ul, #demo { margin-bottom:20px; }
+
+#contenido p, #contenido ul { line-height:18px; }
+
+#contenido ul { padding-left:25px; }
+
+.mensaje { color:#FF0000; text-align:center; }
+
+.linkDescarga { background-color:#FDE7D2; border:1px solid #CEFA71; text-align:center; padding:15px 0 15px 0; text-decoration:blink; }
+
+.code { background-color:#EAEAEA; font-family:Courier New; }

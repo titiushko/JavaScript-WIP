@@ -1,0 +1,41 @@
+/*	Desarrollado por Jesus Liñán
+	webmaster@ribosomatic.com
+	www.ribosomatic.com
+	Puedes hacer lo que quieras con el código
+	pero visita la web cuando te acuerdes
+*/
+
+#botones {
+	width: 400px;
+	padding-top:2px;
+	padding-bottom:2px;
+	z-index: 0;
+}
+#botones a{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	text-decoration:none;
+	cursor:pointer;
+	/*Superponemos los botones para 
+	eliminar el border inferior - only IE (como siempre!!)*/
+	position:relative;
+	z-index: 1;
+}
+#botones a:hover{
+	color:#FF0000;
+}
+
+#contenido {
+	/*Ancho y Alto del contenedor*/
+	width: 400px;
+	height:200px;
+	background-color:#FFCCCC;
+	border-top:1px #FF9900 solid;
+	padding:5px;
+}
+#contenido p{
+	color:#3366FF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+

@@ -1,0 +1,127 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<style>
+			#text_oculto{
+				overflow-y: hidden;
+				position: absolute;
+				top: 0pt;
+				left: -9999px;
+				height: 55px;
+				width: 168px;
+				line-height: 16px;
+				text-decoration: none;
+				letter-spacing: normal;
+				font-size: 13px;
+				font-family: monospace;
+			}
+		</style>
+	</head>
+	<body>
+			<div class="content-wrap">
+			<h1>
+				DEMO 20100208 Cambiar la altura de textareas automáticamente con Prototype
+			</h1>
+			<p>
+				<script src="prototype.js" type="text/javascript"></script>
+			</p>
+			<h1 id="ejemplo1">Ejemplo 1</h1>
+			<p>El siguiente textarea se adapta al contenido. Inténtalo escribiendo algunas lineas.</p>
+			<p>&nbsp;</p>
+			<p>
+				<textarea tabindex="-1" name="" id="text_oculto"></textarea>
+				<textarea style="overflow-y: hidden; height: 75px;" id="texto"></textarea>
+			</p>
+			<p>
+			<script type="text/javascript">
+				// <![CDATA[
+				/* Código original Copyright (c) 2010 James Padolsey
+				* Adaptación a Prototype por Henning Kiel
+				* -------------------------------------------------------
+				* Dual licensed under the MIT and GPL licenses.
+				*    - http://www.opensource.org/licenses/mit-license.php
+				*    - http://www.gnu.org/copyleft/gpl.html
+				*/
+				// autodimensionaTextarea convierte el textarea con el ID pasado en un textarea que adapta su altura automáticamente al contenido.
+				// El parámetro opcional maxAltura define la altura máxima que el textarea puede tener. A partir de esta altura se usarán barras de desplazamiento.
+				// El parámetro opcional espacioAdicional define cuanto espacio vacío queremos mostrar abajo de la última linea del contenido del textarea.
+				var autodimensionaTextarea = function(textarea, maxAltura, espacioAdicional){
+					maxAltura = maxAltura || 1000;
+					espacioAdicional = espacioAdicional || 20;
+
+				// Obtenemos el objeto del textarea y desactivamos el scroll vertical y redimensionarlo manualmente (sólo Webkit)
+					var ta = $(textarea);
+					ta.setStyle({resize:'none','overflowY':'hidden'});
+
+				// Guardamos la altura original. Luego la usamos como altura mínima para el textarea.
+					var origAltura = ta.getHeight();
+
+				// Creamos un clon escondido del textarea. Con este clon averiguamos la altura que debería tener el textarea original.
+					var copia = (function(){
+				// props contiene propiedades de CSS que pueden influir el tamaño de texto.
+						var props = ['width', 'lineHeight', 'textDecoration', 'letterSpacing', 'fontSize', 'fontFamily'],
+						probOb = {position:'absolute', 'top':0, 'left':-9999, height:(origAltura + 'px')};
+				// Copiamos las propiedas para luego aplicarlo al clon. El método clone() que usamos para copiar el textarea
+				// no sirve para estas propiedades, ya que pueden resultar de reglas CSS según el ID del textarea original. Como
+				// cambiamos el ID del clon, estas reglas no tendrían efecto.
+						$A(props).each(function(prop){
+							probOb[prop] = ta.getStyle(prop);
+						});
+				// Creamos la copia, quitamos los atributos id y name (que tienen que ser únicos para no cambiar el comportamiento
+				// de la página) y aplicamos los estilos que pueden influir el tamaño del texto.
+						var clon = ta.clone();
+						clon.writeAttribute('id', "")
+						.writeAttribute('name', "")
+						.setStyle(probOb)
+						.writeAttribute('tabIndex', '-1');
+				// Insertamos la copia en la página
+						ta.insert({before:clon});
+						return clon;
+					})();
+
+					var ultimaAlturaContenido = origAltura;
+					var cambiaAltura = function(){
+				// El scrollTop de un elemento devuelve el número de pixeles que se ha desplazado usando la barra de desplazamiento vertical.
+				// scrollTop no puede ser mayor que la altura del contenido de un elemento. Si intentamos cambiarlo a un valor mayor
+				// que la altura del contenido, se cambia a la altura del contenido menos la altura del elemento.
+				// Este truco usamos aquí para averiguar la altura real del contenido del textarea, aplicando un valor demasiado
+				// alto al scrollTop y asi enforzar que sea exactamente la altura del contenido.
+						copia.setStyle({width:(ta.getWidth() + 'px')}) // Asegurar que el clon sigue teniendo el mismo ancho que el original
+						copia.setStyle({height:(origAltura + 'px')}); // Parece que en IE no se puede poner una altura de 0px
+						copia.setValue(ta.getValue());
+						copia.scrollTop = 10000;
+
+				// En caso que el contenido del textarea es menos alto que el textarea original, no lo redimensionamos a una altura menor, sino usamos la altura original.
+						var alturaContenido = Math.max(copia.scrollTop + origAltura + espacioAdicional, origAltura);
+
+						// Si no hay cambio de altura, no hacemos nada
+						if (ultimaAlturaContenido === alturaContenido){return;};
+						ultimaAlturaContenido = alturaContenido;
+
+				// Aquí definimos el máximo de la altura del textarea. Si la altura del contenido es mayor a 1000, usamos barras de desplazamiento.
+						if (alturaContenido >= maxAltura){
+							ta.setStyle({overflowY:''});
+							return;
+						}
+						ta.setStyle({overflowY:'hidden'});
+
+				// Finalmente podemos cambiar la altura del textarea.
+						ta.setStyle({height:alturaContenido});
+					};
+
+				// Para cada evento que puede significar un cambio de contenido del textarea llamamos a la función cambiaAltura para actualizar la altura.
+					$A(['keyup', 'keydown', 'change']).each(function(e){
+						ta.observe(e, cambiaAltura);
+					});
+
+				// Llamamos una vez manualmente la función cambiaAltura para que la altura se adapta al contenido que el textarea ya contiene
+					cambiaAltura();
+				};
+
+				autodimensionaTextarea('texto');
+				// ]]>
+			</script>
+			</p>
+		</div>
+	</body>
+</html>

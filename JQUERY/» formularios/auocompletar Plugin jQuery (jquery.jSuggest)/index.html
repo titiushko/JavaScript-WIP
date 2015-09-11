@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>jSuggest Demo 1.0</title>
+		<style>
+			#jSuggestContainer {
+			position:absolute;
+			font: 12px Tahoma;
+			border:1px solid #ffb931;
+			border-top:0;
+			background:#FFF;
+			}
+
+			.jSuggestLoading {
+			font-style:italic;
+			padding: 10px;
+			}
+
+			#jSuggestContainer ul, #jSuggestContainer ul li{
+			margin: 0;
+			padding:0;
+			list-style:none;
+			}
+
+
+
+			#jSuggestContainer ul li{
+			padding: 2px 4px;
+			border-bottom: 1px dotted #ffe594;
+			color:#666;
+			background:#fff9e7;
+			cursor:pointer
+			}
+
+			#jSuggestContainer ul li.last{
+			border-bottom: 0;
+			}
+
+			#jSuggestContainer ul li.jSuggestHover{
+			background:#ffeaaa;
+			color:#333;
+			}
+		</style>
+		<script language="javascript" type="text/javascript" src="jquery-1.2.6.min.js"></script>
+		<script language="javascript" type="text/javascript" src="jquery.jSuggest.1.0.js"></script>
+		<script language="javascript">
+			$(function(){
+
+				$("#nombre_recolector").jSuggest({
+					url: "autocompletar.html",
+					type: "POST",
+					data: "nombre_recolector",
+					loadingText: 'Buscando...',
+					delay: 600,
+					minchar: 3,
+					zindex: 10,
+					autoChange: true
+				});
+
+			});
+		</script>
+	</head>
+	<body>
+		<h3>Type on the box below to see auto suggest, in this setting, 3 characters minimum to get it working.</h3>
+		<label><input type="text" style="width:300px;" name="nombre_recolector" id="nombre_recolector" /></label>
+	</body>
+</html>

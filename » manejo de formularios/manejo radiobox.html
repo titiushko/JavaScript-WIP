@@ -1,0 +1,121 @@
+<HTML>
+	<HEAD>
+		<SCRIPT language="JavaScript">
+			function valorradio1(form,nombre){
+				var objeto=eval('window.document.'+form+'.'+nombre);
+				return valorradio2(objeto)
+			}
+
+			function valorradio2(objeto){
+				for (var i=0;i<objeto.length;i++){
+					if (objeto[i].checked)
+					return objeto[i].value;
+				}
+				return null
+			}
+
+			function activaradio1(form,nombre,valor){
+				var objeto=eval('window.document.'+form+'.'+nombre);
+				activaradio2(objeto,valor);
+			}
+
+			function activaradio2(objeto,valor){
+				for (var i=0;i<objeto.length;i++){
+					if (objeto[i].value==valor)
+					objeto[i].checked=true;
+				}
+			}
+
+			function desactivaradio1(form,nombre,valor){
+				var objeto=eval('window.document.'+form+'.'+nombre);
+				desactivaradio2(objeto,valor)
+			}
+
+			function desactivaradio2(objeto,valor){
+				for (var i=0;i<objeto.length;i++){
+					if (objeto[i].value==valor)
+					objeto[i].checked=false;
+				}
+			}
+
+			function cambiaestadoradio1(form,nombre,valor){
+				var objeto=eval('window.document.'+form+'.'+nombre);
+				cambiaestadoradio2(objeto,valor)
+			}
+
+			function cambiaestadoradio2(objeto,valor){
+				for (var i=0;i<objeto.length;i++){
+					if (objeto[i].value==valor)
+					objeto[i].checked=!objeto[i].checked;
+				}
+			}
+		</SCRIPT>
+	</HEAD>
+	<BODY>
+		<FORM NAME="formulario" ACTION="">
+			<BR><BR>
+			<CENTER>
+				<B>Acceso a elementos Radio</B><BR><BR>
+				<TABLE BORDER=0>
+					<TR>
+						<TD>&nbsp
+						<TD><FONT SIZE=2>Radio1
+						<TD><FONT SIZE=2>Radio2
+					</TR>
+					<TR>
+						<TD>CampoRadio:
+						<TD ALIGN="CENTER">
+						<INPUT TYPE="Radio" Name="radio" Value="radio1">
+						<TD ALIGN="CENTER">
+						<INPUT TYPE="Radio" Name="radio" Value="radio2">
+					</TR>
+				</TABLE>
+					<BR><BR>
+				<TABLE BORDER=1>
+					<TR>
+						<TH>Estado
+						<TH>Activar
+						<TH>Desactivar
+						<TH>Cambiar Estado
+					</TR>
+					<TR ALIGN="CENTER">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método1"
+						onClick="var valor2=valorradio1('formulario','radio');
+						alert('Activado campo Radio='+valor2)">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método1"
+						onClick="var valor=prompt('Número del Radio que quiere activar','1');
+						activaradio1('formulario','radio','radio'+valor)">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método1"
+						onClick="var valor=prompt('Número del Radio que quiere desactivar','1');
+						desactivaradio1('formulario','radio','radio'+valor)">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método1"
+						onClick="var valor=prompt('Número del Radio que quiere cambiar','1');
+						cambiaestadoradio1('formulario','radio','radio'+valor)">
+					</TR>
+					<TR ALIGN="CENTER">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método2"
+						onClick="var valor2=valorradio2(window.document.formulario.radio);
+						alert('Activado campo Radio='+valor2)">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método2"
+						onClick="var valor=prompt('Número del Radio que quiere cambiar','1');
+						activaradio2(window.document.formulario.radio,'radio'+valor)">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método2"
+						onClick="var valor=prompt('Número del Radio que quiere desactivar','1');
+						desactivaradio2(window.document.formulario.radio,'radio'+valor)">
+						<TD>
+						<INPUT TYPE="Button" VALUE="Método2"
+						onClick="var valor=prompt('Número del Radio que quiere cambiar','1');
+						cambiaestadoradio2(window.document.formulario.radio,'radio'+valor)">
+					</TR>
+				</TABLE>
+			</CENTER>
+		</FORM>
+	</BODY>
+</HTML>

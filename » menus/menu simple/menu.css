@@ -1,0 +1,37 @@
+/* menu */
+A.menu:link {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 12px;
+	COLOR: black;
+	FONT-FAMILY: verdana, helvetica, arial;
+	TEXT-DECORATION: none
+}
+A.menu:active {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 12px;
+	COLOR: grey;
+	FONT-FAMILY: verdana, helvetica, arial;
+	TEXT-DECORATION: none
+}
+A.menu:visited {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 12px;
+	COLOR: grey;
+	FONT-FAMILY: verdana, helvetica, arial;
+	TEXT-DECORATION: none
+}
+A.menu:hover {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 12px;
+	COLOR: red;
+	FONT-FAMILY: verdana, helvetica, arial;
+	TEXT-DECORATION: none
+}
+strong.seleccionado {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 12px;
+	COLOR: blue;
+	FONT-FAMILY: verdana, helvetica, arial;
+	TEXT-DECORATION: none;
+	background: yellow
+}

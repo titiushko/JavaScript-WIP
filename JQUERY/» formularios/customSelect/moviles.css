@@ -1,0 +1,38 @@
+
+.custom-select-provincias{
+background:url("./images/select.png") no-repeat scroll left top transparent;
+border:0 none;
+height:2.7em;
+margin-left:0.5em;
+padding-left:0.7em;
+padding-top:0.6em;
+width:14em;
+cursor:pointer;
+}
+
+.custom-options-provincias{
+background:none repeat scroll 0 0 #FFFFFF;
+border-bottom:3px solid #DCDADA;
+border-left:3px solid #DCDADA;
+border-right:3px solid #DCDADA;
+display:none;
+margin-left:0.7em;
+margin-top:-0.9em;
+min-width:12.6em;
+padding-left:0.5em;
+padding-top:0.3em;
+position:absolute;
+}
+
+.custom-options-provincias li{
+margin-left:-0.5em;
+padding-left:0.5em;
+list-style:none;
+}
+
+.custom-options-provincias li:hover{
+cursor:pointer;
+background:#DCDADA;
+width:100%;
+color:#ffffff;
+}

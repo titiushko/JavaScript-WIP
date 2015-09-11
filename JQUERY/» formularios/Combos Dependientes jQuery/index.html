@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Combos dependientes</title>
+<script language="javascript" src="js/jquery-1.2.6.min.js"></script>
+<script language="javascript">
+$(document).ready(function(){
+	// Parametros para e combo1
+   $("#combo1").change(function () {
+   		$("#combo1 option:selected").each(function () {
+			//alert($(this).val());
+				elegido=$(this).val();
+				$.post("combo1.php", { elegido: elegido }, function(data){
+				$("#combo2").html(data);
+				$("#combo3").html("");
+			});			
+        });
+   })
+	// Parametros para el combo2
+	$("#combo2").change(function () {
+   		$("#combo2 option:selected").each(function () {
+			//alert($(this).val());
+				elegido=$(this).val();
+				$.post("combo2.php", { elegido: elegido }, function(data){
+				$("#combo3").html(data);
+			});			
+        });
+   })
+});
+</script>
+</head>
+<body>
+<select name="combo1" id="combo1">	
+	<option value="op1_1">Option1</option>
+    <option value="op1_2">Option2</option>
+    <option value="op1_3">Option3</option>    
+</select>
+<select name="combo2" id="combo2">	
+</select>
+<select name="combo3" id="combo3">	
+</select>
+</body>
+</html>

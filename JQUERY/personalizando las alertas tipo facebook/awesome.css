@@ -1,0 +1,151 @@
+.awesome, .awesome:visited {
+	background: #222;
+	display: inline-block;
+	padding: 5px 10px 6px;
+	color: #fff;
+	text-decoration: none;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer;
+}
+
+.awesome:hover              { background-color: #111; color: #fff; }
+.awesome:active             { top: 1px; }
+.small.awesome, .small.awesome:visited      { font-size: 11px; padding: ; }
+.awesome, .awesome:visited,
+.medium.awesome, .medium.awesome:visited    { font-size: 13px; font-weight: bold; line-height: 1; text-shadow: 0 -1px 1px rgba(0,0,0,0.25); }
+.large.awesome, .large.awesome:visited      { font-size: 14px; padding: 8px 14px 9px; }
+
+.green.awesome, .green.awesome:visited    { background-color: #91bd09; }
+.green.awesome:hover            { background-color: #749a02; }
+.blue.awesome, .blue.awesome:visited    { background-color: #2daebf; }
+.blue.awesome:hover             { background-color: #007d9a; }
+.red.awesome, .red.awesome:visited      { background-color: #e33100; }
+.red.awesome:hover              { background-color: #872300; }
+.magenta.awesome, .magenta.awesome:visited    { background-color: #a9014b; }
+.magenta.awesome:hover              { background-color: #630030; }
+.orange.awesome, .orange.awesome:visited    { background-color: #ff5c00; }
+.orange.awesome:hover             { background-color: #d45500; }
+.yellow.awesome, .yellow.awesome:visited    { background-color: #ffb515; }
+.yellow.awesome:hover             { background-color: #fc9200; }
+/**/
+*{ padding:0; margin:0 }
+p{ margin-bottom: 10px; }
+h2{
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-size: 1.4em;
+}
+body{
+	font-family: Verdana, Arial,sans-serif;
+	font-size: 14px;
+	line-height: 22px;
+	background: #2C3643;
+}
+body.small{
+	font-size: 12px;
+	line-height: 20px;
+}
+body.medium{
+	font-size: 14px;
+	line-height: 22px;
+}
+body.large{
+	font-size: 16px;
+	line-height: 24px;
+}
+#header{
+	background: #9b0103;
+	color: #fff;
+}
+
+.content{
+	margin: 0 auto;
+	width:960px;
+}
+#title{
+	padding-top: 32px;
+	padding-bottom: 5px;
+}
+h1{
+	font-size: 1.6em;
+	line-height: 28px;
+	font-weight: bold;
+}
+#title a, #title a:link, #title a:visited {
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+pre{
+	font-size: 12px;
+	margin: 10px;
+	color: #666;
+}
+
+#content{
+	background: #fff;
+	padding: 20px;
+	margin: 0 auto;
+	margin-top: 50px;
+	width: 600px;
+	-webkit-box-shadow: 0 0 20px #555;
+	-moz-box-shadow: 0 0 20px #555;
+}
+
+#footer{
+	padding: 15px 0 70px;
+	color: #fff;
+	font-size: .8em;
+}
+
+#footer a, #footer a:link, #footer a:visited {
+	color:#9b0103;
+	font-weight:bold;
+	text-decoration:underline;
+}
+
+button{
+	argin-bottom: 20px;
+}
+#dialog{
+	width: 100%;
+	position: absolute;
+	top: 150px;
+}
+#dialog-wrapper{
+	position: relative;
+	margin: 0 auto;
+	border: 10px solid rgba(150, 150, 150, 0.7);
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	width: 500px;
+}
+#dialog-content{
+	background-color: #fff;
+	border: 1px solid #666;
+	border-width: 0 1px 1px;
+	padding: 10px;
+}
+#dialog-footer{
+	background: #ccc;
+	border: 1px solid #666;
+	border-top: 0;
+	padding: 10px;
+	text-align: right;
+}
+#dialog h1{
+	background-color: #f60;
+	border: 1px solid #cc3300;
+	border-bottom: 0;
+	color: #fff;
+	padding: 5px 10px;
+}
+#dialog-content p{
+	rgin-bottom: 10px;
+}

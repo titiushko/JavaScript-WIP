@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+	<title>Ejemplo select</title>
+	<script>
+		function dimePropiedades(nombre_elemento){
+			var texto
+			var elemento = eval("document.formulario." + nombre_elemento);
+			
+			texto = "El numero de opciones del select: " + elemento.length
+			
+			var indice = elemento.selectedIndex
+			texto += "\nIndice de la opcion escogida: " + indice
+			
+			var valor = elemento.options[indice].value
+			texto += "\nValor de la opcion escogida: " + valor
+			
+			var textoEscogido = elemento.options[indice].text
+			texto += "\nTexto de la opcion escogida: " + textoEscogido
+			alert(texto)
+		}
+		function ponerValoracion(valoracion){
+			formulario.opciones1.selectedIndex = valoracion;
+		}
+		function ponerPuntuacion(puntuacion){
+			formulario.opciones2.selectedIndex = puntuacion;
+		}
+	</script>
+	</head>
+	<body>
+		<form name="formulario">
+			Valoración sobre este web:
+			<select name="opciones1">
+				<option value="10" onClick="ponerPuntuacion('0');">Muy bien</option>
+				<option value="5" onClick="ponerPuntuacion('1');" selected="selected">Regular</option>
+				<option value="0" onClick="ponerPuntuacion('2');">Muy mal</option>
+			</select>
+			Puntuacion:
+			<select name="opciones2">
+				<option value="Muy bien" onClick="ponerValoracion('0');">10</option>
+				<option value="Regular" onClick="ponerValoracion('1');" selected="selected">5</option>
+				<option value="Muy mal" onClick="ponerValoracion('2');">0</option>
+			</select>
+			<br><br>
+			<input value="Propiedades lista 1" onclick="dimePropiedades('opciones1')" type="button">
+			<input value="Propiedades lista 2" onclick="dimePropiedades('opciones2')" type="button">
+		</form>
+	</body>
+</html>
+<!--
+<<Propiedades del objeto select>>
+Vamos a ver una lista de las propiedades de este elemento de formularioario.
+
+length
+Guarda la cantidad de opciones del campo select. Cantidad de etiquetas <OPTION>
+
+Option
+Hace referencia a cada una de sus opciones. Son por si mismas objetos.
+
+options
+Un array con cada una de las opciones del select.
+
+selectedIndex
+Es el índice de la opción que se encuentra seleccionada.
+
+Aparte de las conocidas propiedades comunes a todos los elementos de formularioario: form y name y type.
+
+<<Métodos del objeto select>>
+Los métodos son solamente 2 y ya conocemos su significado.
+
+blur()
+Para retirar el foco de la aplicación de ese elemento de formularioario.
+
+focus()
+Para poner el foco de la aplicación.
+
+Objeto option
+Tenemos que pararnos a ver también este objeto para entender bien el campo select. Recordamos que las option son las distintas opciones que tiene un select, expresadas con la etiqueta <OPTION>.
+
+<<Propiedades de option>>
+Estos objetos sólo tienen propiedades, no tienen métodos. Vamos a verlas.
+
+defaultSelected
+Indica con un true o un false si esa opción es la opción por defecto. La opción por defecto se consigue con HTML colocando el atributo selected a un option.
+
+index
+El índice de esa opción dentro del select.
+
+selected
+Indica si esa opción se encuentra seleccionada o no.
+
+text
+Es el texto de la opción. Lo que puede ver el usuario en el select, que se escribe después de la etiqueta <OPTION>.
+
+value
+Indica el valor de la opción, que se introduce con el atributo VALUE de la etiqueta <OPTION>.
+-->

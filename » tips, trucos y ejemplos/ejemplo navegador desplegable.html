@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+
+	<title>Ejemplo navegador desplegable</title>
+</head><body>
+<script language="javascript">
+
+function destino(){
+
+url = document.navegador.secciones.options[document.navegador.secciones.selectedIndex].value
+
+if (url != "no") window.location = url;
+
+}
+
+</script>
+
+
+<form name="navegador">
+<select name="secciones" onchange="destino()">
+
+<option selected="selected" value="no">Secciones y servicios de desarrolloweb
+
+</option><option value="no">--------------------------------------
+
+</option><option value="http://www.desarrolloweb.com/">Portada
+
+</option><option value="http://www.desarrolloweb.com/manuales">Manuales
+
+</option><option value="http://www.desarrolloweb.com/promocion">Promoción de páginas
+
+</option><option value="http://www.desarrolloweb.com/programas">Programas
+
+</option><option value="http://www.desarrolloweb.com/noticias">Noticias
+
+</option><option value="http://www.desarrolloweb.com/cosecha">Cosecha de 2000
+
+</option><option value="http://www.desarrolloweb.com/favoritas">Favorita del mes
+
+</option><option value="http://www.desarrolloweb.com/vuestraspaginas/">Vuestras páginas
+
+</option><option value="http://www.desarrolloweb.com/colabora/">Colaborar
+
+</option><option value="no">--------------------------------------
+
+</option><option value="http://www.desarrolloweb.com/listacorreo/">Lista de correo de ayuda
+
+</option><option value="http://www.desarrolloweb.com/librovisitas/">Libro de visitas
+
+</option></select>
+
+</form>
+
+
+</body></html>
