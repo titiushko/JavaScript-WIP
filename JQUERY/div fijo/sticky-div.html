@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <style type="text/css">
+        #page {
+            width: 800px;
+            margin: 0 auto;
+        }
+        #header {
+            border: 1px solid blue;
+            height: 100px;
+            margin: 8px;
+        }
+        #body {
+            border: 1px solid blue;
+            height: 2400px;
+            margin: 8px;
+        }
+        #footer {
+            border: 1px solid blue;
+            height: 100px;
+            margin: 8px;
+        }
+        h1, h2 {
+            padding: 16px;
+        }
+		#sticky {
+            width: 140px;
+            height: 200px;
+			padding: 10px;
+            border: 1px solid red;
+            float: left;
+            margin-left: -165px;
+            margin-right: 10px;
+            position: absolute;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="page">
+        <div id="header"><h1>HEADER</h1></div>
+		<div id="sticky">A teacher is teaching a class and she sees that Johnny isn't paying attention, so she asks him, "If there are three ducks sitting on a fence, and you shoot one, how many are left?" Johnny says, "None." The teacher asks,</div>
+        <div id="body"><h1>CONTENT</h1></div>
+        <div id="footer"><h1>FOOTER</h1></div>
+    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function() { // document ready
+			if (!!$('#sticky').offset()) { // make sure "#sticky" element exists
+				var stickyTop = $('#sticky').offset().top; // returns number
+				$(window).scroll(function () { // scroll event
+					var windowTop = $(window).scrollTop(); // returns number
+					if (stickyTop < windowTop) {
+						$('#sticky').css({ position: 'fixed', top: 0 });
+					} else {
+						$('#sticky').css('position', 'static');
+					}
+				});
+			}
+		});
+	</script>
+</body>
+</html>
+<!--
+Source: http://www.harrycampaz.com/2014/02/como-hacer-un-div-fijo-cuando-damos.html
+-->

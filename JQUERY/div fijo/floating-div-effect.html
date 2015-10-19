@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style type="text/css">
+        #floating-box {
+            width: 90px;
+            height: 200px;
+            border: 1px solid red;
+            background-color: #BBBBBB;
+            float: left;
+            margin-left: -100px;
+            margin-right: 10px;
+            position: absolute;
+            z-index: 1;
+        }
+        #page {
+            width: 800px;
+            margin: 0 auto;
+        }
+        #header {
+            border: 1px solid blue;
+            height: 100px;
+            margin: 8px;
+        }
+        #body {
+            border: 1px solid blue;
+            height: 2400px;
+            margin: 8px;
+        }
+        #footer {
+            border: 1px solid blue;
+            height: 100px;
+            margin: 8px;
+        }
+        h1, h2 {
+            padding: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="page">
+        <div id="header"><h1>Header</h1></div>
+        <div id="floating-box"></div>
+        <div id="body">
+            <h1>Content</h1>
+            <h2>Mashable floating effect example</h2>
+        </div>
+        <div id="footer"><h1>Footer</h1></div>
+    </div>
+    <script type="text/javascript">
+        //avoid conflict with other script
+        $j = jQuery.noConflict();
+        $j(document).ready(function ($) {
+            //this is the floating content
+            var $floatingbox = $('#floating-box');
+            if ($('#body').length > 0) {
+                var bodyY = parseInt($('#body').offset().top) - 20;
+                var originalX = $floatingbox.css('margin-left');
+                $(window).scroll(function () {
+                    var scrollY = $(window).scrollTop();
+                    var isfixed = $floatingbox.css('position') == 'fixed';
+                    if ($floatingbox.length > 0) {
+                        $floatingbox.html("srollY : " + scrollY + ", bodyY : " + bodyY + ", isfixed : " + isfixed);
+                        if (scrollY > bodyY && !isfixed) {
+                            $floatingbox.stop().css({
+                                position: 'fixed',
+                                left: '50%',
+                                top: 20,
+                                marginLeft: -500
+
+                            });
+                        } else if (scrollY < bodyY && isfixed) {
+                            $floatingbox.css({
+                                position: 'relative',
+                                left: 0,
+                                top: 0,
+                                marginLeft: originalX
+                            });
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+<!--
+Source: http://www.mkyong.com/jquery/mashable-floating-effect-example-with-jquery/
+-->
