@@ -1,0 +1,101 @@
+http://librojquery.com/#conceptos-básicos-de-jquery
+
+SELECCIÓN DE ELEMENTOS (http://api.jquery.com/category/selectors/)
+$('#myId');							// selección de elementos en base a su id
+$('div.myClass');					// selección de elementos en base al nombre de clase; si se especifica el tipo de elemento, se mejora el rendimiento de la selección
+$('input[name=first_name]');		// selección de elementos por su atributo
+$('#contents ul.people li');		// selección de elementos en forma de selector css
+
+PSEUDO-SELECTORES
+$('a.external:first');				// selecciona el primer elemento <a> con la clase 'external'
+$('tr:odd');						// selecciona todos los elementos <tr> impares de una tabla
+$('#myForm :input');				// selecciona todos los elementos del tipo input dentro del formulario #myForm
+$('div:visible');					// selecciona todos los divs visibles
+$('div:gt(2)');						// selecciona todos los divs excepto los tres primeros
+$('div:animated');					// selecciona todos los divs actualmente animados
+
+COMPROBAR SELECCIONES
+if ($('div.foo')) { ... }			// conocer si dicha selección entregó algún resultado
+if ($('div.foo').length) { ... }	// evaluar si una selección posee elementos
+
+REFINAMIENTO DE SELECCIONES
+$('div.foo').has('p');				// el elemento div.foo contiene elementos <p>
+$('h1').not('.bar');				// el elemento h1 no posse la clase 'bar'
+$('ul li').filter('.current');		// un item de una lista desordenada que posse la clase 'current'
+$('ul li').first();					// el primer item de una lista desordenada
+$('ul li').eq(5);					// el sexto item de una lista desordenada
+
+SELECCIÓN DE ELEMENTOS DE UN FORMULARIO
+:button								// selecciona elementos <button> y con el atributo type='button'
+:checkbox							// selecciona elementos <input> con el atributo type='checkbox'
+:checked							// selecciona elementos <input> del tipo checkbox seleccionados
+:disabled							// selecciona elementos del formulario que están deshabitados
+:enabled							// selecciona elementos del formulario que están habilitados
+:file								// selecciona elementos <input> con el atributo type='file'
+:image								// selecciona elementos <input> con el atributo type='image'
+:input								// selecciona elementos <input>, <textarea> y <select>
+:password							// selecciona elementos <input> con el atributo type='password'
+:radio								// selecciona elementos <input> con el atributo type='radio'
+:reset								// selecciona elementos <input> con el atributo type='reset'
+:selected							// selecciona elementos <options> que están seleccionados
+:submit								// selecciona elementos <input> con el atributo type='submit'
+:text								// selecciona elementos <input> con el atributo type='text'
+$('#myForm :input');				// obtiene todos los elementos inputs dentro del formulario #myForm
+
+OBTENER PROPIEDADES CSS
+$('h1').css('fontSize');			// devuelve una cadena de caracteres como "19px"
+$('h1').css('font-size');			// también funciona
+
+ESTABLECER PROPIEDADES CSS
+$('h1').css('fontSize', '100px');	// establece una propiedad individual CSS
+$('h1').css({'fontSize': '100px', 'color': 'red'});	// establece múltiples propiedades CSS
+
+ESTABLECER VALORES CSS RELATIVOS
+$('h1').css({ 
+		'fontSize': '+=15px',		// suma 15px al tamaño original del elemento
+		'paddingTop': '+=20px'		// suma 20px al padding superior original del elemento
+});
+
+MÉTODOS BÁSICOS SOBRE DIMENSIONES
+$('h1').width('50px');				// establece el ancho de todos los elementos H1
+$('h1').width();					// obtiene el ancho del primer elemento H1
+$('h1').height('50px');				// establece el alto de todos los elementos H1
+$('h1').height();					// obtiene el alto del primer elemento H1
+$('h1').position();					// devuelve un objeto conteniendo información sobre la posición del primer elemento relativo al "offset" (posición) de su elemento padre
+
+ESTABLECER ATRIBUTOS
+$('a').attr('href', 'allMyHrefsAreTheSameNow.html');
+$('a').attr({'title': 'all titles are the same too', 'href': 'somethingNew.html'});
+
+OBTENER ATRIBUTOS
+$('a').attr('href');				// devuelve el atributo href perteneciente al primer elemento <a> del documento
+
+MOVERSE A TRAVÉS DEL DOM UTILIZANDO MÉTODOS DE RECORRIDO
+$('h1').next('p');					// seleccionar el inmediato y próximo elemento <p> con respecto a H1
+$('div:visible').parent();			// seleccionar el elemento contenedor a un div visible
+$('input[name=first_name]').closest('form');	// seleccionar el elemento <form> más cercano a un input
+$('#myList').children();			// seleccionar todos los elementos hijos de #myList
+$('li.selected').siblings();		// seleccionar todos los items hermanos del elemento <li>
+
+OBTENER Y ESTABLECER INFORMACIÓN EN ELEMENTOS (http://api.jquery.com/category/manipulation/)
+$.fn.html							// obtiene o establece el contenido HTML de un elemento
+$.fn.text							// obtiene o establece el contenido en texto del elemento; en caso se pasarle como argumento código HTML, este es despojado
+$.fn.attr							// obtiene o establece el valor de un determinado atributo
+$.fn.width							// obtiene o establece el ancho en pixeles del primer elemento de la selección como un entero
+$.fn.height							// obtiene o establece el alto en pixeles del primer elemento de la selección como un entero
+$.fn.position						// obtiene un objeto con información sobre la posición del primer elemento de la selección, relativo al primer elemento padre posicionado; este método es solo obtenedor
+$.fn.val							// obtiene o establece el valor (value) en elementos de formularios
+
+MOVER ELEMENTOS UTILIZANDO DIFERENTES ENFOQUES
+$.fn.insertAfter					// coloca a el/los elementos seleccionados después del elemento que se haya pasado como argumento
+$.fn.after							// coloca al elemento pasado como argumento después del elemento seleccionado
+$.fn.insertBefore
+$.fn.before
+$.fn.appendTo
+$.fn.append
+$.fn.prependTo
+$.fn.prepend
+
+REMOVER ELEMENTOS
+$.fn.remove							// remover de forma permanente al elemento
+$.fn.detach							// remueve el elemento, pero mantiene la información y eventos asociados al mismo, siendo útil en el caso que necesite reinsertar el elemento en el documento
