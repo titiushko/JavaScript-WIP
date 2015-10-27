@@ -41,6 +41,7 @@ SELECCIÓN DE ELEMENTOS DE UN FORMULARIO
 :submit								// selecciona elementos <input> con el atributo type='submit'
 :text								// selecciona elementos <input> con el atributo type='text'
 $('#myForm :input');				// obtiene todos los elementos inputs dentro del formulario #myForm
+$('#myForm :input:text:visible:first');	// obtiene el primer elemento input visible de tipo texto dentro del formulario #myForm
 
 OBTENER PROPIEDADES CSS
 $('h1').css('fontSize');			// devuelve una cadena de caracteres como "19px"
